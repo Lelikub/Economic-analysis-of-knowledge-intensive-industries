@@ -185,7 +185,7 @@ Expected: both commands pass. Commit with message `feat: add Russian efficiency 
 - Consumes: `ReportContext`, `opex_chart_path: Path`, `efficiency_chart_path: Path`.
 - Produces: `WordReportBuilder.build(path: Path, context: ReportContext, *, opex_chart_path: Path, efficiency_chart_path: Path) -> Path`.
 
-- [ ] **Step 1: Add and install the document dependency through the interpreter**
+- [x] **Step 1: Add and install the document dependency through the interpreter**
 
 Add `python-docx>=1.2` to `requirements.txt`, then run:
 
@@ -195,7 +195,7 @@ Add `python-docx>=1.2` to `requirements.txt`, then run:
 
 Expected: `python-docx` imports from the repository virtual environment.
 
-- [ ] **Step 2: Write failing DOCX behavior tests**
+- [x] **Step 2: Write failing DOCX behavior tests**
 
 Build a real `ReportContext` from the three repository CSV files using `CsvProductionLoader`, `OperationalMetricsCalculator`, `ComparisonCsvValidator`, `StressAnalyzer`, `TTMCalculator`, and `MetricsHarness`. Create both actual PNG files. Then assert the produced document boundary:
 
@@ -215,7 +215,7 @@ assert any("14 713,04" in cell.text for table in document.tables for row in tabl
 
 Add an error test that passes a missing PNG and expects `FileNotFoundError` naming that path.
 
-- [ ] **Step 3: Run DOCX tests to verify RED**
+- [x] **Step 3: Run DOCX tests to verify RED**
 
 Run:
 
@@ -225,13 +225,13 @@ Run:
 
 Expected: import failure because `word_reporting.py` does not exist.
 
-- [ ] **Step 4: Implement the DOCX builder**
+- [x] **Step 4: Implement the DOCX builder**
 
 Use `python-docx` to set A4 page geometry, Russian default font, heading styles, table grid style, alternating header fill, and two pictures. Implement dedicated presentation helpers for decimal, percentage, currency and missing values. Fill every section listed in the spec directly from `context`; derive narrative comparisons from the supplied values, for example selecting the smallest of FPY/availability/performance as the OEE constraint without recalculating any metric.
 
 Validate both PNG paths before creating the document and save atomically to the requested path after making its parent directory.
 
-- [ ] **Step 5: Verify GREEN and regression**
+- [x] **Step 5: Verify GREEN and regression**
 
 Run:
 
