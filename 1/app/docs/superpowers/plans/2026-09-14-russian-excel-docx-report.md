@@ -130,7 +130,7 @@ Expected: all selected tests pass with zero failures. Commit `localization.py`, 
 - Consumes: `MetricsResult` for baseline and stress scenarios.
 - Produces: `EfficiencyComparisonVisualizer.create(path: Path, baseline: MetricsResult, stress: MetricsResult) -> Path`.
 
-- [ ] **Step 1: Write the failing chart test**
+- [x] **Step 1: Write the failing chart test**
 
 ```python
 def test_efficiency_chart_uses_calculated_metrics(tmp_path, data_dir):
@@ -147,7 +147,7 @@ def test_efficiency_chart_uses_calculated_metrics(tmp_path, data_dir):
 
 Also strengthen the OPEX test with the literal Russian category list.
 
-- [ ] **Step 2: Run visualization tests to verify RED**
+- [x] **Step 2: Run visualization tests to verify RED**
 
 Run:
 
@@ -157,11 +157,11 @@ Run:
 
 Expected: import or attribute failure because `EfficiencyComparisonVisualizer` does not exist.
 
-- [ ] **Step 3: Implement the grouped percentage chart**
+- [x] **Step 3: Implement the grouped percentage chart**
 
 Add a deterministic matplotlib builder that reads only `baseline.fpy/oee/teep.value` and corresponding stress values, rejects missing values with `ValueError`, plots two series labelled `Базовый сценарий` and `Стрессовый сценарий`, and saves a closed PNG figure. Correct all OPEX strings to Russian, including `Комплаенс, качество и метрология`.
 
-- [ ] **Step 4: Verify GREEN and regression**
+- [x] **Step 4: Verify GREEN and regression**
 
 Run:
 

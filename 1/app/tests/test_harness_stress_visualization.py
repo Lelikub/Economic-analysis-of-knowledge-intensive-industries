@@ -8,7 +8,11 @@ from euv_analysis.harness import MetricsHarness
 from euv_analysis.loader import CsvProductionLoader
 from euv_analysis.metrics import OperationalMetricsCalculator
 from euv_analysis.stress import ComparisonCsvValidator, StressAnalyzer
-from euv_analysis.visualization import OPEX_SHARES, OpexVisualizer
+from euv_analysis.visualization import (
+    OPEX_SHARES,
+    EfficiencyComparisonVisualizer,
+    OpexVisualizer,
+)
 
 
 def test_harness_uses_numeric_tolerance():
@@ -114,6 +118,32 @@ def test_opex_shares_sum_to_one_and_png_is_created(tmp_path):
     result = OpexVisualizer().create(path)
 
     assert sum(OPEX_SHARES.values()) == pytest.approx(1.0)
+    assert list(OPEX_SHARES) == [
+        "Сырьё и прекурсоры",
+        "Утилиты",
+        "Персонал",
+        "ТОиР",
+        "Комплаенс, качество и метрология",
+    ]
+    assert result == path
+    assert path.is_file()
+    assert path.stat().st_size > 10_000
+
+
+def test_efficiency_chart_uses_calculated_metrics(tmp_path, data_dir):
+    """Catches a missing or hard-coded baseline-versus-stress chart."""
+    loader = CsvProductionLoader()
+    calculator = OperationalMetricsCalculator()
+    baseline = calculator.calculate(
+        loader.load(data_dir / "euv_photoresist_pilot_2026.csv")
+    )
+    stress = calculator.calculate(
+        loader.load(data_dir / "euv_photoresist_stress_2026.csv")
+    )
+    path = tmp_path / "сравнение_эффективности.png"
+
+    result = EfficiencyComparisonVisualizer().create(path, baseline, stress)
+
     assert result == path
     assert path.is_file()
     assert path.stat().st_size > 10_000
