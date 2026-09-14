@@ -13,6 +13,7 @@ from euv_analysis.excel import (
     ExcelGroundTruthReader,
     ExcelRecalculator,
 )
+from euv_analysis.harness import HarnessEntry
 from euv_analysis.loader import CsvProductionLoader
 
 
@@ -24,27 +25,68 @@ def test_workbook_contains_independent_formulas(tmp_path, valid_data):
 
     workbook = load_workbook(path, data_only=False)
     assert {
-        "Source Data",
-        "Metrics",
-        "Costs",
+        "Исходные данные",
+        "Метрики",
+        "Затраты",
         "TTM",
-        "Harness Log",
-        "Stress Test",
-        "OPEX",
-        "Assumptions",
-        "Data Issues",
+        "Журнал сверки",
+        "Стресс-тест",
+        "Структура OPEX",
+        "Допущения",
+        "Проблемы данных",
     } <= set(workbook.sheetnames)
     formulas = [
         cell.value
-        for sheet_name in ("Metrics", "Costs", "TTM", "Stress Test")
+        for sheet_name in ("Метрики", "Затраты", "TTM", "Стресс-тест")
         for row in workbook[sheet_name].iter_rows()
         for cell in row
         if cell.data_type == "f"
     ]
     assert len(formulas) >= 20
-    assert any("'Source Data'!" in formula for formula in formulas)
-    assert workbook["Metrics"]["D2"].value.startswith("=")
-    assert workbook["Metrics"]["D2"].value != "=0.75"
+    assert any("'Исходные данные'!" in formula for formula in formulas)
+    assert workbook["Метрики"]["D2"].value.startswith("=")
+    assert workbook["Метрики"]["D2"].value != "=0.75"
+
+
+def test_workbook_uses_russian_sheet_names_headers_and_values(tmp_path, valid_data):
+    """Catches regression to English labels in the user-facing workbook."""
+    path = ExcelGroundTruthBuilder().build(
+        tmp_path / "ground_truth.xlsx", valid_data, valid_data
+    )
+    workbook = load_workbook(path, data_only=False)
+
+    assert workbook.sheetnames == [
+        "Исходные данные",
+        "Метрики",
+        "Затраты",
+        "TTM",
+        "Стресс-тест",
+        "Журнал сверки",
+        "Структура OPEX",
+        "Допущения",
+        "Проблемы данных",
+    ]
+    assert [cell.value for cell in workbook["Исходные данные"][1]] == [
+        "Сценарий",
+        "Параметр",
+        "Техническое имя CSV",
+        "Значение",
+        "Единица измерения",
+        "Описание",
+    ]
+    assert workbook["Исходные данные"]["A2"].value == "Базовый"
+    assert workbook["Исходные данные"]["B2"].value == "Календарное время"
+    assert workbook["Исходные данные"]["C2"].value == "Calendar_Hours"
+    assert (
+        workbook["Метрики"]["A2"].value
+        == "Выход годных с первого прохода (FPY)"
+    )
+    assert (
+        workbook["Метрики"]["B2"].value
+        == "Годный объём первого прохода / фактический выпуск"
+    )
+    assert workbook["Метрики"]["F2"].value.startswith("Доля продукции")
+    assert workbook["Метрики"]["D13"].value == "НЕ РАССЧИТЫВАЕТСЯ"
 
 
 def test_workbook_records_mass_intensity_data_gap(tmp_path, valid_data):
@@ -55,9 +97,11 @@ def test_workbook_records_mass_intensity_data_gap(tmp_path, valid_data):
     workbook = load_workbook(path, data_only=False)
 
     mass_row = next(
-        row for row in workbook["Metrics"].iter_rows(values_only=True) if row[0] == "Mass Intensity"
+        row
+        for row in workbook["Метрики"].iter_rows(values_only=True)
+        if row[0] == "Массовая ресурсоёмкость"
     )
-    assert mass_row[3] == "NOT_COMPUTABLE"
+    assert mass_row[3] == "НЕ РАССЧИТЫВАЕТСЯ"
     assert "Raw_Material_Mass_kg" in mass_row[5]
 
 
@@ -70,11 +114,38 @@ def test_workbook_stress_sheet_includes_ttm_penalty_formulas(tmp_path, valid_dat
 
     ttm_row = next(
         row
-        for row in workbook["Stress Test"].iter_rows(values_only=True)
-        if row[0] == "TTM Penalty"
+        for row in workbook["Стресс-тест"].iter_rows(values_only=True)
+        if row[0] == "Штраф за задержку вывода на рынок (TTM)"
     )
     assert ttm_row[1].startswith("=")
     assert ttm_row[2].startswith("=")
+
+
+def test_harness_rows_are_localized_only_in_workbook(tmp_path, valid_data):
+    """Catches leaking internal English metric names and statuses into Excel."""
+    path = ExcelGroundTruthBuilder().build(
+        tmp_path / "ground_truth.xlsx", valid_data, valid_data
+    )
+    entry = HarnessEntry(
+        "OEE",
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        1e-9,
+        "PASS",
+        "",
+        "2026-09-14T00:00:00+00:00",
+    )
+
+    ExcelGroundTruthBuilder().write_harness(path, [entry])
+
+    workbook = load_workbook(path, data_only=False)
+    row = list(
+        workbook["Журнал сверки"].iter_rows(min_row=2, values_only=True)
+    )[0]
+    assert row[0] == "Общая эффективность оборудования (OEE)"
+    assert row[6] == "СОВПАДАЕТ"
 
 
 class _FakeWorkbook:

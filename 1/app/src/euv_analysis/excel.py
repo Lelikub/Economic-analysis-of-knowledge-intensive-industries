@@ -14,6 +14,16 @@ from openpyxl.chart import BarChart, Reference
 from openpyxl.drawing.image import Image
 from openpyxl.styles import Alignment, Font, PatternFill
 
+from .localization import (
+    PARAMETER_DESCRIPTIONS,
+    PARAMETER_LABELS,
+    SCENARIO_LABELS,
+    SHEET_NAMES,
+    localize_cause,
+    localize_metric,
+    localize_status,
+    localize_unit,
+)
 from .models import ProductionData
 
 
@@ -43,24 +53,24 @@ PARAMETER_FIELDS: tuple[tuple[str, str], ...] = (
 
 
 GROUND_TRUTH_CELLS: dict[str, tuple[str, str]] = {
-    "FPY": ("Metrics", "D2"),
-    "Final Yield": ("Metrics", "D3"),
-    "Availability": ("Metrics", "D4"),
-    "Performance": ("Metrics", "D5"),
-    "Quality": ("Metrics", "D6"),
-    "OEE": ("Metrics", "D7"),
-    "Utilization": ("Metrics", "D8"),
-    "TEEP": ("Metrics", "D9"),
-    "Energy Intensity": ("Metrics", "D10"),
-    "Economic Intensity": ("Metrics", "D11"),
-    "CPU": ("Metrics", "D12"),
-    "Mass Intensity": ("Metrics", "D13"),
-    "TTM Penalty Assignment": ("Metrics", "D14"),
-    "TTM Penalty CSV": ("Metrics", "D15"),
-    "Energy Cost": ("Costs", "D2"),
-    "Monthly Depreciation": ("Costs", "D3"),
-    "Total Manufacturing Cost": ("Costs", "D4"),
-    "Raw Material Cost Proxy": ("Costs", "D7"),
+    "FPY": (SHEET_NAMES["metrics"], "D2"),
+    "Final Yield": (SHEET_NAMES["metrics"], "D3"),
+    "Availability": (SHEET_NAMES["metrics"], "D4"),
+    "Performance": (SHEET_NAMES["metrics"], "D5"),
+    "Quality": (SHEET_NAMES["metrics"], "D6"),
+    "OEE": (SHEET_NAMES["metrics"], "D7"),
+    "Utilization": (SHEET_NAMES["metrics"], "D8"),
+    "TEEP": (SHEET_NAMES["metrics"], "D9"),
+    "Energy Intensity": (SHEET_NAMES["metrics"], "D10"),
+    "Economic Intensity": (SHEET_NAMES["metrics"], "D11"),
+    "CPU": (SHEET_NAMES["metrics"], "D12"),
+    "Mass Intensity": (SHEET_NAMES["metrics"], "D13"),
+    "TTM Penalty Assignment": (SHEET_NAMES["metrics"], "D14"),
+    "TTM Penalty CSV": (SHEET_NAMES["metrics"], "D15"),
+    "Energy Cost": (SHEET_NAMES["costs"], "D2"),
+    "Monthly Depreciation": (SHEET_NAMES["costs"], "D3"),
+    "Total Manufacturing Cost": (SHEET_NAMES["costs"], "D4"),
+    "Raw Material Cost Proxy": (SHEET_NAMES["costs"], "D7"),
 }
 
 
@@ -107,143 +117,223 @@ class ExcelGroundTruthBuilder:
         workbook.calculation.fullCalcOnLoad = True
         workbook.calculation.forceFullCalc = True
 
-        source = workbook.create_sheet("Source Data")
-        source.append(["Scenario", "Parameter", "Value", "Unit", "Description"])
+        source = workbook.create_sheet(SHEET_NAMES["source"])
+        source.append(
+            [
+                "Сценарий",
+                "Параметр",
+                "Техническое имя CSV",
+                "Значение",
+                "Единица измерения",
+                "Описание",
+            ]
+        )
         refs: dict[str, dict[str, str]] = {"Baseline": {}, "Stress": {}}
         for scenario_name, data in (("Baseline", baseline), ("Stress", stress)):
             for parameter_name, field_name in PARAMETER_FIELDS:
                 row_number = source.max_row + 1
                 source.append(
                     [
-                        scenario_name,
+                        SCENARIO_LABELS[scenario_name],
+                        PARAMETER_LABELS[parameter_name],
                         parameter_name,
                         getattr(data, field_name),
-                        data.units.get(parameter_name, ""),
-                        data.descriptions.get(parameter_name, ""),
+                        localize_unit(data.units.get(parameter_name, "")),
+                        PARAMETER_DESCRIPTIONS[parameter_name],
                     ]
                 )
                 refs[scenario_name][parameter_name] = (
-                    f"'Source Data'!$C${row_number}"
+                    f"'{SHEET_NAMES['source']}'!$D${row_number}"
                 )
-        _style_sheet(source, {"A": 14, "B": 36, "C": 18, "D": 16, "E": 72})
+        _style_sheet(
+            source,
+            {"A": 18, "B": 38, "C": 36, "D": 18, "E": 24, "F": 66},
+        )
 
         b = refs["Baseline"]
         s = refs["Stress"]
-        metrics = workbook.create_sheet("Metrics")
-        metrics.append(["Metric", "Formula", "Parameters", "Value", "Unit", "Comment"])
+        metrics = workbook.create_sheet(SHEET_NAMES["metrics"])
+        metrics.append(
+            [
+                "Метрика",
+                "Пояснение формулы",
+                "Используемые параметры",
+                "Значение",
+                "Единица измерения",
+                "Комментарий",
+            ]
+        )
         metric_rows = [
             (
-                "FPY",
-                "G_fr / N",
-                "First_Pass_Good_Units, Actual_Output",
+                localize_metric("FPY"),
+                "Годный объём первого прохода / фактический выпуск",
+                "Годный объём первого прохода; фактический выпуск",
                 f"={b['First_Pass_Good_Units']}/{b['Actual_Output']}",
-                "dimensionless",
-                "First-pass yield; not Final Yield",
+                localize_unit("dimensionless"),
+                "Доля продукции, прошедшей контроль качества без переделки",
             ),
             (
-                "Final Yield",
-                "G_final / N",
-                "Final_Good_Units, Actual_Output",
+                localize_metric("Final Yield"),
+                "Итоговый годный объём / фактический выпуск",
+                "Итоговый годный объём; фактический выпуск",
                 f"={b['Final_Good_Units']}/{b['Actual_Output']}",
-                "dimensionless",
-                "Final good output after rework",
+                localize_unit("dimensionless"),
+                "Учитывает годную продукцию после переделки",
             ),
             (
-                "Availability",
-                "Actual_Hours / Planned_Hours",
-                "Actual_Hours, Planned_Hours",
+                localize_metric("Availability"),
+                "Фактическое время работы / плановое время работы",
+                "Фактическое время работы; плановое время работы",
                 f"={b['Actual_Hours']}/{b['Planned_Hours']}",
-                "dimensionless",
-                "OEE availability factor",
+                localize_unit("dimensionless"),
+                "Коэффициент доступности в составе OEE",
             ),
             (
-                "Performance",
-                "(Planned_Hours / Target_Output) * Actual_Output / Actual_Hours",
-                "Planned_Hours, Target_Output, Actual_Output, Actual_Hours",
+                localize_metric("Performance"),
+                "(Плановое время / плановый выпуск) × фактический выпуск / фактическое время",
+                "Плановое время; плановый выпуск; фактический выпуск; фактическое время",
                 f"=({b['Planned_Hours']}/{b['Target_Output']})*{b['Actual_Output']}/{b['Actual_Hours']}",
-                "dimensionless",
-                "Normative cycle time is derived as h/L",
+                localize_unit("dimensionless"),
+                "Нормативное время цикла рассчитано в часах на литр",
             ),
-            ("Quality", "Quality = FPY", "FPY", "=D2", "dimensionless", "Lecture definition"),
             (
-                "OEE",
-                "Availability * Performance * Quality",
-                "Availability, Performance, Quality",
+                localize_metric("Quality"),
+                "Коэффициент качества = FPY",
+                "Выход годных с первого прохода (FPY)",
+                "=D2",
+                localize_unit("dimensionless"),
+                "Определение коэффициента качества по лекции",
+            ),
+            (
+                localize_metric("OEE"),
+                "Доступность × производительность × качество",
+                "Доступность; производительность; качество",
                 "=D4*D5*D6",
-                "dimensionless",
-                "Operational equipment effectiveness",
+                localize_unit("dimensionless"),
+                "Операционная эффективность оборудования",
             ),
             (
-                "Utilization",
-                "Planned_Hours / Calendar_Hours",
-                "Planned_Hours, Calendar_Hours",
+                localize_metric("Utilization"),
+                "Плановое время работы / календарное время",
+                "Плановое время работы; календарное время",
                 f"={b['Planned_Hours']}/{b['Calendar_Hours']}",
-                "dimensionless",
-                "Calendar-time utilization",
+                localize_unit("dimensionless"),
+                "Использование доступного календарного фонда времени",
             ),
-            ("TEEP", "OEE * Utilization", "OEE, Utilization", "=D7*D8", "dimensionless", "CAPEX utilization view"),
             (
-                "Energy Intensity",
-                "Energy_kWh / Final_Good_Units",
-                "Energy_kWh, Final_Good_Units",
-                f"={b['Energy_kWh']}/{b['Final_Good_Units']}",
-                "kWh/L",
-                "Gate-to-gate energy use per final good liter",
+                localize_metric("TEEP"),
+                "OEE × использование календарного времени",
+                "OEE; использование календарного времени",
+                "=D7*D8",
+                localize_unit("dimensionless"),
+                "Показывает использование производственного потенциала CAPEX",
             ),
-            ("Economic Intensity", "Total Cost / Final Good Units", "Costs!D4, Final_Good_Units", "='Costs'!D5", "USD/L", "Numerically equals CPU for this scope"),
-            ("CPU", "Total Cost / Final Good Units", "Costs!D4, Final_Good_Units", "='Costs'!D6", "USD/L", "Cost per final good liter"),
-            ("Mass Intensity", "Raw material mass / Final Good Units", "Raw_Material_Mass_kg", "NOT_COMPUTABLE", "kg/L", "Raw_Material_Mass_kg is absent from source data"),
-            ("TTM Penalty Assignment", "Multiplicative retained-value loss", "TTM!B2:F2", "='TTM'!G2", "dimensionless", "r=10%, alpha=15%, T=3"),
-            ("TTM Penalty CSV", "Multiplicative retained-value loss", "TTM!B3:F3", "='TTM'!G3", "dimensionless", "CSV rates retained separately"),
+            (
+                localize_metric("Energy Intensity"),
+                "Потребление электроэнергии / итоговый годный объём",
+                "Потребление электроэнергии; итоговый годный объём",
+                f"={b['Energy_kWh']}/{b['Final_Good_Units']}",
+                localize_unit("kWh/L"),
+                "Потребление энергии на литр итоговой годной продукции",
+            ),
+            (
+                localize_metric("Economic Intensity"),
+                "Общие производственные затраты / итоговый годный объём",
+                "Общие производственные затраты; итоговый годный объём",
+                f"='{SHEET_NAMES['costs']}'!D5",
+                localize_unit("USD/L"),
+                "В данной области расчёта численно совпадает с CPU",
+            ),
+            (
+                localize_metric("CPU"),
+                "Общие производственные затраты / итоговый годный объём",
+                "Общие производственные затраты; итоговый годный объём",
+                f"='{SHEET_NAMES['costs']}'!D6",
+                localize_unit("USD/L"),
+                "Себестоимость литра итоговой годной продукции",
+            ),
+            (
+                localize_metric("Mass Intensity"),
+                "Масса сырья / итоговый годный объём",
+                "Raw_Material_Mass_kg (масса сырья)",
+                localize_status("NOT_COMPUTABLE"),
+                localize_unit("kg/L"),
+                "Параметр Raw_Material_Mass_kg отсутствует в исходных данных",
+            ),
+            (
+                localize_metric("TTM Penalty Assignment"),
+                "Мультипликативная потеря сохраняемой стоимости из-за задержки",
+                "Параметры TTM в строке 2",
+                f"='{SHEET_NAMES['ttm']}'!G2",
+                localize_unit("dimensionless"),
+                "Ставка дисконтирования 10 %, ценовая эрозия 15 %, горизонт 3 года",
+            ),
+            (
+                localize_metric("TTM Penalty CSV"),
+                "Мультипликативная потеря сохраняемой стоимости из-за задержки",
+                "Параметры TTM в строке 3",
+                f"='{SHEET_NAMES['ttm']}'!G3",
+                localize_unit("dimensionless"),
+                "Ставки из CSV показаны отдельным сценарием",
+            ),
         ]
         for row in metric_rows:
             metrics.append(row)
             if isinstance(row[3], str) and row[3].startswith("="):
                 LOGGER.info("EXCEL_FORMULA_WRITTEN metric=%s", row[0])
         for row in range(2, metrics.max_row + 1):
-            if metrics.cell(row, 3).value == "dimensionless":
+            if metrics.cell(row, 5).value == localize_unit("dimensionless"):
                 metrics.cell(row, 4).number_format = "0.0000%"
         _style_sheet(metrics, {"A": 28, "B": 48, "C": 58, "D": 20, "E": 18, "F": 58})
 
-        costs = workbook.create_sheet("Costs")
-        costs.append(["Metric", "Formula", "Parameters", "Value", "Unit", "Comment"])
+        costs = workbook.create_sheet(SHEET_NAMES["costs"])
+        costs.append(
+            [
+                "Метрика",
+                "Пояснение формулы",
+                "Используемые параметры",
+                "Значение",
+                "Единица измерения",
+                "Комментарий",
+            ]
+        )
         cost_rows = [
-            ("Energy Cost", "Energy_kWh * Energy_Cost_Rate", "Energy_kWh, Energy_Cost_Rate", f"={b['Energy_kWh']}*{b['Energy_Cost_Rate']}", "USD/month", "Purchased electricity"),
-            ("Monthly Depreciation", "CAPEX / Economic Life / 12", "Equipment_CAPEX, Amortization_Years_Economic", f"={b['Equipment_CAPEX']}/{b['Amortization_Years_Economic']}/12", "USD/month", "30-day dataset is treated as one month"),
-            ("Total Manufacturing Cost", "Raw materials + Energy + Overhead + Depreciation", "Source Data, D2, D3", f"={b['Raw_Material_Cost']}+D2+{b['OPEX_Overhead']}+D3", "USD/month", "Transparent cost build-up"),
-            ("Economic Intensity", "Total Cost / Final Good Units", "D4, Final_Good_Units", f"=D4/{b['Final_Good_Units']}", "USD/L", "Full economic resource intensity"),
-            ("CPU", "Total Cost / Final Good Units", "D4, Final_Good_Units", f"=D4/{b['Final_Good_Units']}", "USD/L", "Cost per unit"),
-            ("Raw Material Cost Proxy", "Raw Material Cost / Final Good Units", "Raw_Material_Cost, Final_Good_Units", f"={b['Raw_Material_Cost']}/{b['Final_Good_Units']}", "USD/L", "Cost proxy; not mass intensity"),
+            (localize_metric("Energy Cost"), "Потребление электроэнергии × тариф", "Потребление электроэнергии; тариф на электроэнергию", f"={b['Energy_kWh']}*{b['Energy_Cost_Rate']}", localize_unit("USD/month"), "Затраты на покупную электроэнергию"),
+            (localize_metric("Monthly Depreciation"), "CAPEX / экономический срок / 12", "Капитальная стоимость; экономический срок амортизации", f"={b['Equipment_CAPEX']}/{b['Amortization_Years_Economic']}/12", localize_unit("USD/month"), "Набор данных за 30 суток принят за один месяц"),
+            (localize_metric("Total Manufacturing Cost"), "Сырьё + энергия + накладные расходы + амортизация", "Исходные данные; затраты на электроэнергию; амортизация", f"={b['Raw_Material_Cost']}+D2+{b['OPEX_Overhead']}+D3", localize_unit("USD/month"), "Прозрачная структура полной производственной стоимости"),
+            (localize_metric("Economic Intensity"), "Общие производственные затраты / итоговый годный объём", "Общие производственные затраты; итоговый годный объём", f"=D4/{b['Final_Good_Units']}", localize_unit("USD/L"), "Полная экономическая ресурсоёмкость"),
+            (localize_metric("CPU"), "Общие производственные затраты / итоговый годный объём", "Общие производственные затраты; итоговый годный объём", f"=D4/{b['Final_Good_Units']}", localize_unit("USD/L"), "Себестоимость единицы продукции"),
+            (localize_metric("Raw Material Cost Proxy"), "Затраты на сырьё / итоговый годный объём", "Затраты на сырьё; итоговый годный объём", f"={b['Raw_Material_Cost']}/{b['Final_Good_Units']}", localize_unit("USD/L"), "Стоимостной показатель не заменяет массовую ресурсоёмкость"),
         ]
         for row in cost_rows:
             costs.append(row)
             LOGGER.info("EXCEL_FORMULA_WRITTEN metric=%s", row[0])
         _style_sheet(costs, {"A": 30, "B": 50, "C": 52, "D": 20, "E": 18, "F": 58})
 
-        ttm = workbook.create_sheet("TTM")
-        ttm.append(["Scenario", "Discount Rate", "Price Erosion", "Market Horizon", "Delay", "Window Open", "Penalty", "Comment"])
-        ttm.append(["Assignment", 0.10, 0.15, 3.0, baseline.delay_years, baseline.market_window_open, _ttm_formula(2), "Task parameters"])
-        ttm.append(["CSV", baseline.discount_rate, baseline.price_erosion_rate, baseline.market_horizon, baseline.delay_years, baseline.market_window_open, _ttm_formula(3), "CSV parameters"])
-        ttm.append(["Stress Baseline", 0.10, 0.15, 3.0, stress_baseline_delay, baseline.market_window_open, _ttm_formula(4), "Delay from comparison CSV baseline"])
-        ttm.append(["Stress", 0.10, 0.15, 3.0, stress.delay_years, stress.market_window_open, _ttm_formula(5), "Delay from stress CSV"])
+        ttm = workbook.create_sheet(SHEET_NAMES["ttm"])
+        ttm.append(["Сценарий", "Ставка дисконтирования", "Ценовая эрозия", "Рыночный горизонт, лет", "Задержка, лет", "Рыночное окно открыто", "Штраф TTM", "Комментарий"])
+        ttm.append([SCENARIO_LABELS["Assignment"], 0.10, 0.15, 3.0, baseline.delay_years, baseline.market_window_open, _ttm_formula(2), "Параметры практического задания"])
+        ttm.append([SCENARIO_LABELS["CSV"], baseline.discount_rate, baseline.price_erosion_rate, baseline.market_horizon, baseline.delay_years, baseline.market_window_open, _ttm_formula(3), "Параметры из исходного CSV"])
+        ttm.append([SCENARIO_LABELS["Stress Baseline"], 0.10, 0.15, 3.0, stress_baseline_delay, baseline.market_window_open, _ttm_formula(4), "Задержка из базового столбца сравнительного CSV"])
+        ttm.append([SCENARIO_LABELS["Stress"], 0.10, 0.15, 3.0, stress.delay_years, stress.market_window_open, _ttm_formula(5), "Задержка из стрессового CSV"])
         for row in (2, 3, 4, 5):
             LOGGER.info("EXCEL_FORMULA_WRITTEN metric=TTM row=%s", row)
             for col in (2, 3, 7):
                 ttm.cell(row, col).number_format = "0.0000%"
         _style_sheet(ttm, {"A": 18, "B": 18, "C": 18, "D": 18, "E": 14, "F": 16, "G": 18, "H": 36})
 
-        stress_sheet = workbook.create_sheet("Stress Test")
-        stress_sheet.append(["Metric", "Baseline", "Stress", "Absolute Change", "Relative Change", "Interpretation"])
+        stress_sheet = workbook.create_sheet(SHEET_NAMES["stress"])
+        stress_sheet.append(["Метрика", "Базовый сценарий", "Стрессовый сценарий", "Абсолютное изменение", "Относительное изменение", "Интерпретация"])
         baseline_cost = f"({b['Raw_Material_Cost']}+{b['Energy_kWh']}*{b['Energy_Cost_Rate']}+{b['OPEX_Overhead']}+{b['Equipment_CAPEX']}/{b['Amortization_Years_Economic']}/12)"
         stress_cost = f"({s['Raw_Material_Cost']}+{s['Energy_kWh']}*{s['Energy_Cost_Rate']}+{s['OPEX_Overhead']}+{s['Equipment_CAPEX']}/{s['Amortization_Years_Economic']}/12)"
         stress_rows = [
-            ("FPY", f"={b['First_Pass_Good_Units']}/{b['Actual_Output']}", f"={s['First_Pass_Good_Units']}/{s['Actual_Output']}", "First-pass quality falls"),
-            ("OEE", f"=({b['Actual_Hours']}/{b['Planned_Hours']})*(({b['Planned_Hours']}/{b['Target_Output']})*{b['Actual_Output']}/{b['Actual_Hours']})*({b['First_Pass_Good_Units']}/{b['Actual_Output']})", f"=({s['Actual_Hours']}/{s['Planned_Hours']})*(({s['Planned_Hours']}/{s['Target_Output']})*{s['Actual_Output']}/{s['Actual_Hours']})*({s['First_Pass_Good_Units']}/{s['Actual_Output']})", "Quality reduces equipment effectiveness"),
-            ("TEEP", "=B3*('Source Data'!$C$3/'Source Data'!$C$2)", "=C3*('Source Data'!$C$21/'Source Data'!$C$20)", "Calendar utilization is unchanged"),
-            ("Energy Cost", f"={b['Energy_kWh']}*{b['Energy_Cost_Rate']}", f"={s['Energy_kWh']}*{s['Energy_Cost_Rate']}", "Threefold tariff raises energy cost"),
-            ("Economic Intensity", f"={baseline_cost}/{b['Final_Good_Units']}", f"={stress_cost}/{s['Final_Good_Units']}", "Higher energy cost raises cost per good liter"),
-            ("CPU", "=B6", "=C6", "Same scoped numerator and denominator as economic intensity"),
-            ("TTM Penalty", "='TTM'!G4", "='TTM'!G5", "Delay creates a multiplicative economic penalty"),
+            (localize_metric("FPY"), f"={b['First_Pass_Good_Units']}/{b['Actual_Output']}", f"={s['First_Pass_Good_Units']}/{s['Actual_Output']}", "Снижается доля годной продукции первого прохода"),
+            (localize_metric("OEE"), f"=({b['Actual_Hours']}/{b['Planned_Hours']})*(({b['Planned_Hours']}/{b['Target_Output']})*{b['Actual_Output']}/{b['Actual_Hours']})*({b['First_Pass_Good_Units']}/{b['Actual_Output']})", f"=({s['Actual_Hours']}/{s['Planned_Hours']})*(({s['Planned_Hours']}/{s['Target_Output']})*{s['Actual_Output']}/{s['Actual_Hours']})*({s['First_Pass_Good_Units']}/{s['Actual_Output']})", "Снижение качества уменьшает общую эффективность оборудования"),
+            (localize_metric("TEEP"), f"=B3*('{SHEET_NAMES['source']}'!$D$3/'{SHEET_NAMES['source']}'!$D$2)", f"=C3*('{SHEET_NAMES['source']}'!$D$21/'{SHEET_NAMES['source']}'!$D$20)", "Использование календарного времени не изменяется"),
+            (localize_metric("Energy Cost"), f"={b['Energy_kWh']}*{b['Energy_Cost_Rate']}", f"={s['Energy_kWh']}*{s['Energy_Cost_Rate']}", "Трёхкратный тариф увеличивает затраты на электроэнергию"),
+            (localize_metric("Economic Intensity"), f"={baseline_cost}/{b['Final_Good_Units']}", f"={stress_cost}/{s['Final_Good_Units']}", "Рост затрат повышает стоимость ресурсов на литр годной продукции"),
+            (localize_metric("CPU"), "=B6", "=C6", "Численно совпадает с экономической ресурсоёмкостью в текущей области расчёта"),
+            (localize_metric("TTM Penalty"), f"='{SHEET_NAMES['ttm']}'!G4", f"='{SHEET_NAMES['ttm']}'!G5", "Задержка создаёт мультипликативный экономический штраф"),
         ]
         for metric_name, baseline_formula, stress_formula, interpretation in stress_rows:
             row_number = stress_sheet.max_row + 1
@@ -251,22 +341,22 @@ class ExcelGroundTruthBuilder:
             LOGGER.info("EXCEL_FORMULA_WRITTEN stress_metric=%s", metric_name)
         _style_sheet(stress_sheet, {"A": 26, "B": 20, "C": 20, "D": 20, "E": 20, "F": 62})
 
-        harness = workbook.create_sheet("Harness Log")
-        harness.append(["Metric", "Excel Value", "Python Value", "Absolute Delta", "Relative Delta", "Tolerance", "Status", "Probable Cause", "Timestamp"])
+        harness = workbook.create_sheet(SHEET_NAMES["harness"])
+        harness.append(["Метрика", "Значение Excel", "Значение Python", "Абсолютное отклонение", "Относительное отклонение", "Допуск", "Статус", "Вероятная причина", "Временная метка"])
         _style_sheet(harness, {"A": 28, "B": 18, "C": 18, "D": 18, "E": 18, "F": 14, "G": 18, "H": 54, "I": 26})
 
-        opex = workbook.create_sheet("OPEX")
-        opex.append(["Category", "Share"])
+        opex = workbook.create_sheet(SHEET_NAMES["opex"])
+        opex.append(["Категория затрат", "Доля"])
         for category, share in (
             ("Сырье и прекурсоры", 0.25),
             ("Утилиты", 0.20),
             ("Персонал", 0.30),
             ("ТОиР", 0.15),
-            ("Compliance / качество / метрология", 0.10),
+            ("Комплаенс, качество и метрология", 0.10),
         ):
             opex.append([category, share])
         chart = BarChart()
-        chart.title = "Структура OPEX в High-Tech производстве"
+        chart.title = "Структура OPEX в высокотехнологичном производстве"
         chart.y_axis.title = "Доля"
         chart.x_axis.title = "Категория"
         chart.add_data(Reference(opex, min_col=2, min_row=1, max_row=6), titles_from_data=True)
@@ -276,25 +366,25 @@ class ExcelGroundTruthBuilder:
             opex.add_image(Image(str(opex_chart_path)), "D18")
         _style_sheet(opex, {"A": 40, "B": 16})
 
-        assumptions_sheet = workbook.create_sheet("Assumptions")
+        assumptions_sheet = workbook.create_sheet(SHEET_NAMES["assumptions"])
         assumption_headers = ["ID", "Assumption", "Reason", "Impact", "Source", "Status"]
-        assumptions_sheet.append(assumption_headers)
+        assumptions_sheet.append(["Код", "Допущение", "Обоснование", "Влияние", "Источник", "Статус"])
         default_assumptions = [
             {"ID": "A01", "Assumption": "Расчётный период — один месяц", "Reason": "Calendar_Hours = 720 = 30 × 24", "Impact": "Месячная амортизация", "Source": "CSV", "Status": "Принято"},
-            {"ID": "A02", "Assumption": "Normative Cycle Time = Planned_Hours / Target_Output", "Reason": "Отдельное поле отсутствует", "Impact": "Performance и OEE", "Source": "Лекция + CSV", "Status": "Принято"},
-            {"ID": "A03", "Assumption": "Знаменатель CPU — Final_Good_Units", "Reason": "Это объём после итогового контроля", "Impact": "CPU и intensity", "Source": "Лекция + задание", "Status": "Принято"},
+            {"ID": "A02", "Assumption": "Нормативное время цикла = плановое время / плановый выпуск", "Reason": "Отдельное поле отсутствует", "Impact": "Производительность и OEE", "Source": "Лекция + CSV", "Status": "Принято"},
+            {"ID": "A03", "Assumption": "Знаменатель CPU — итоговый годный объём", "Reason": "Это объём после итогового контроля", "Impact": "CPU и ресурсоёмкость", "Source": "Лекция + задание", "Status": "Принято"},
         ]
         for item in assumptions or default_assumptions:
             assumptions_sheet.append([item.get(key, "") for key in assumption_headers])
         _style_sheet(assumptions_sheet, {"A": 10, "B": 52, "C": 48, "D": 30, "E": 24, "F": 16})
 
-        issues_sheet = workbook.create_sheet("Data Issues")
+        issues_sheet = workbook.create_sheet(SHEET_NAMES["issues"])
         issue_headers = ["Issue", "Parameter", "Severity", "Effect", "Action"]
-        issues_sheet.append(issue_headers)
+        issues_sheet.append(["Проблема", "Параметр", "Критичность", "Влияние", "Рекомендуемое действие"])
         default_issues = [
-            {"Issue": "Mass input is absent", "Parameter": "Raw_Material_Mass_kg", "Severity": "HIGH", "Effect": "Mass intensity is NOT_COMPUTABLE", "Action": "Add consumed raw-material mass in kg"},
-            {"Issue": "TTM rates conflict", "Parameter": "Discount_Rate; Price_Erosion_Rate", "Severity": "MEDIUM", "Effect": "Different TTM penalties", "Action": "Report assignment and CSV scenarios separately"},
-            {"Issue": "Pilot delay differs from comparison baseline", "Parameter": "Delay_Years", "Severity": "MEDIUM", "Effect": "Pilot is not the no-delay baseline", "Action": "Use comparison CSV for stress baseline validation"},
+            {"Issue": "Отсутствует масса сырья", "Parameter": "Raw_Material_Mass_kg", "Severity": "ВЫСОКАЯ", "Effect": "Массовая ресурсоёмкость не рассчитывается", "Action": "Добавить массу потреблённого сырья в килограммах"},
+            {"Issue": "Параметры TTM расходятся", "Parameter": "Discount_Rate; Price_Erosion_Rate", "Severity": "СРЕДНЯЯ", "Effect": "Получаются разные штрафы TTM", "Action": "Показывать сценарии задания и CSV отдельно"},
+            {"Issue": "Задержка пилотного сценария отличается от базового comparison CSV", "Parameter": "Delay_Years", "Severity": "СРЕДНЯЯ", "Effect": "Пилотный сценарий не является сценарием без задержки", "Action": "Использовать comparison CSV для проверки стресс-сценария"},
         ]
         for item in data_issues or default_issues:
             issues_sheet.append([item.get(key, "") for key in issue_headers])
@@ -307,20 +397,20 @@ class ExcelGroundTruthBuilder:
         """Write comparison rows, then let Excel recalculate the book again."""
         path = Path(path)
         workbook = load_workbook(path, data_only=False)
-        sheet = workbook["Harness Log"]
+        sheet = workbook[SHEET_NAMES["harness"]]
         if sheet.max_row > 1:
             sheet.delete_rows(2, sheet.max_row - 1)
         for entry in entries:
             sheet.append(
                 [
-                    entry.metric,
+                    localize_metric(entry.metric),
                     entry.excel_value,
                     entry.python_value,
                     entry.absolute_delta,
                     entry.relative_delta,
                     entry.tolerance,
-                    entry.status,
-                    entry.probable_cause,
+                    localize_status(entry.status),
+                    localize_cause(entry.probable_cause),
                     entry.timestamp,
                 ]
             )

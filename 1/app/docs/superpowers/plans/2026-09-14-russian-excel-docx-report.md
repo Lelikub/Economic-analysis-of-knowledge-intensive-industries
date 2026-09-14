@@ -33,7 +33,7 @@
 - Produces: `SHEET_NAMES`, `PARAMETER_LABELS`, `PARAMETER_DESCRIPTIONS`, `METRIC_LABELS`, `UNIT_LABELS`, `STATUS_LABELS`, `SCENARIO_LABELS`, `localize_unit(value: str) -> str`, `localize_metric(value: str) -> str`, `localize_status(value: str) -> str`.
 - Preserves: `GROUND_TRUTH_CELLS: dict[str, tuple[str, str]]` with English internal metric keys and Russian sheet values.
 
-- [ ] **Step 1: Write failing Excel localization tests**
+- [x] **Step 1: Write failing Excel localization tests**
 
 Add tests that exercise a real workbook:
 
@@ -71,7 +71,7 @@ def test_harness_rows_are_localized_only_in_workbook(tmp_path, valid_data):
     assert row[6] == "СОВПАДАЕТ"
 ```
 
-- [ ] **Step 2: Run tests to verify RED**
+- [x] **Step 2: Run tests to verify RED**
 
 Run:
 
@@ -81,7 +81,7 @@ Run:
 
 Expected: failures because current workbook uses `Source Data`, `Metrics`, English headers and raw harness statuses.
 
-- [ ] **Step 3: Implement localization boundary and Russian Excel UI**
+- [x] **Step 3: Implement localization boundary and Russian Excel UI**
 
 Create immutable mappings in `localization.py`, including all 18 parameters and all exported metrics. Implement pure fallbacks:
 
@@ -98,7 +98,7 @@ def localize_status(value: str) -> str:
 
 In `excel.py`, use Russian sheet names for creation and all cross-sheet references, shift source values to column D because column C stores the original CSV name, translate every heading/formula explanation/comment/interpretation, and update `GROUND_TRUTH_CELLS` sheet values. Keep formulas starting with `=` and keep `IF`, `OR`, `EXP`, `NA`, and `ABS` unchanged. In `write_harness`, localize only the workbook display values.
 
-- [ ] **Step 4: Run Excel unit tests to verify GREEN**
+- [x] **Step 4: Run Excel unit tests to verify GREEN**
 
 Run:
 
@@ -108,7 +108,7 @@ Run:
 
 Expected: all non-COM Excel tests pass and at least 20 real formula cells remain.
 
-- [ ] **Step 5: Run non-COM regression and commit**
+- [x] **Step 5: Run non-COM regression and commit**
 
 Run:
 
@@ -363,4 +363,3 @@ Run a Python verification that opens XLSX with `openpyxl` and DOCX with `python-
 - [ ] **Step 6: Review the acceptance checklist and commit**
 
 Run `git diff --check`, review `git diff --stat` and every changed source/test/doc path, then commit with message `docs: document Russian Excel and Word outputs`. Do not push.
-
