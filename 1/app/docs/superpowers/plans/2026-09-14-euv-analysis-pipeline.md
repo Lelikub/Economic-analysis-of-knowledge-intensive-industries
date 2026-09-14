@@ -214,13 +214,14 @@ git commit -m "feat: calculate production metrics and TTM"
 
 **Files:**
 - Create: `1/app/src/euv_analysis/excel.py`
+- Create: `1/app/src/euv_analysis/excel_worker.py`
 - Create: `1/app/tests/test_excel.py`
 
 **Interfaces:**
 - Consumes: baseline/stress `ProductionData`, assumptions, data issues, and output paths.
 - Produces: `ExcelGroundTruthBuilder.build(...) -> Path`, `ExcelRecalculator.recalculate(path) -> RecalculationResult`, `ExcelGroundTruthReader.read(path) -> dict[str, float | None]`.
 
-- [ ] **Step 1: Write failing workbook structure and formula tests**
+- [x] **Step 1: Write failing workbook structure and formula tests**
 
 Create a temporary workbook and assert sheet names, source values, real formulas, and lack of copied Python metric values:
 
@@ -234,37 +235,37 @@ def test_workbook_contains_independent_formulas(tmp_path, valid_data):
     assert any("'Source Data'!" in formula for formula in formulas)
 ```
 
-- [ ] **Step 2: Run formula test and verify RED**
+- [x] **Step 2: Run formula test and verify RED**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_excel.py::test_workbook_contains_independent_formulas -v`
 
 Expected: import failure for missing `euv_analysis.excel`.
 
-- [ ] **Step 3: Implement workbook builder**
+- [x] **Step 3: Implement workbook builder**
 
 Write named source rows, formulas for baseline metrics/costs/TTM, stress formulas, comments, units, number formats, assumptions and data issues. Set workbook calculation mode to automatic and insert OPEX chart when the PNG exists.
 
-- [ ] **Step 4: Verify workbook formula test GREEN**
+- [x] **Step 4: Verify workbook formula test GREEN**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_excel.py::test_workbook_contains_independent_formulas -v`
 
 Expected: PASS.
 
-- [ ] **Step 5: Write failing recalculation contract tests**
+- [x] **Step 5: Write failing recalculation contract tests**
 
 Use a fake COM adapter for unit behavior and a Windows integration marker for installed Excel. Assert ordered events and clear failure state rather than fake values.
 
-- [ ] **Step 6: Implement Excel COM recalculation and cached-value reader**
+- [x] **Step 6: Implement Excel COM recalculation and cached-value reader**
 
 Use `win32com.client.DispatchEx("Excel.Application")`, disable alerts, open the absolute workbook path, force full calculation, save, close, and always quit Excel in `finally`. Read values separately via `openpyxl.load_workbook(..., data_only=True)`.
 
-- [ ] **Step 7: Run Excel tests and verify GREEN**
+- [x] **Step 7: Run Excel tests and verify GREEN**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_excel.py -v`
 
 Expected: unit tests PASS; installed-Excel integration test PASS on this Windows environment.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```text
 git add 1/app/src/euv_analysis/excel.py 1/app/tests/test_excel.py
