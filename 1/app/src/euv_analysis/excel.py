@@ -7,7 +7,7 @@ import logging
 from pathlib import Path
 import subprocess
 import sys
-from typing import Any, Callable
+from typing import Any, Callable, Iterable
 
 from openpyxl import Workbook, load_workbook
 from openpyxl.chart import BarChart, Reference
@@ -298,6 +298,29 @@ class ExcelGroundTruthBuilder:
 
         workbook.save(path)
         return path
+
+    def write_harness(self, path: Path, entries: Iterable[Any]) -> None:
+        """Write comparison rows, then let Excel recalculate the book again."""
+        path = Path(path)
+        workbook = load_workbook(path, data_only=False)
+        sheet = workbook["Harness Log"]
+        if sheet.max_row > 1:
+            sheet.delete_rows(2, sheet.max_row - 1)
+        for entry in entries:
+            sheet.append(
+                [
+                    entry.metric,
+                    entry.excel_value,
+                    entry.python_value,
+                    entry.absolute_delta,
+                    entry.relative_delta,
+                    entry.tolerance,
+                    entry.status,
+                    entry.probable_cause,
+                    entry.timestamp,
+                ]
+            )
+        workbook.save(path)
 
 
 @dataclass(frozen=True, slots=True)

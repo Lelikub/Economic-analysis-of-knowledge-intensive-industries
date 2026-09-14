@@ -345,7 +345,7 @@ git commit -m "feat: add harness stress analysis and OPEX chart"
 - Consumes: all components from Tasks 1–4 and project paths.
 - Produces: `configure_logging`, `ReportBuilder.build`, `AnalysisPipeline.run() -> PipelineResult`, command `python main.py`.
 
-- [ ] **Step 1: Write failing integration test**
+- [x] **Step 1: Write failing integration test**
 
 Run the pipeline in a temporary output root while reading real `1/data` inputs. Assert required files and semantic content:
 
@@ -361,27 +361,27 @@ def test_pipeline_creates_required_artifacts(tmp_path, project_data_dir):
     assert "Data Quality Report" in (tmp_path / "output" / "report.md").read_text(encoding="utf-8")
 ```
 
-- [ ] **Step 2: Run integration test and verify RED**
+- [x] **Step 2: Run integration test and verify RED**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_pipeline.py -v`
 
 Expected: import failure for missing `euv_analysis.pipeline`.
 
-- [ ] **Step 3: Implement structured logging and report builder**
+- [x] **Step 3: Implement structured logging and report builder**
 
 Add console/file handlers, stable stage fields, UTF-8 file output, assumptions and issues tables, formulas with dimensions, Python/Excel results, harness, boundary-test summary, stress comparison, TTM interpretation, OPEX image reference, and completion checklist.
 
-- [ ] **Step 4: Implement pipeline orchestration and CLI**
+- [x] **Step 4: Implement pipeline orchestration and CLI**
 
 Resolve paths relative to `main.py`, not the current shell. Sequence load → validate → Python metrics → OPEX → Excel formulas → Excel recalc → Excel values → harness → stress → exports → report. Return nonzero on an unhandled failure and log exception context.
 
-- [ ] **Step 5: Run integration test and verify GREEN**
+- [x] **Step 5: Run integration test and verify GREEN**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_pipeline.py -v`
 
 Expected: PASS with actual Excel recalc available; if COM is unavailable, integration result must explicitly carry the limitation and harness cannot report false PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```text
 git add 1/app/src/euv_analysis/logging_config.py 1/app/src/euv_analysis/reporting.py 1/app/src/euv_analysis/pipeline.py 1/app/main.py 1/app/tests/test_pipeline.py
