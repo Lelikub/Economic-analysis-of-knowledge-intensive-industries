@@ -61,6 +61,22 @@ def test_workbook_records_mass_intensity_data_gap(tmp_path, valid_data):
     assert "Raw_Material_Mass_kg" in mass_row[5]
 
 
+def test_workbook_stress_sheet_includes_ttm_penalty_formulas(tmp_path, valid_data):
+    """Catches omission of the required TTM metric from Excel stress results."""
+    path = ExcelGroundTruthBuilder().build(
+        tmp_path / "ground_truth.xlsx", valid_data, valid_data
+    )
+    workbook = load_workbook(path, data_only=False)
+
+    ttm_row = next(
+        row
+        for row in workbook["Stress Test"].iter_rows(values_only=True)
+        if row[0] == "TTM Penalty"
+    )
+    assert ttm_row[1].startswith("=")
+    assert ttm_row[2].startswith("=")
+
+
 class _FakeWorkbook:
     def __init__(self):
         self.saved = False

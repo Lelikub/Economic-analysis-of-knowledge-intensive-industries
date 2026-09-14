@@ -124,6 +124,30 @@ class DataValidator:
                 "Energy_kWh cannot be negative",
             ),
             (
+                data.energy_cost_rate < 0,
+                "NEGATIVE_ENERGY_RATE",
+                "Energy_Cost_Rate",
+                "Energy_Cost_Rate cannot be negative",
+            ),
+            (
+                data.equipment_capex < 0,
+                "NEGATIVE_CAPEX",
+                "Equipment_CAPEX",
+                "Equipment_CAPEX cannot be negative",
+            ),
+            (
+                data.opex_overhead < 0,
+                "NEGATIVE_OPEX_OVERHEAD",
+                "OPEX_Overhead",
+                "OPEX_Overhead cannot be negative",
+            ),
+            (
+                data.price_erosion_rate < 0,
+                "NEGATIVE_PRICE_EROSION",
+                "Price_Erosion_Rate",
+                "Price_Erosion_Rate cannot be negative",
+            ),
+            (
                 data.delay_years < 0,
                 "NEGATIVE_DELAY",
                 "Delay_Years",

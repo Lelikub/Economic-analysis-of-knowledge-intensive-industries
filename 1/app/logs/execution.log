@@ -1,0 +1,70 @@
+2026-09-14 11:10:49,882 | INFO | euv_analysis.pipeline | startup | PIPELINE_STARTED work_dir=C:\work\Economic analysis of knowledge‑intensive industries\1\app
+2026-09-14 11:10:49,882 | INFO | euv_analysis.pipeline | discovery | FILE_FOUND type=pilot path=C:\work\Economic analysis of knowledge‑intensive industries\1\data\euv_photoresist_pilot_2026.csv
+2026-09-14 11:10:49,882 | INFO | euv_analysis.pipeline | discovery | FILE_FOUND type=stress path=C:\work\Economic analysis of knowledge‑intensive industries\1\data\euv_photoresist_stress_2026.csv
+2026-09-14 11:10:49,882 | INFO | euv_analysis.pipeline | discovery | FILE_FOUND type=comparison path=C:\work\Economic analysis of knowledge‑intensive industries\1\data\euv_photoresist_comparison_input_2026.csv
+2026-09-14 11:10:49,887 | INFO | euv_analysis.pipeline | load | CSV_READ scenario=pilot rows=18
+2026-09-14 11:10:49,889 | INFO | euv_analysis.pipeline | load | CSV_READ scenario=stress rows=18
+2026-09-14 11:10:49,891 | INFO | euv_analysis.pipeline | load | CSV_READ scenario=comparison checks={'ENERGY_RATE_TRIPLED': True, 'FPY_75_TO_40': True, 'DELAY_0_TO_0_5': True}
+2026-09-14 11:10:49,891 | INFO | euv_analysis.pipeline | validation | VALIDATION_COMPLETED issues=0 errors=0
+2026-09-14 11:10:49,891 | INFO | euv_analysis.pipeline | python_metrics | PYTHON_METRICS_CALCULATED scenario=baseline values={'FPY': 0.75, 'Final Yield': 0.85, 'Availability': 0.8125, 'Performance': 0.9743589743589743, 'Quality': 0.75, 'OEE': 0.59375, 'Utilization': 0.6666666666666666, 'TEEP': 0.3958333333333333, 'Energy Cost': 25300.0, 'Monthly Depreciation': 777777.7777777779, 'Total Manufacturing Cost': 1188077.777777778, 'Mass Intensity': None, 'Energy Intensity': 1424.1486068111456, 'Economic Intensity': 14713.037495700037, 'Raw Material Cost Proxy': 2972.136222910217, 'CPU': 14713.037495700037}
+2026-09-14 11:10:49,891 | INFO | euv_analysis.pipeline | python_metrics | PYTHON_METRICS_CALCULATED scenario=stress values={'FPY': 0.4, 'Final Yield': 0.85, 'Availability': 0.8125, 'Performance': 0.9743589743589743, 'Quality': 0.4, 'OEE': 0.31666666666666665, 'Utilization': 0.6666666666666666, 'TEEP': 0.21111111111111108, 'Energy Cost': 75900.0, 'Monthly Depreciation': 777777.7777777779, 'Total Manufacturing Cost': 1238677.777777778, 'Mass Intensity': None, 'Energy Intensity': 1424.1486068111456, 'Economic Intensity': 15339.66288269694, 'Raw Material Cost Proxy': 2972.136222910217, 'CPU': 15339.66288269694}
+2026-09-14 11:10:49,891 | INFO | euv_analysis.pipeline | ttm | TTM_CALCULATED assignment=0.26285941114120437 csv=0.2803468358172122 stress=0.26285941114120437
+2026-09-14 11:10:49,891 | INFO | euv_analysis.pipeline | tests | BOUNDARY_TESTS_COMPLETED results={'A_FULL_SCRAP': True, 'B_IDEAL_FACTORY': True, 'C_RAW_MATERIAL_SUBSIDY': True, 'ZERO_TIME_DENOMINATOR': True, 'TTM_DELAY_ZERO': True, 'TTM_DELAY_AT_HORIZON': True, 'TTM_DELAY_AFTER_HORIZON': True}
+2026-09-14 11:10:50,032 | INFO | euv_analysis.pipeline | visualization | OPEX_CHART_CREATED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\opex_structure.png
+2026-09-14 11:10:50,034 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=FPY
+2026-09-14 11:10:50,034 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Final Yield
+2026-09-14 11:10:50,034 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Availability
+2026-09-14 11:10:50,034 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Performance
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Quality
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=OEE
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Utilization
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TEEP
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Energy Intensity
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Economic Intensity
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=CPU
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TTM Penalty Assignment
+2026-09-14 11:10:50,035 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TTM Penalty CSV
+2026-09-14 11:10:50,036 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Energy Cost
+2026-09-14 11:10:50,036 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Monthly Depreciation
+2026-09-14 11:10:50,036 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Total Manufacturing Cost
+2026-09-14 11:10:50,037 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Economic Intensity
+2026-09-14 11:10:50,037 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=CPU
+2026-09-14 11:10:50,037 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=Raw Material Cost Proxy
+2026-09-14 11:10:50,038 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TTM row=2
+2026-09-14 11:10:50,038 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TTM row=3
+2026-09-14 11:10:50,038 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TTM row=4
+2026-09-14 11:10:50,038 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN metric=TTM row=5
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=FPY
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=OEE
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=TEEP
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=Energy Cost
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=Economic Intensity
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=CPU
+2026-09-14 11:10:50,039 | INFO | euv_analysis.excel | component | EXCEL_FORMULA_WRITTEN stress_metric=TTM Penalty
+2026-09-14 11:10:50,106 | INFO | euv_analysis.pipeline | excel | EXCEL_WORKBOOK_CREATED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\ground_truth.xlsx
+2026-09-14 11:10:50,106 | INFO | euv_analysis.excel | component | EXCEL_RECALC_STARTED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\ground_truth.xlsx
+2026-09-14 11:10:51,993 | INFO | euv_analysis.excel | component | EXCEL_RECALC_COMPLETED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\ground_truth.xlsx
+2026-09-14 11:10:52,002 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=FPY value=0.75
+2026-09-14 11:10:52,002 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Final Yield value=0.85
+2026-09-14 11:10:52,003 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Availability value=0.8125
+2026-09-14 11:10:52,004 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Performance value=0.9743589743589743
+2026-09-14 11:10:52,004 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Quality value=0.75
+2026-09-14 11:10:52,005 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=OEE value=0.59375
+2026-09-14 11:10:52,005 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Utilization value=0.6666666666666666
+2026-09-14 11:10:52,005 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=TEEP value=0.3958333333333333
+2026-09-14 11:10:52,006 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Energy Intensity value=1424.1486068111456
+2026-09-14 11:10:52,006 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Economic Intensity value=14713.037495700037
+2026-09-14 11:10:52,007 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=CPU value=14713.037495700037
+2026-09-14 11:10:52,007 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Mass Intensity value=NOT_COMPUTABLE
+2026-09-14 11:10:52,008 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=TTM Penalty Assignment value=0.26285941114120437
+2026-09-14 11:10:52,009 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=TTM Penalty CSV value=0.2803468358172122
+2026-09-14 11:10:52,009 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Energy Cost value=25300
+2026-09-14 11:10:52,010 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Monthly Depreciation value=777777.7777777779
+2026-09-14 11:10:52,014 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Total Manufacturing Cost value=1188077.777777778
+2026-09-14 11:10:52,014 | INFO | euv_analysis.excel | component | EXCEL_VALUE_READ metric=Raw Material Cost Proxy value=2972.136222910217
+2026-09-14 11:10:52,014 | INFO | euv_analysis.pipeline | harness | HARNESS_COMPLETED pass=17 fail=0 not_computable=1
+2026-09-14 11:10:52,092 | INFO | euv_analysis.excel | component | EXCEL_RECALC_STARTED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\ground_truth.xlsx
+2026-09-14 11:10:53,974 | INFO | euv_analysis.excel | component | EXCEL_RECALC_COMPLETED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\ground_truth.xlsx
+2026-09-14 11:10:53,975 | INFO | euv_analysis.pipeline | stress | STRESS_TEST_COMPLETED rows=7
+2026-09-14 11:10:53,976 | INFO | euv_analysis.pipeline | report | REPORT_CREATED path=C:\work\Economic analysis of knowledge‑intensive industries\1\app\output\report.md
+2026-09-14 11:10:53,976 | INFO | euv_analysis.pipeline | complete | PIPELINE_COMPLETED files=5 excel_success=True

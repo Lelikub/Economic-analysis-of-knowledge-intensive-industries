@@ -94,6 +94,7 @@ class ExcelGroundTruthBuilder:
         stress: ProductionData,
         *,
         opex_chart_path: Path | None = None,
+        stress_baseline_delay: float = 0.0,
         assumptions: list[dict[str, str]] | None = None,
         data_issues: list[dict[str, str]] | None = None,
     ) -> Path:
@@ -223,7 +224,9 @@ class ExcelGroundTruthBuilder:
         ttm.append(["Scenario", "Discount Rate", "Price Erosion", "Market Horizon", "Delay", "Window Open", "Penalty", "Comment"])
         ttm.append(["Assignment", 0.10, 0.15, 3.0, baseline.delay_years, baseline.market_window_open, _ttm_formula(2), "Task parameters"])
         ttm.append(["CSV", baseline.discount_rate, baseline.price_erosion_rate, baseline.market_horizon, baseline.delay_years, baseline.market_window_open, _ttm_formula(3), "CSV parameters"])
-        for row in (2, 3):
+        ttm.append(["Stress Baseline", 0.10, 0.15, 3.0, stress_baseline_delay, baseline.market_window_open, _ttm_formula(4), "Delay from comparison CSV baseline"])
+        ttm.append(["Stress", 0.10, 0.15, 3.0, stress.delay_years, stress.market_window_open, _ttm_formula(5), "Delay from stress CSV"])
+        for row in (2, 3, 4, 5):
             LOGGER.info("EXCEL_FORMULA_WRITTEN metric=TTM row=%s", row)
             for col in (2, 3, 7):
                 ttm.cell(row, col).number_format = "0.0000%"
@@ -240,6 +243,7 @@ class ExcelGroundTruthBuilder:
             ("Energy Cost", f"={b['Energy_kWh']}*{b['Energy_Cost_Rate']}", f"={s['Energy_kWh']}*{s['Energy_Cost_Rate']}", "Threefold tariff raises energy cost"),
             ("Economic Intensity", f"={baseline_cost}/{b['Final_Good_Units']}", f"={stress_cost}/{s['Final_Good_Units']}", "Higher energy cost raises cost per good liter"),
             ("CPU", "=B6", "=C6", "Same scoped numerator and denominator as economic intensity"),
+            ("TTM Penalty", "='TTM'!G4", "='TTM'!G5", "Delay creates a multiplicative economic penalty"),
         ]
         for metric_name, baseline_formula, stress_formula, interpretation in stress_rows:
             row_number = stress_sheet.max_row + 1

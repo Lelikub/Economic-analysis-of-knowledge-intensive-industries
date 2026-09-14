@@ -42,6 +42,17 @@ def test_loader_rejects_nan_value(tmp_path, data_dir):
         CsvProductionLoader().load(path)
 
 
+def test_loader_rejects_fractional_market_window_without_truncation(tmp_path, data_dir):
+    """Catches an implicit float-to-int conversion that turns 0.5 into 0."""
+    frame = pd.read_csv(data_dir / "euv_photoresist_pilot_2026.csv")
+    frame.loc[frame["Parameter_Name"] == "Market_Window_Open", "Value"] = 0.5
+    path = tmp_path / "fractional_window.csv"
+    frame.to_csv(path, index=False)
+
+    with pytest.raises(DataLoadError, match="Market_Window_Open.*0 or 1"):
+        CsvProductionLoader().load(path)
+
+
 @pytest.mark.parametrize(
     ("changes", "code"),
     [
@@ -51,6 +62,10 @@ def test_loader_rejects_nan_value(tmp_path, data_dir):
         ({"first_pass_good_units": 96.0}, "FPY_UNITS_EXCEED_OUTPUT"),
         ({"final_good_units": 96.0}, "FINAL_UNITS_EXCEED_OUTPUT"),
         ({"energy_kwh": -1.0}, "NEGATIVE_ENERGY"),
+        ({"energy_cost_rate": -0.01}, "NEGATIVE_ENERGY_RATE"),
+        ({"equipment_capex": -1.0}, "NEGATIVE_CAPEX"),
+        ({"opex_overhead": -1.0}, "NEGATIVE_OPEX_OVERHEAD"),
+        ({"price_erosion_rate": -0.01}, "NEGATIVE_PRICE_EROSION"),
         ({"market_window_open": 2}, "INVALID_MARKET_WINDOW"),
         ({"amortization_years_economic": 0.0}, "NON_POSITIVE_AMORTIZATION"),
         ({"market_horizon": 0.0}, "NON_POSITIVE_MARKET_HORIZON"),

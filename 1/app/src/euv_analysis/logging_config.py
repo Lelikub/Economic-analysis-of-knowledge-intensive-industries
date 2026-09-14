@@ -39,3 +39,5 @@ def configure_logging(log_path: Path) -> None:
 
     root.addHandler(console)
     root.addHandler(file_handler)
+    for dependency_name in ("matplotlib", "PIL"):
+        logging.getLogger(dependency_name).setLevel(logging.WARNING)

@@ -406,31 +406,31 @@ git commit -m "feat: orchestrate EUV analysis pipeline"
 - Consumes: finished pipeline.
 - Produces: reproducible usage documentation and verified final artifacts.
 
-- [ ] **Step 1: Write README**
+- [x] **Step 1: Write README**
 
 Document environment setup, exact launch command, test command, output files, Excel dependency, formula provenance, `NOT_COMPUTABLE` policy and known data gaps.
 
-- [ ] **Step 2: Run the full test suite**
+- [x] **Step 2: Run the full test suite**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests -v`
 
 Expected: all tests PASS with no unexpected warnings.
 
-- [ ] **Step 3: Run production pipeline**
+- [x] **Step 3: Run production pipeline**
 
 Run from `1/app`: `..\..\.venv\Scripts\python.exe main.py`
 
 Expected: exit code 0; console and file logs show every pipeline stage, Excel formula write/recalc/read events, harness result, stress result, chart creation and report creation.
 
-- [ ] **Step 4: Verify final artifacts programmatically**
+- [x] **Step 4: Verify final artifacts programmatically**
 
 Check existence and nonzero size of all required files; open workbook twice (`data_only=False` and `True`) to confirm formulas and cached results; parse harness CSV to confirm no unexplained `FAIL`; parse report checklist for completion.
 
-- [ ] **Step 5: Reconcile ARCH.md with implementation**
+- [x] **Step 5: Reconcile ARCH.md with implementation**
 
 Update module names, file layout, fallback behavior and assumptions if actual implementation differs from the approved design. Do not rewrite historical conclusions to hide limitations.
 
-- [ ] **Step 6: Inspect working tree and commit only task files**
+- [x] **Step 6: Inspect working tree and commit only task files**
 
 ```text
 git status --short
@@ -438,6 +438,6 @@ git add 1/app 1/data/ARCH.md
 git commit -m "feat: complete EUV production analysis"
 ```
 
-- [ ] **Step 7: Final evidence summary**
+- [x] **Step 7: Final evidence summary**
 
 Report exact test count, Excel/Python harness status, key baseline/stress figures, data gaps, assumptions, generated file paths and any remaining limitation.

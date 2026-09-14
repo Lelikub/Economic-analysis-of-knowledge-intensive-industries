@@ -62,6 +62,7 @@ CSV ──> loader ──> typed ProductionData ──> validator
     │       ├── metrics.py
     │       ├── ttm.py
     │       ├── excel.py
+    │       ├── excel_worker.py
     │       ├── harness.py
     │       ├── stress.py
     │       ├── visualization.py
@@ -93,7 +94,7 @@ CSV ──> loader ──> typed ProductionData ──> validator
 
 ### 5.3 Расчёты Python
 
-`OperationalMetricsCalculator` вычисляет FPY, Final Yield, Availability, Performance, Quality, OEE, Utilization и TEEP. `CostCalculator` вычисляет энергию в денежном выражении, месячную экономическую амортизацию, полные производственные затраты, экономическую ресурсоёмкость и CPU. `ResourceIntensityCalculator` рассчитывает доступные показатели ресурсоёмкости.
+`OperationalMetricsCalculator` является единым фасадом расчёта и формирует типизированный `MetricsResult`. Внутри него отдельно рассчитываются операционные показатели, затраты и доступные виды ресурсоёмкости; хранение данных, Excel, логирование и визуализация в класс не входят.
 
 Формулы:
 
@@ -136,7 +137,7 @@ L = 1 - (1 / (1 + r)^Δt) × exp(-αΔt) × ((T - Δt) / T) × I(Δt)
 
 `ExcelGroundTruthBuilder` создаёт книгу со вкладками `Source Data`, `Metrics`, `Costs`, `TTM`, `Harness Log`, `Stress Test`, `OPEX`, `Assumptions` и `Data Issues`. Во все расчётные ячейки записываются Excel-формулы со ссылками на исходные значения.
 
-Книга сохраняется, затем пересчитывается через установленный Microsoft Excel посредством COM automation. После сохранения пересчитанной книги значения читаются в режиме `data_only=True`. В журнале фиксируются события `EXCEL_FORMULA_WRITTEN`, `EXCEL_RECALC_STARTED`, `EXCEL_RECALC_COMPLETED` и `EXCEL_VALUE_READ`.
+Книга сохраняется, затем пересчитывается через установленный Microsoft Excel посредством COM automation. COM-сеанс изолирован в короткоживущем процессе `excel_worker.py`, запущенном тем же Python-интерпретатором: это гарантирует завершение жизненного цикла Excel до чтения книги и исключает RPC fault при освобождении COM-прокси. После сохранения пересчитанной книги значения читаются в режиме `data_only=True`. В журнале фиксируются события `EXCEL_FORMULA_WRITTEN`, `EXCEL_RECALC_STARTED`, `EXCEL_RECALC_COMPLETED` и `EXCEL_VALUE_READ`.
 
 Если Excel automation недоступна, pipeline сохраняет книгу с формулами, помечает Ground Truth как не пересчитанный, не создаёт фиктивные результаты harness и даёт инструкцию по ручному пересчёту.
 
@@ -158,7 +159,7 @@ L = 1 - (1 / (1 + r)^Δt) × exp(-αΔt) × ((T - Δt) / T) × I(Δt)
 
 ## 6. Ошибки и специальные значения
 
-- Нулевой знаменатель приводит к контролируемому `MetricNotComputableError` или статусу `NOT_COMPUTABLE` на границе представления.
+- Нулевой знаменатель приводит к типизированному статусу `MetricStatus.NOT_COMPUTABLE`; значение сохраняется как `None`, а не как бесконечность.
 - Полный брак даёт `FPY = 0`, `OEE = 0`; CPU и интенсивности при `Final_Good_Units = 0` получают `NOT_COMPUTABLE`.
 - Отрицательная стоимость сырья запрещена в обычном baseline, но разрешается как `INTENTIONAL_STRESS_CONDITION` в тесте субсидирования.
 - NaN, пропуски и несогласованные единицы являются ошибками входа.

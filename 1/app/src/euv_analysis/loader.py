@@ -91,10 +91,11 @@ class CsvProductionLoader:
             else:
                 descriptions[source_name] = ""
 
+        if values["market_window_open"] not in (0.0, 1.0):
+            raise DataLoadError("Market_Window_Open must be exactly 0 or 1")
         values["market_window_open"] = int(values["market_window_open"])
         return ProductionData(
             **values,
             units=units,
             descriptions=descriptions,
         )
-

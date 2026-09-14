@@ -176,6 +176,7 @@ class AnalysisPipeline:
             baseline,
             stress,
             opex_chart_path=opex_path,
+            stress_baseline_delay=comparison.delay[0],
         )
         _log(logging.INFO, "excel", "EXCEL_WORKBOOK_CREATED path=%s", workbook_path)
 
