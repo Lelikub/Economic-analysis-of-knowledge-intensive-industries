@@ -133,9 +133,9 @@ git commit -m "feat: add typed production data validation"
 
 **Interfaces:**
 - Consumes: `ProductionData` from Task 1.
-- Produces: `MetricValue`, `MetricsResult`, `MetricNotComputableError`, `OperationalMetricsCalculator.calculate(data) -> MetricsResult`, `TTMCalculator.calculate(delay_years, discount_rate, price_erosion_rate, market_horizon, market_window_open) -> float`.
+- Produces: `MetricStatus`, `MetricValue`, `MetricsResult`, `OperationalMetricsCalculator.calculate(data) -> MetricsResult`, `TTMCalculator.calculate(delay_years, discount_rate, price_erosion_rate, market_horizon, market_window_open) -> float`.
 
-- [ ] **Step 1: Write failing operational and cost tests**
+- [x] **Step 1: Write failing operational and cost tests**
 
 Tests must derive expected values from formula inputs, cover perfect factory and full scrap, and assert `NOT_COMPUTABLE` instead of infinity when final good output is zero:
 
@@ -156,23 +156,23 @@ def test_full_scrap_is_controlled(valid_data):
     assert result.cpu.status is MetricStatus.NOT_COMPUTABLE
 ```
 
-- [ ] **Step 2: Run metrics tests and verify RED**
+- [x] **Step 2: Run metrics tests and verify RED**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_metrics.py -v`
 
 Expected: import failure for missing `euv_analysis.metrics`.
 
-- [ ] **Step 3: Implement minimal metric calculators**
+- [x] **Step 3: Implement minimal metric calculators**
 
 Implement formulas and dimensional labels from the spec. Ensure mass intensity is explicitly not computable, `raw_material_cost_per_good_liter_proxy` is separate, and zero denominators use a controlled result status.
 
-- [ ] **Step 4: Run metrics tests and verify GREEN**
+- [x] **Step 4: Run metrics tests and verify GREEN**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_metrics.py -v`
 
 Expected: all operational, cost, resource-intensity, perfect-factory, full-scrap, and subsidy tests PASS.
 
-- [ ] **Step 5: Write failing TTM boundary tests**
+- [x] **Step 5: Write failing TTM boundary tests**
 
 ```python
 def test_ttm_zero_delay_has_zero_penalty():
@@ -189,19 +189,19 @@ def test_ttm_matches_lecture_scenario():
 
 Also test `T <= 0`, `r <= -1`, negative delay, closed window, and invalid window.
 
-- [ ] **Step 6: Run TTM tests and verify RED**
+- [x] **Step 6: Run TTM tests and verify RED**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_ttm.py -v`
 
 Expected: import failure for missing `euv_analysis.ttm`.
 
-- [ ] **Step 7: Implement TTM calculator and verify GREEN**
+- [x] **Step 7: Implement TTM calculator and verify GREEN**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_ttm.py -v`
 
 Expected: all TTM tests PASS.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```text
 git add 1/app/src/euv_analysis/models.py 1/app/src/euv_analysis/metrics.py 1/app/src/euv_analysis/ttm.py 1/app/tests
