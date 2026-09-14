@@ -1,0 +1,19 @@
+﻿Group,Parameter_Name,Unit,Baseline_Value,Stressed_Value,Stress_Note
+Time,Calendar_Hours,hours,720.0,720.0,
+Time,Planned_Hours,hours,480.0,480.0,
+Time,Actual_Hours,hours,390.0,390.0,
+Volume,Target_Output,L,120.0,120.0,
+Volume,Actual_Output,L,95.0,95.0,
+Volume,First_Pass_Good_Units,L,71.25,38.0,Падение FPY с 75% до 40% (38 л)
+Volume,Final_Good_Units,L,80.75,80.75,
+OPEX,Raw_Material_Cost,USD,240000.0,240000.0,
+OPEX,Energy_kWh,kWh,115000.0,115000.0,
+OPEX,Energy_Cost_Rate,USD/kWh,0.22,0.66,Рост тарифа х3 ($0.22 -> $0.66)
+CAPEX,Equipment_CAPEX,USD,28000000.0,28000000.0,
+CAPEX,Amortization_Years_Economic,years,3.0,3.0,
+OPEX,OPEX_Overhead,USD/month,145000.0,145000.0,
+TTM,Delay_Years,years,0.0,0.5,Задержка вывода на рынок 0.5 года
+TTM,Discount_Rate,ratio,0.12,0.12,
+TTM,Price_Erosion_Rate,ratio,0.18,0.18,
+TTM,Market_Horizon,years,3.0,3.0,
+TTM,Market_Window_Open,binary,1.0,1.0,
