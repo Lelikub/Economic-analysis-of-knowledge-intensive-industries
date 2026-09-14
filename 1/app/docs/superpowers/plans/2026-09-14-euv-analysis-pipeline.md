@@ -286,7 +286,7 @@ git commit -m "feat: add independent Excel ground truth"
 - Consumes: Python metrics, Excel values, baseline/stress data, comparison CSV.
 - Produces: `HarnessEntry`, `MetricsHarness.compare(...)`, `StressAnalyzer.compare(...)`, `ComparisonCsvValidator.validate(...)`, `OpexVisualizer.create(path) -> Path`.
 
-- [ ] **Step 1: Write failing harness tests**
+- [x] **Step 1: Write failing harness tests**
 
 ```python
 def test_harness_uses_numeric_tolerance():
@@ -299,31 +299,31 @@ def test_harness_does_not_pass_missing_excel_value():
     assert rows[0].status == "NOT_COMPUTABLE"
 ```
 
-- [ ] **Step 2: Run harness tests and verify RED**
+- [x] **Step 2: Run harness tests and verify RED**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_harness_stress_visualization.py -v`
 
 Expected: import failure for missing harness/stress/visualization modules.
 
-- [ ] **Step 3: Add comparison and stress tests**
+- [x] **Step 3: Add comparison and stress tests**
 
 Load the real comparison CSV and assert numerical validation of `0.22 → 0.66`, `71.25/95 → 38/95`, and `0 → 0.5`. Assert output rows for FPY, OEE, TEEP, Energy Cost, Economic Intensity, CPU, and both TTM scenarios.
 
-- [ ] **Step 4: Add OPEX chart test**
+- [x] **Step 4: Add OPEX chart test**
 
 Assert percentages sum to 100, the generated PNG exists, and its size is nonzero.
 
-- [ ] **Step 5: Implement harness, comparison, stress and visualization**
+- [x] **Step 5: Implement harness, comparison, stress and visualization**
 
 Use dataclasses for exported rows. Relative delta is `None` when the reference is zero. Interpretations are derived from sign/direction and metric semantics, not hardcoded final numeric results.
 
-- [ ] **Step 6: Run tests and verify GREEN**
+- [x] **Step 6: Run tests and verify GREEN**
 
 Run: `.venv/Scripts/python.exe -m pytest 1/app/tests/test_harness_stress_visualization.py -v`
 
 Expected: all tests PASS.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```text
 git add 1/app/src/euv_analysis/harness.py 1/app/src/euv_analysis/stress.py 1/app/src/euv_analysis/visualization.py 1/app/tests/test_harness_stress_visualization.py
