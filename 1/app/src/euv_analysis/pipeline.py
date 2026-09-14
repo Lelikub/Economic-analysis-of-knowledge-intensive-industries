@@ -22,7 +22,8 @@ from .stress import (
 )
 from .ttm import TTMCalculator
 from .validation import DataValidator
-from .visualization import OpexVisualizer
+from .visualization import EfficiencyComparisonVisualizer, OpexVisualizer
+from .word_reporting import WordReportBuilder
 
 
 LOGGER = logging.getLogger(__name__)
@@ -168,6 +169,17 @@ class AnalysisPipeline:
             self.output_dir / "opex_structure.png"
         )
         _log(logging.INFO, "visualization", "OPEX_CHART_CREATED path=%s", opex_path)
+        efficiency_path = EfficiencyComparisonVisualizer().create(
+            self.output_dir / "сравнение_эффективности.png",
+            baseline_metrics,
+            stress_metrics,
+        )
+        _log(
+            logging.INFO,
+            "visualization",
+            "EFFICIENCY_CHART_CREATED path=%s",
+            efficiency_path,
+        )
 
         workbook_path = self.output_dir / "ground_truth.xlsx"
         excel_builder = ExcelGroundTruthBuilder()
@@ -249,33 +261,47 @@ class AnalysisPipeline:
             len(stress_rows),
         )
 
+        report_context = ReportContext(
+            baseline=baseline,
+            stress=stress,
+            baseline_metrics=baseline_metrics,
+            stress_metrics=stress_metrics,
+            excel_values=excel_values,
+            harness_rows=harness_rows,
+            stress_rows=stress_rows,
+            comparison=comparison,
+            validation_issues=validation_issues,
+            boundary_checks=boundary_checks,
+            assignment_ttm=assignment_ttm,
+            csv_ttm=csv_ttm,
+            stress_ttm=stress_ttm,
+            excel_recalculation_success=excel_success,
+        )
         report_path = ReportBuilder().build(
-            self.output_dir / "report.md",
-            ReportContext(
-                baseline=baseline,
-                stress=stress,
-                baseline_metrics=baseline_metrics,
-                stress_metrics=stress_metrics,
-                excel_values=excel_values,
-                harness_rows=harness_rows,
-                stress_rows=stress_rows,
-                comparison=comparison,
-                validation_issues=validation_issues,
-                boundary_checks=boundary_checks,
-                assignment_ttm=assignment_ttm,
-                csv_ttm=csv_ttm,
-                stress_ttm=stress_ttm,
-                excel_recalculation_success=excel_success,
-            ),
+            self.output_dir / "report.md", report_context
         )
         _log(logging.INFO, "report", "REPORT_CREATED path=%s", report_path)
+        word_report_path = WordReportBuilder().build(
+            self.output_dir / "Итоговый_отчет.docx",
+            report_context,
+            opex_chart_path=opex_path,
+            efficiency_chart_path=efficiency_path,
+        )
+        _log(
+            logging.INFO,
+            "report",
+            "WORD_REPORT_CREATED path=%s",
+            word_report_path,
+        )
 
         output_files = (
             workbook_path,
             self.output_dir / "harness_log.csv",
             self.output_dir / "stress_comparison.csv",
             opex_path,
+            efficiency_path,
             report_path,
+            word_report_path,
         )
         missing_outputs = [
             path for path in output_files if not path.is_file() or path.stat().st_size == 0

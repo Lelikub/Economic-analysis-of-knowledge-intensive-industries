@@ -3,9 +3,37 @@ from __future__ import annotations
 import csv
 
 import pytest
+from docx import Document
 from openpyxl import load_workbook
 
+from euv_analysis.excel import ExcelRecalculator, RecalculationResult
 from euv_analysis.pipeline import AnalysisPipeline
+
+
+def test_pipeline_creates_docx_and_chart_without_excel_com(
+    tmp_path, data_dir, monkeypatch
+):
+    """Catches pipeline coupling of required reports to external Excel COM."""
+    monkeypatch.setattr(
+        ExcelRecalculator,
+        "recalculate",
+        lambda self, path: RecalculationResult(
+            False,
+            ("EXCEL_RECALC_STARTED",),
+            "COM unavailable in unit test",
+        ),
+    )
+
+    result = AnalysisPipeline(data_dir=data_dir, work_dir=tmp_path).run()
+
+    names = {path.name for path in result.output_files}
+    assert "сравнение_эффективности.png" in names
+    assert "Итоговый_отчет.docx" in names
+    document = Document(tmp_path / "output" / "Итоговый_отчет.docx")
+    assert len(document.inline_shapes) == 2
+    log = (tmp_path / "logs" / "execution.log").read_text(encoding="utf-8")
+    assert "EFFICIENCY_CHART_CREATED" in log
+    assert "WORD_REPORT_CREATED" in log
 
 
 @pytest.mark.excel
@@ -18,7 +46,9 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
         "harness_log.csv",
         "stress_comparison.csv",
         "opex_structure.png",
+        "сравнение_эффективности.png",
         "report.md",
+        "Итоговый_отчет.docx",
     }
     assert required <= {path.name for path in result.output_files}
     assert all(path.is_file() and path.stat().st_size > 0 for path in result.output_files)
@@ -53,8 +83,8 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
     workbook_path = tmp_path / "output" / "ground_truth.xlsx"
     formula_book = load_workbook(workbook_path, data_only=False, read_only=True)
     try:
-        assert formula_book["Metrics"]["D2"].value.startswith("=")
-        assert formula_book["Harness Log"].max_row > 1
+        assert formula_book["Метрики"]["D2"].value.startswith("=")
+        assert formula_book["Журнал сверки"].max_row > 1
     finally:
         formula_book.close()
 
@@ -73,7 +103,9 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
         "HARNESS_COMPLETED",
         "STRESS_TEST_COMPLETED",
         "OPEX_CHART_CREATED",
+        "EFFICIENCY_CHART_CREATED",
         "REPORT_CREATED",
+        "WORD_REPORT_CREATED",
         "PIPELINE_COMPLETED",
     ):
         assert event in execution_log

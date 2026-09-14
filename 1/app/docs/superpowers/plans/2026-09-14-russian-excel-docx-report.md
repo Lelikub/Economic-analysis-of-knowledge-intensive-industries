@@ -254,7 +254,7 @@ Expected: document tests and all non-COM tests pass. Commit with message `feat: 
 - Consumes: `EfficiencyComparisonVisualizer`, `WordReportBuilder`, existing `ReportContext`.
 - Produces: `сравнение_эффективности.png` and `Итоговый_отчет.docx` in `PipelineResult.output_files`; log events `EFFICIENCY_CHART_CREATED` and `WORD_REPORT_CREATED`.
 
-- [ ] **Step 1: Write a failing pipeline test with COM isolated at its boundary**
+- [x] **Step 1: Write a failing pipeline test with COM isolated at its boundary**
 
 Patch only the external `ExcelRecalculator.recalculate` operation to return `RecalculationResult(False, ("EXCEL_RECALC_STARTED",), "COM unavailable in unit test")`, run the real pipeline, and assert:
 
@@ -271,7 +271,7 @@ assert "WORD_REPORT_CREATED" in log
 
 Update the existing real-Excel integration expectations to Russian sheet names and include the two new artifacts.
 
-- [ ] **Step 2: Run pipeline unit test to verify RED**
+- [x] **Step 2: Run pipeline unit test to verify RED**
 
 Run:
 
@@ -281,11 +281,11 @@ Run:
 
 Expected: failure because the pipeline does not generate the chart or DOCX.
 
-- [ ] **Step 3: Integrate chart and DOCX generation**
+- [x] **Step 3: Integrate chart and DOCX generation**
 
 Create the efficiency PNG immediately after the OPEX PNG, build one `ReportContext` after stress analysis, pass it to both `ReportBuilder` and `WordReportBuilder`, log the two new events, and append both paths to `output_files`. Do not instantiate a second calculator inside either report builder.
 
-- [ ] **Step 4: Verify GREEN and regression**
+- [x] **Step 4: Verify GREEN and regression**
 
 Run:
 
