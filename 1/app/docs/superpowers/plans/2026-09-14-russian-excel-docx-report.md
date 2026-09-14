@@ -316,7 +316,7 @@ Expected: all selected tests pass. Commit with message `feat: publish Word repor
 - Documents: exact interpreter command, output catalog, Excel language behavior, Word contents and COM limitation.
 - Verifies: all acceptance criteria from the design spec.
 
-- [ ] **Step 1: Update README and ARCH**
+- [x] **Step 1: Update README and ARCH**
 
 Document the canonical command from `1/app`:
 
@@ -326,7 +326,7 @@ Document the canonical command from `1/app`:
 
 Document the seven required outputs, nine Russian Excel sheets, internal English formula-function requirement, DOCX sections, and shared `ReportContext` data flow. Extend `1/data/ARCH.md` with the architectural conclusion that calculation and presentation remain separate boundaries.
 
-- [ ] **Step 2: Run documentation-adjacent non-COM verification**
+- [x] **Step 2: Run documentation-adjacent non-COM verification**
 
 Run:
 
@@ -336,7 +336,7 @@ Run:
 
 Expected: zero failed tests.
 
-- [ ] **Step 3: Run full tests with real Excel access**
+- [x] **Step 3: Run full tests with real Excel access**
 
 Run:
 
@@ -346,7 +346,7 @@ Run:
 
 Expected: all tests, including three marked `excel`, pass; formula caches contain FPY `0.75`, OEE `0.59375`, and CPU approximately `14713.0374957`.
 
-- [ ] **Step 4: Generate production artifacts through the interpreter**
+- [x] **Step 4: Generate production artifacts through the interpreter**
 
 Run:
 
@@ -356,10 +356,10 @@ Run:
 
 Expected: exit code 0 and `PIPELINE_COMPLETED files=7 excel_success=True` in the log.
 
-- [ ] **Step 5: Inspect artifacts programmatically through the interpreter**
+- [x] **Step 5: Inspect artifacts programmatically through the interpreter**
 
 Run a Python verification that opens XLSX with `openpyxl` and DOCX with `python-docx`, asserts the exact nine Russian sheet names, at least 20 formulas, Russian headers, cached core values, seven nonempty output files, at least six Word tables, exactly two inline images, and required calculated texts.
 
-- [ ] **Step 6: Review the acceptance checklist and commit**
+- [x] **Step 6: Review the acceptance checklist and commit**
 
 Run `git diff --check`, review `git diff --stat` and every changed source/test/doc path, then commit with message `docs: document Russian Excel and Word outputs`. Do not push.

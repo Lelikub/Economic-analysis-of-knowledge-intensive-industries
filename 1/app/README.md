@@ -1,4 +1,4 @@
-# EUV Photoresist Production Analysis
+# Экономический анализ производства EUV-фоторезиста
 
 Воспроизводимый Python-pipeline для практического занятия № 1 по экономическому анализу наукоёмких производств.
 
@@ -10,10 +10,10 @@
 
 ## Установка
 
-Из корня репозитория:
+Из каталога `1/app`:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r .\1\app\requirements.txt
+..\..\.venv\Scripts\python.exe -m pip install -r .\requirements.txt
 ```
 
 ## Единая команда запуска
@@ -28,32 +28,40 @@
 
 ## Тесты
 
-Из корня репозитория:
+Из каталога `1/app`:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest .\1\app\tests -v -p no:cacheprovider
+..\..\.venv\Scripts\python.exe -m pytest .\tests -v -p no:cacheprovider
 ```
 
 Тесты с маркером `excel` запускают установленный Microsoft Excel. Чтобы проверить только чистую Python-логику:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest .\1\app\tests -m "not excel" -v -p no:cacheprovider
+..\..\.venv\Scripts\python.exe -m pytest .\tests -m "not excel" -v -p no:cacheprovider
 ```
 
 ## Результаты
 
-- `output/ground_truth.xlsx` — Excel Ground Truth с формулами и кэшированными значениями после реального пересчёта;
+- `output/ground_truth.xlsx` — русскоязычная Excel Ground Truth с формулами и кэшированными значениями после реального пересчёта;
 - `output/harness_log.csv` — сравнение Excel и Python;
-- `output/stress_comparison.csv` — baseline/stress;
-- `output/opex_structure.png` — структура OPEX;
-- `output/report.md` — итоговый аналитический отчёт;
+- `output/stress_comparison.csv` — сравнение базового и стрессового сценариев;
+- `output/opex_structure.png` — диаграмма структуры OPEX;
+- `output/сравнение_эффективности.png` — сравнение FPY, OEE и TEEP;
+- `output/report.md` — итоговый аналитический отчёт в Markdown;
+- `output/Итоговый_отчет.docx` — оформленный Word-отчёт с параметрами, формулами, рассчитанными таблицами, двумя графиками и выводами;
 - `logs/execution.log` — хронология pipeline.
+
+Excel-книга содержит листы `Исходные данные`, `Метрики`, `Затраты`, `TTM`, `Стресс-тест`, `Журнал сверки`, `Структура OPEX`, `Допущения` и `Проблемы данных`. Заголовки, отображаемые значения, единицы, пояснения формул и статусы записываются по-русски. Имена функций внутри формульных ячеек (`IF`, `OR`, `EXP`, `NA`, `ABS`) остаются международными: этого требует формат XLSX, даже если интерфейс Excel русский.
+
+## Как работает запуск
+
+`main.py` последовательно читает и валидирует CSV, рассчитывает метрики в Python, создаёт независимые формулы Excel, запускает скрытый пересчёт Microsoft Excel, сравнивает оба набора значений, выполняет стресс-анализ, строит два графика и передаёт один общий набор рассчитанных результатов в Markdown- и Word-отчёты. Генератор Word не требует установленного Microsoft Word и не пересчитывает метрики повторно.
 
 ## Политика данных
 
 - FPY и Final Yield не смешиваются.
 - TTM-параметры задания и CSV рассчитываются как отдельные сценарии.
-- Массовая ресурсоёмкость имеет статус `NOT_COMPUTABLE`, поскольку в CSV нет массы потреблённого сырья. `Raw Material Cost Proxy` — отдельный стоимостной показатель, а не замена физической массы.
+- Массовая ресурсоёмкость имеет внутренний статус `NOT_COMPUTABLE` и отображается в Excel/Word как `НЕ РАССЧИТЫВАЕТСЯ`, поскольку в CSV нет массы потреблённого сырья. Стоимостной показатель сырья — отдельная метрика, а не замена физической массы.
 - При недоступности Excel книга с формулами сохраняется, но harness не получает фиктивный PASS.
 
 Архитектура и допущения описаны в [`../data/ARCH.md`](../data/ARCH.md).
