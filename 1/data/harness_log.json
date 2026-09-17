@@ -1,0 +1,72 @@
+[
+  {
+    "number": 1,
+    "stage": "Аудит показателей качества",
+    "task": "Развести FPY и итоговый выход годных",
+    "code_fragment": "fpy = first_pass_good_units / actual_output; final_yield = final_good_units / actual_output",
+    "issue": "FPY и Final Yield могли быть ошибочно приняты за один показатель",
+    "cause": "Итоговый годный объём включает продукцию после переделки",
+    "resolution": "Показатели реализованы и раскрыты раздельно",
+    "recheck_result": "Тест подтверждает FPY 75 %, Final Yield 85 %"
+  },
+  {
+    "number": 2,
+    "stage": "Аудит параметров TTM",
+    "task": "Сопоставить параметры задания и CSV",
+    "code_fragment": "assignment_ttm = ttm.calculate(delay, 0.10, 0.15, 3.0, window)",
+    "issue": "В задании r=10 %, α=15 %, а в CSV r=12 %, α=18 %",
+    "cause": "Исходные материалы задают разные сценарии",
+    "resolution": "Оба сценария рассчитаны и раскрыты отдельно",
+    "recheck_result": "Получены штрафы 26,285941 % и 28,034684 % без подмены параметров"
+  },
+  {
+    "number": 3,
+    "stage": "Стресс-сценарий TTM",
+    "task": "Выбрать корректную базовую задержку",
+    "code_fragment": "baseline_stress_ttm = ttm.calculate(comparison.delay[0], 0.10, 0.15, 3.0, window)",
+    "issue": "Pilot CSV содержит задержку 0,5 года, comparison baseline — 0 лет",
+    "cause": "Pilot и сравнительный baseline имеют разное назначение",
+    "resolution": "Для стресс-сравнения использован baseline comparison CSV",
+    "recheck_result": "Тест подтверждает изменение штрафа TTM с 0 % до 26,285941 %"
+  },
+  {
+    "number": 4,
+    "stage": "Аудит ресурсоёмкости",
+    "task": "Проверить вычислимость массовой ресурсоёмкости",
+    "code_fragment": "mass_intensity = NOT_COMPUTABLE",
+    "issue": "Масса сырья отсутствует, а стоимость не может заменить массу",
+    "cause": "В CSV нет Raw_Material_Mass_kg",
+    "resolution": "Метрика помечена НЕ РАССЧИТЫВАЕТСЯ, стоимостной proxy показан отдельно",
+    "recheck_result": "Excel и Python одинаково фиксируют одно невычислимое значение"
+  },
+  {
+    "number": 5,
+    "stage": "Пересчёт Excel",
+    "task": "Получить кэшированные результаты формул",
+    "code_fragment": "excel.CalculateFullRebuild(); workbook.Save()",
+    "issue": "openpyxl сохраняет формулы, но не вычисляет их",
+    "cause": "Библиотека не является движком Excel",
+    "resolution": "Добавлен реальный пересчёт установленным Microsoft Excel",
+    "recheck_result": "Из кэша прочитаны FPY 0,75, OEE 0,59375 и CPU 14 713,0374957"
+  },
+  {
+    "number": 6,
+    "stage": "Жизненный цикл COM",
+    "task": "Исключить сбой освобождения Excel COM",
+    "code_fragment": "subprocess.run([sys.executable, excel_worker.py, workbook_path])",
+    "issue": "Первый интеграционный подход мог завершаться RPC_E_DISCONNECTED",
+    "cause": "COM-прокси переживали закрытие Excel в долгоживущем процессе",
+    "resolution": "Пересчёт изолирован в короткоживущем worker-процессе",
+    "recheck_result": "Интеграционный тест завершается без RPC fault и с корректным кэшем"
+  },
+  {
+    "number": 7,
+    "stage": "Архитектура контрольных журналов",
+    "task": "Развести журнал реализации и числовую сверку",
+    "code_fragment": "implementation_log_entries и reconciliation_rows",
+    "issue": "Числовая сверка была ошибочно названа Harness Log",
+    "cause": "Два разных типа доказательств использовали одно название",
+    "resolution": "Числовая проверка переименована в «Сверка Excel–Python», Harness Log выделен отдельно",
+    "recheck_result": "Отчёты содержат два самостоятельных раздела и восемь обязательных артефактов"
+  }
+]

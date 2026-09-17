@@ -36,7 +36,7 @@
 - Produces: `HarnessLogDataError(ValueError)`.
 - Produces: `HarnessLogLoader.load(path: Path) -> tuple[HarnessLogEntry, ...]`.
 
-- [ ] **Step 1: Write failing loader tests**
+- [x] **Step 1: Write failing loader tests**
 
 Create `tests/test_harness_log.py` with real behavior checks:
 
@@ -90,7 +90,7 @@ VALID_TEXT_FIELDS = {
 }
 ```
 
-- [ ] **Step 2: Run loader tests to verify RED**
+- [x] **Step 2: Run loader tests to verify RED**
 
 Run:
 
@@ -100,7 +100,7 @@ Run:
 
 Expected: collection fails because `euv_analysis.harness_log` does not exist.
 
-- [ ] **Step 3: Implement the dataclass, strict loader and seven JSON rows**
+- [x] **Step 3: Implement the dataclass, strict loader and seven JSON rows**
 
 Implement exact-key validation and sequential numbering:
 
@@ -138,7 +138,7 @@ Populate JSON with these exact record subjects and evidence; every phrase is sto
 | 6 | Жизненный цикл COM | Исключить сбой освобождения Excel COM | `subprocess.run([sys.executable, excel_worker.py, workbook_path])` | Первый интеграционный подход мог завершаться `RPC_E_DISCONNECTED` | COM-прокси переживали закрытие Excel в долгоживущем процессе | Пересчёт изолирован в короткоживущем worker-процессе | Интеграционный тест завершается без RPC fault и с корректным кэшем |
 | 7 | Архитектура контрольных журналов | Развести журнал реализации и числовую сверку | `implementation_log_entries` и `reconciliation_rows` | Числовая сверка была ошибочно названа Harness Log | Два разных типа доказательств использовали одно название | Числовая проверка переименована в «Сверка Excel–Python», Harness Log выделен отдельно | Отчёты содержат два самостоятельных раздела и восемь обязательных артефактов |
 
-- [ ] **Step 4: Verify GREEN and non-COM regression**
+- [x] **Step 4: Verify GREEN and non-COM regression**
 
 Run:
 
@@ -149,7 +149,7 @@ Run:
 
 Expected: all tests pass.
 
-- [ ] **Step 5: Commit the structured journal**
+- [x] **Step 5: Commit the structured journal**
 
 Verify `git diff --check`, stage only JSON, loader and tests, then commit:
 
