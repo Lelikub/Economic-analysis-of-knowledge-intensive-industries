@@ -4,11 +4,13 @@ from pathlib import Path
 
 import pytest
 from docx import Document
+from docx.enum.section import WD_ORIENT
 
-from euv_analysis.harness import MetricsHarness
+from euv_analysis.harness_log import HarnessLogLoader
 from euv_analysis.loader import CsvProductionLoader
 from euv_analysis.metrics import OperationalMetricsCalculator
 from euv_analysis.reporting import ReportContext
+from euv_analysis.reconciliation import MetricsReconciler
 from euv_analysis.stress import ComparisonCsvValidator, StressAnalyzer
 from euv_analysis.ttm import TTMCalculator
 from euv_analysis.validation import DataValidator
@@ -57,7 +59,12 @@ def word_report_inputs(tmp_path: Path, data_dir: Path):
         baseline_metrics=baseline_metrics,
         stress_metrics=stress_metrics,
         excel_values=python_values,
-        harness_rows=MetricsHarness().compare(python_values, python_values),
+        implementation_log_entries=HarnessLogLoader().load(
+            data_dir / "harness_log.json"
+        ),
+        reconciliation_rows=MetricsReconciler().compare(
+            python_values, python_values
+        ),
         stress_rows=StressAnalyzer().compare(
             baseline_metrics,
             stress_metrics,
@@ -111,8 +118,16 @@ def test_word_report_contains_calculated_tables_and_two_charts(
     assert "26,2859 %" in text
     assert "НЕ РАССЧИТЫВАЕТСЯ" in table_text
     assert "14 713,04" in table_text
-    assert len(document.tables) >= 6
+    assert "Harness Log — журнал реализации" in text
+    assert "Архитектура контрольных журналов" in table_text
+    assert "Числовая проверка переименована" in table_text
+    assert len(document.tables) >= 9
     assert len(document.inline_shapes) == 2
+    assert any(
+        section.orientation == WD_ORIENT.LANDSCAPE
+        for section in document.sections
+    )
+    assert document.sections[-1].orientation == WD_ORIENT.PORTRAIT
 
 
 def test_word_report_rejects_missing_chart(tmp_path: Path, word_report_inputs):
@@ -127,4 +142,3 @@ def test_word_report_rejects_missing_chart(tmp_path: Path, word_report_inputs):
             opex_chart_path=opex_path,
             efficiency_chart_path=missing,
         )
-

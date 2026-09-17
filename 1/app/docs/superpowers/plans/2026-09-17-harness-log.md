@@ -401,7 +401,7 @@ refactor: separate Harness Log from metric reconciliation
 - Changes: `PipelineResult.reconciliation_rows: tuple[ReconciliationEntry, ...]` replaces `harness_rows`.
 - Adds: `WordReportBuilder._add_harness_log(document: Document, entries: Sequence[HarnessLogEntry]) -> None`.
 
-- [ ] **Step 1: Write failing report tests**
+- [x] **Step 1: Write failing report tests**
 
 Update the Word fixture to load `harness_log.json`, construct `reconciliation_rows`, and populate both fields. Assert:
 
@@ -428,7 +428,7 @@ assert "## Сверка Excel–Python" in markdown
 assert "RPC_E_DISCONNECTED" in markdown
 ```
 
-- [ ] **Step 2: Run report tests to verify RED**
+- [x] **Step 2: Run report tests to verify RED**
 
 Run:
 
@@ -438,11 +438,11 @@ Run:
 
 Expected: failures because `ReportContext` and report builders do not yet expose the new journal.
 
-- [ ] **Step 3: Update ReportContext and Markdown**
+- [x] **Step 3: Update ReportContext and Markdown**
 
 Use separate typed fields. Rename the numeric Markdown heading to `Сверка Excel–Python`; add the exact eight-column Harness Log table and rows via `_escape`. Update checklist text to distinguish verified implementation issues from reconciliation failures. Update pipeline imports to `HarnessLogLoader`, `ReconciliationEntry` and `MetricsReconciler`; load `data_dir / "harness_log.json"`, pass entries into Ground Truth, populate both `ReportContext` fields, and return `PipelineResult.reconciliation_rows`. Keep the legacy numeric CSV filename only until Task 5 so this intermediate commit remains operational.
 
-- [ ] **Step 4: Add a landscape Word section**
+- [x] **Step 4: Add a landscape Word section**
 
 Before the numeric reconciliation section, add heading `Harness Log — журнал реализации`, create a landscape `WD_SECTION.NEW_PAGE`, swap section width and height, add the eight-column table with 8-point font and repeat-header XML (`w:tblHeader`), then add a new portrait section and restore A4 portrait dimensions/margins. Keep the existing two images and every calculated table.
 
@@ -458,7 +458,7 @@ portrait.orientation = WD_ORIENT.PORTRAIT
 portrait.page_width, portrait.page_height = Cm(21), Cm(29.7)
 ```
 
-- [ ] **Step 5: Verify GREEN and regression**
+- [x] **Step 5: Verify GREEN and regression**
 
 Run:
 
@@ -469,7 +469,7 @@ Run:
 
 Expected: all tests pass; Word has at least nine tables, a landscape section and two images.
 
-- [ ] **Step 6: Commit report integration**
+- [x] **Step 6: Commit report integration**
 
 Verify and commit:
 

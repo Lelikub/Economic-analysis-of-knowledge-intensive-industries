@@ -31,6 +31,10 @@ def test_pipeline_creates_docx_and_chart_without_excel_com(
     assert "Итоговый_отчет.docx" in names
     document = Document(tmp_path / "output" / "Итоговый_отчет.docx")
     assert len(document.inline_shapes) == 2
+    markdown = (tmp_path / "output" / "report.md").read_text(encoding="utf-8")
+    assert "## Harness Log — журнал реализации" in markdown
+    assert "## Сверка Excel–Python" in markdown
+    assert "RPC_E_DISCONNECTED" in markdown
     log = (tmp_path / "logs" / "execution.log").read_text(encoding="utf-8")
     assert "EFFICIENCY_CHART_CREATED" in log
     assert "WORD_REPORT_CREATED" in log
@@ -55,7 +59,7 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
     assert (tmp_path / "logs" / "execution.log").is_file()
     assert result.excel_recalculation_success is True
     assert result.comparison_valid is True
-    assert all(row.status != "FAIL" for row in result.harness_rows)
+    assert all(row.status != "FAIL" for row in result.reconciliation_rows)
     assert all(result.boundary_checks.values())
 
     report = (tmp_path / "output" / "report.md").read_text(encoding="utf-8")
@@ -84,7 +88,8 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
     formula_book = load_workbook(workbook_path, data_only=False, read_only=True)
     try:
         assert formula_book["Метрики"]["D2"].value.startswith("=")
-        assert formula_book["Журнал сверки"].max_row > 1
+        assert formula_book["Сверка Excel–Python"].max_row > 1
+        assert formula_book["Harness Log"].max_row == 8
     finally:
         formula_book.close()
 
@@ -100,7 +105,7 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
         "EXCEL_RECALC_STARTED",
         "EXCEL_RECALC_COMPLETED",
         "EXCEL_VALUE_READ",
-        "HARNESS_COMPLETED",
+        "RECONCILIATION_COMPLETED",
         "STRESS_TEST_COMPLETED",
         "OPEX_CHART_CREATED",
         "EFFICIENCY_CHART_CREATED",

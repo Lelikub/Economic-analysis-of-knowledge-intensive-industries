@@ -6,6 +6,7 @@ from pathlib import Path
 from collections.abc import Iterable, Sequence
 
 from docx import Document
+from docx.enum.section import WD_ORIENT, WD_SECTION
 from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT, WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
@@ -98,6 +99,13 @@ def _add_table(
     return table
 
 
+def _repeat_table_header(row) -> None:
+    properties = row._tr.get_or_add_trPr()
+    repeat = OxmlElement("w:tblHeader")
+    repeat.set(qn("w:val"), "true")
+    properties.append(repeat)
+
+
 class WordReportBuilder:
     """Build a styled DOCX without recalculating any business metric."""
 
@@ -124,7 +132,8 @@ class WordReportBuilder:
         self._add_parameters(document, context)
         self._add_formulas(document, context)
         self._add_metrics(document, context)
-        self._add_harness(document, context)
+        self._add_harness_log(document, context)
+        self._add_reconciliation(document, context)
         self._add_stress(document, context)
         self._add_ttm(document, context)
         self._add_charts(document, opex_chart_path, efficiency_chart_path)
@@ -263,8 +272,68 @@ class WordReportBuilder:
         )
 
     @staticmethod
-    def _add_harness(document: Document, context: ReportContext) -> None:
-        document.add_heading("5. Сверка Python и Excel", level=1)
+    def _add_harness_log(document: Document, context: ReportContext) -> None:
+        landscape = document.add_section(WD_SECTION.NEW_PAGE)
+        landscape.orientation = WD_ORIENT.LANDSCAPE
+        landscape.page_width = Cm(29.7)
+        landscape.page_height = Cm(21)
+        landscape.top_margin = Cm(1.2)
+        landscape.bottom_margin = Cm(1.2)
+        landscape.left_margin = Cm(1.2)
+        landscape.right_margin = Cm(1.2)
+
+        document.add_heading("Harness Log — журнал реализации", level=1)
+        document.add_paragraph(
+            "Журнал содержит подтверждённые проблемы, причины, внесённые "
+            "исправления и результаты повторной проверки модели."
+        )
+        rows = [
+            (
+                entry.number,
+                entry.stage,
+                entry.task,
+                entry.code_fragment,
+                entry.issue,
+                entry.cause,
+                entry.resolution,
+                entry.recheck_result,
+            )
+            for entry in context.implementation_log_entries
+        ]
+        table = _add_table(
+            document,
+            (
+                "№",
+                "Этап",
+                "Запрос к ИИ / задача",
+                "Сгенерированный или изменённый фрагмент кода",
+                "Обнаруженная ошибка / галлюцинация",
+                "Причина",
+                "Как исправлено",
+                "Результат повторной проверки",
+            ),
+            rows,
+        )
+        _repeat_table_header(table.rows[0])
+        for row in table.rows:
+            for cell in row.cells:
+                cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.TOP
+                for paragraph in cell.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.size = Pt(8)
+
+        portrait = document.add_section(WD_SECTION.NEW_PAGE)
+        portrait.orientation = WD_ORIENT.PORTRAIT
+        portrait.page_width = Cm(21)
+        portrait.page_height = Cm(29.7)
+        portrait.top_margin = Cm(1.8)
+        portrait.bottom_margin = Cm(1.8)
+        portrait.left_margin = Cm(1.8)
+        portrait.right_margin = Cm(1.5)
+
+    @staticmethod
+    def _add_reconciliation(document: Document, context: ReportContext) -> None:
+        document.add_heading("5. Сверка Excel–Python", level=1)
         status = "выполнен" if context.excel_recalculation_success else "недоступен"
         document.add_paragraph(f"Реальный пересчёт Microsoft Excel: {status}.")
         rows = [
@@ -275,7 +344,7 @@ class WordReportBuilder:
                 _number(row.absolute_delta, 10) if row.absolute_delta is not None else "—",
                 localize_status(row.status),
             )
-            for row in context.harness_rows
+            for row in context.reconciliation_rows
         ]
         _add_table(
             document,
@@ -427,4 +496,3 @@ class WordReportBuilder:
             f"{_number(cpu_change or 0.0)} долл. США/л. Массовая ресурсоёмкость "
             "не рассчитывается до появления физического параметра массы сырья."
         )
-

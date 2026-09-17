@@ -9,11 +9,12 @@ from pathlib import Path
 from collections.abc import Sequence
 
 from .excel import ExcelGroundTruthBuilder, ExcelGroundTruthReader, ExcelRecalculator
-from .harness import HarnessEntry, MetricsHarness
+from .harness_log import HarnessLogLoader
 from .loader import CsvProductionLoader
 from .logging_config import configure_logging
 from .metrics import OperationalMetricsCalculator
 from .models import MetricStatus, ScenarioMode, ValidationSeverity
+from .reconciliation import MetricsReconciler, ReconciliationEntry
 from .reporting import ReportBuilder, ReportContext
 from .stress import (
     ComparisonCsvValidator,
@@ -38,7 +39,7 @@ class PipelineResult:
     """Final evidence returned by a successful pipeline run."""
 
     output_files: tuple[Path, ...]
-    harness_rows: tuple[HarnessEntry, ...]
+    reconciliation_rows: tuple[ReconciliationEntry, ...]
     stress_rows: tuple[StressComparisonRow, ...]
     boundary_checks: dict[str, bool]
     ttm_results: dict[str, float]
@@ -91,6 +92,15 @@ class AnalysisPipeline:
                 "Comparison CSV does not match the required stress scenario: "
                 + ", ".join(comparison.messages)
             )
+        implementation_log_entries = HarnessLogLoader().load(
+            self.data_dir / "harness_log.json"
+        )
+        _log(
+            logging.INFO,
+            "harness_log",
+            "HARNESS_LOG_LOADED entries=%d",
+            len(implementation_log_entries),
+        )
 
         validator = DataValidator()
         baseline_issues = validator.validate(baseline, ScenarioMode.NORMAL)
@@ -187,6 +197,7 @@ class AnalysisPipeline:
             workbook_path,
             baseline,
             stress,
+            implementation_log_entries=implementation_log_entries,
             opex_chart_path=opex_path,
             stress_baseline_delay=comparison.delay[0],
         )
@@ -217,22 +228,22 @@ class AnalysisPipeline:
                 "TTM Penalty CSV": csv_ttm,
             }
         )
-        harness_rows = MetricsHarness(tolerance=1e-9).compare(
+        reconciliation_rows = MetricsReconciler(tolerance=1e-9).compare(
             excel_values, python_values
         )
         _log(
             logging.INFO,
-            "harness",
-            "HARNESS_COMPLETED pass=%d fail=%d not_computable=%d",
-            sum(row.status == "PASS" for row in harness_rows),
-            sum(row.status == "FAIL" for row in harness_rows),
-            sum(row.status == "NOT_COMPUTABLE" for row in harness_rows),
+            "reconciliation",
+            "RECONCILIATION_COMPLETED pass=%d fail=%d not_computable=%d",
+            sum(row.status == "PASS" for row in reconciliation_rows),
+            sum(row.status == "FAIL" for row in reconciliation_rows),
+            sum(row.status == "NOT_COMPUTABLE" for row in reconciliation_rows),
         )
         self._write_harness_csv(
-            self.output_dir / "harness_log.csv", harness_rows
+            self.output_dir / "harness_log.csv", reconciliation_rows
         )
 
-        excel_builder.write_harness(workbook_path, harness_rows)
+        excel_builder.write_reconciliation(workbook_path, reconciliation_rows)
         second_recalculation = recalculator.recalculate(workbook_path)
         excel_success = (
             first_recalculation.success and second_recalculation.success
@@ -267,7 +278,8 @@ class AnalysisPipeline:
             baseline_metrics=baseline_metrics,
             stress_metrics=stress_metrics,
             excel_values=excel_values,
-            harness_rows=harness_rows,
+            implementation_log_entries=implementation_log_entries,
+            reconciliation_rows=reconciliation_rows,
             stress_rows=stress_rows,
             comparison=comparison,
             validation_issues=validation_issues,
@@ -320,7 +332,7 @@ class AnalysisPipeline:
         )
         return PipelineResult(
             output_files=output_files,
-            harness_rows=tuple(harness_rows),
+            reconciliation_rows=tuple(reconciliation_rows),
             stress_rows=tuple(stress_rows),
             boundary_checks=boundary_checks,
             ttm_results={
@@ -385,7 +397,9 @@ class AnalysisPipeline:
         }
 
     @staticmethod
-    def _write_harness_csv(path: Path, rows: Sequence[HarnessEntry]) -> None:
+    def _write_harness_csv(
+        path: Path, rows: Sequence[ReconciliationEntry]
+    ) -> None:
         with Path(path).open("w", encoding="utf-8-sig", newline="") as stream:
             writer = csv.DictWriter(
                 stream,

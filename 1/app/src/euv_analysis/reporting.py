@@ -7,8 +7,9 @@ from pathlib import Path
 from collections.abc import Sequence
 
 from .excel import PARAMETER_FIELDS
-from .harness import HarnessEntry
+from .harness_log import HarnessLogEntry
 from .models import MetricsResult, ProductionData, ValidationIssue
+from .reconciliation import ReconciliationEntry
 from .stress import ComparisonValidationResult, StressComparisonRow
 
 
@@ -21,7 +22,8 @@ class ReportContext:
     baseline_metrics: MetricsResult
     stress_metrics: MetricsResult
     excel_values: dict[str, float | None]
-    harness_rows: Sequence[HarnessEntry]
+    implementation_log_entries: Sequence[HarnessLogEntry]
+    reconciliation_rows: Sequence[ReconciliationEntry]
     stress_rows: Sequence[StressComparisonRow]
     comparison: ComparisonValidationResult
     validation_issues: Sequence[ValidationIssue]
@@ -132,7 +134,7 @@ class ReportBuilder:
                 "",
                 "## 3. Архитектура решения",
                 "",
-                "`CSV → typed ProductionData → validation → Python calculators` и параллельно `CSV → Excel formulas → Excel recalculation`. Затем `MetricsHarness` сравнивает два результата; stress, visualization и reporting используют только рассчитанные объекты.",
+                "`CSV → typed ProductionData → validation → Python calculators` и параллельно `CSV → Excel formulas → Excel recalculation`. Затем `MetricsReconciler` выполняет числовую сверку, а структурированный Harness Log фиксирует проблемы реализации; stress, visualization и reporting используют только рассчитанные объекты.",
                 "",
                 "## 4. Проверка исходных данных",
                 "",
@@ -182,13 +184,41 @@ class ReportBuilder:
                 "",
                 f"Реальный пересчёт Microsoft Excel: **{'COMPLETED' if context.excel_recalculation_success else 'UNAVAILABLE'}**. Книга содержит формулы, а значения прочитаны из кэша после пересчёта.",
                 "",
-                "## 8. Harness",
+                "## Harness Log — журнал реализации",
+                "",
+                "| № | Этап | Запрос к ИИ / задача | Сгенерированный или изменённый фрагмент кода | Обнаруженная ошибка / галлюцинация | Причина | Как исправлено | Результат повторной проверки |",
+                "|---:|---|---|---|---|---|---|---|",
+            ]
+        )
+        for entry in context.implementation_log_entries:
+            lines.append(
+                "| "
+                + " | ".join(
+                    _escape(value)
+                    for value in (
+                        entry.number,
+                        entry.stage,
+                        entry.task,
+                        entry.code_fragment,
+                        entry.issue,
+                        entry.cause,
+                        entry.resolution,
+                        entry.recheck_result,
+                    )
+                )
+                + " |"
+            )
+
+        lines.extend(
+            [
+                "",
+                "## Сверка Excel–Python",
                 "",
                 "| Metric | Excel | Python | Abs Delta | Rel Delta | Tolerance | Status | Cause |",
                 "|---|---:|---:|---:|---:|---:|---|---|",
             ]
         )
-        for row in context.harness_rows:
+        for row in context.reconciliation_rows:
             lines.append(
                 f"| {_escape(row.metric)} | {_number(row.excel_value)} | {_number(row.python_value)} | {_number(row.absolute_delta)} | {_number(row.relative_delta)} | {row.tolerance:.1e} | {row.status} | {_escape(row.probable_cause)} |"
             )
@@ -279,8 +309,11 @@ class ReportBuilder:
             "Mass Intensity рассмотрена как Data Gap": True,
             "Excel formulas созданы": True,
             "Excel пересчитан и прочитан": context.excel_recalculation_success,
-            "Harness выполнен без необъяснённых FAIL": not any(
-                row.status == "FAIL" for row in context.harness_rows
+            "Harness Log содержит подтверждённые проблемы реализации": bool(
+                context.implementation_log_entries
+            ),
+            "Сверка Excel–Python выполнена без необъяснённых FAIL": not any(
+                row.status == "FAIL" for row in context.reconciliation_rows
             ),
             "Boundary checks выполнены": all(context.boundary_checks.values()),
             "Stress CSV и comparison CSV обработаны": context.comparison.valid,
