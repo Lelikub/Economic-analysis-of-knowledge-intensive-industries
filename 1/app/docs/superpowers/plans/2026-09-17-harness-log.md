@@ -265,7 +265,7 @@ feat: build Harness Log workbook
 - Changes: `ExcelGroundTruthBuilder.build` receives the keyword-only parameter `implementation_log_entries: Sequence[HarnessLogEntry] = ()` in addition to its existing arguments.
 - Changes: `ExcelGroundTruthBuilder.write_reconciliation(path: Path, entries: Iterable[ReconciliationEntry]) -> None`.
 
-- [ ] **Step 1: Write failing rename and sheet-separation tests**
+- [x] **Step 1: Write failing rename and sheet-separation tests**
 
 Update numeric tests to import `MetricsReconciler` from `reconciliation`. In `test_excel.py`, build with loaded Harness Log entries and assert exact sheets:
 
@@ -283,7 +283,7 @@ assert [cell.value for cell in workbook["Сверка Excel–Python"][1]][:3] =
 
 Rename `test_harness_rows_are_localized_only_in_workbook` to `test_reconciliation_rows_are_localized_only_in_workbook` and call `write_reconciliation`.
 
-- [ ] **Step 2: Run focused tests to verify RED**
+- [x] **Step 2: Run focused tests to verify RED**
 
 Run:
 
@@ -293,7 +293,7 @@ Run:
 
 Expected: failures because renamed module, classes, methods and sheet names do not exist.
 
-- [ ] **Step 3: Move the numeric implementation without changing its algorithm**
+- [x] **Step 3: Move the numeric implementation without changing its algorithm**
 
 Create `reconciliation.py` by renaming only the public types and module docstring. Preserve comparison order, formulas for absolute/relative delta, tolerance behavior, status strings and probable-cause text. During this intermediate task, keep `harness.py` as a compatibility re-export so pipeline and reporting remain runnable until Tasks 4–5 update every consumer:
 
@@ -353,7 +353,7 @@ class MetricsReconciler:
         return entries
 ```
 
-- [ ] **Step 4: Integrate separate Ground Truth sheets**
+- [x] **Step 4: Integrate separate Ground Truth sheets**
 
 Change localization keys to:
 
@@ -364,7 +364,7 @@ Change localization keys to:
 
 `ExcelGroundTruthBuilder.build` creates the reconciliation header sheet and calls `HarnessLogWorkbookBuilder().add_sheet(workbook, implementation_log_entries, title="Harness Log")` for the historical journal. `write_reconciliation` writes only the numeric sheet. Keep `GROUND_TRUTH_CELLS` and all formulas unchanged.
 
-- [ ] **Step 5: Verify GREEN and regression**
+- [x] **Step 5: Verify GREEN and regression**
 
 Run:
 
@@ -376,7 +376,7 @@ Run:
 
 Expected: all selected tests pass and at least 20 Excel formulas remain.
 
-- [ ] **Step 6: Commit the semantic split**
+- [x] **Step 6: Commit the semantic split**
 
 Verify and commit:
 

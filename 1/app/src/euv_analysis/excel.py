@@ -7,13 +7,14 @@ import logging
 from pathlib import Path
 import subprocess
 import sys
-from typing import Any, Callable, Iterable
+from typing import Any, Callable, Iterable, Sequence
 
 from openpyxl import Workbook, load_workbook
 from openpyxl.chart import BarChart, Reference
 from openpyxl.drawing.image import Image
 from openpyxl.styles import Alignment, Font, PatternFill
 
+from .harness_log import HarnessLogEntry, HarnessLogWorkbookBuilder
 from .localization import (
     PARAMETER_DESCRIPTIONS,
     PARAMETER_LABELS,
@@ -103,6 +104,7 @@ class ExcelGroundTruthBuilder:
         baseline: ProductionData,
         stress: ProductionData,
         *,
+        implementation_log_entries: Sequence[HarnessLogEntry] = (),
         opex_chart_path: Path | None = None,
         stress_baseline_delay: float = 0.0,
         assumptions: list[dict[str, str]] | None = None,
@@ -341,9 +343,14 @@ class ExcelGroundTruthBuilder:
             LOGGER.info("EXCEL_FORMULA_WRITTEN stress_metric=%s", metric_name)
         _style_sheet(stress_sheet, {"A": 26, "B": 20, "C": 20, "D": 20, "E": 20, "F": 62})
 
-        harness = workbook.create_sheet(SHEET_NAMES["harness"])
-        harness.append(["Метрика", "Значение Excel", "Значение Python", "Абсолютное отклонение", "Относительное отклонение", "Допуск", "Статус", "Вероятная причина", "Временная метка"])
-        _style_sheet(harness, {"A": 28, "B": 18, "C": 18, "D": 18, "E": 18, "F": 14, "G": 18, "H": 54, "I": 26})
+        reconciliation = workbook.create_sheet(SHEET_NAMES["reconciliation"])
+        reconciliation.append(["Метрика", "Значение Excel", "Значение Python", "Абсолютное отклонение", "Относительное отклонение", "Допуск", "Статус", "Вероятная причина", "Временная метка"])
+        _style_sheet(reconciliation, {"A": 28, "B": 18, "C": 18, "D": 18, "E": 18, "F": 14, "G": 18, "H": 54, "I": 26})
+        HarnessLogWorkbookBuilder().add_sheet(
+            workbook,
+            implementation_log_entries,
+            title=SHEET_NAMES["harness_log"],
+        )
 
         opex = workbook.create_sheet(SHEET_NAMES["opex"])
         opex.append(["Категория затрат", "Доля"])
@@ -393,11 +400,11 @@ class ExcelGroundTruthBuilder:
         workbook.save(path)
         return path
 
-    def write_harness(self, path: Path, entries: Iterable[Any]) -> None:
+    def write_reconciliation(self, path: Path, entries: Iterable[Any]) -> None:
         """Write comparison rows, then let Excel recalculate the book again."""
         path = Path(path)
         workbook = load_workbook(path, data_only=False)
-        sheet = workbook[SHEET_NAMES["harness"]]
+        sheet = workbook[SHEET_NAMES["reconciliation"]]
         if sheet.max_row > 1:
             sheet.delete_rows(2, sheet.max_row - 1)
         for entry in entries:
@@ -415,6 +422,10 @@ class ExcelGroundTruthBuilder:
                 ]
             )
         workbook.save(path)
+
+    def write_harness(self, path: Path, entries: Iterable[Any]) -> None:
+        """Compatibility wrapper retained while callers migrate."""
+        self.write_reconciliation(path, entries)
 
 
 @dataclass(frozen=True, slots=True)

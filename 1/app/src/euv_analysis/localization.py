@@ -9,7 +9,8 @@ SHEET_NAMES: dict[str, str] = {
     "costs": "Затраты",
     "ttm": "TTM",
     "stress": "Стресс-тест",
-    "harness": "Журнал сверки",
+    "reconciliation": "Сверка Excel–Python",
+    "harness_log": "Harness Log",
     "opex": "Структура OPEX",
     "assumptions": "Допущения",
     "issues": "Проблемы данных",
@@ -140,4 +141,3 @@ def localize_status(value: str) -> str:
 def localize_cause(value: str) -> str:
     """Translate a known harness cause without obscuring unexpected diagnostics."""
     return CAUSE_LABELS.get(value, value)
-

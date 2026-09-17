@@ -13,14 +13,20 @@ from euv_analysis.excel import (
     ExcelGroundTruthReader,
     ExcelRecalculator,
 )
-from euv_analysis.harness import HarnessEntry
+from euv_analysis.harness_log import HarnessLogLoader
 from euv_analysis.loader import CsvProductionLoader
+from euv_analysis.reconciliation import ReconciliationEntry
 
 
-def test_workbook_contains_independent_formulas(tmp_path, valid_data):
+def test_workbook_contains_independent_formulas(tmp_path, valid_data, data_dir):
     """Catches a workbook that copies Python results instead of calculating them."""
     path = ExcelGroundTruthBuilder().build(
-        tmp_path / "ground_truth.xlsx", valid_data, valid_data
+        tmp_path / "ground_truth.xlsx",
+        valid_data,
+        valid_data,
+        implementation_log_entries=HarnessLogLoader().load(
+            data_dir / "harness_log.json"
+        ),
     )
 
     workbook = load_workbook(path, data_only=False)
@@ -29,7 +35,8 @@ def test_workbook_contains_independent_formulas(tmp_path, valid_data):
         "Метрики",
         "Затраты",
         "TTM",
-        "Журнал сверки",
+        "Сверка Excel–Python",
+        "Harness Log",
         "Стресс-тест",
         "Структура OPEX",
         "Допущения",
@@ -48,10 +55,17 @@ def test_workbook_contains_independent_formulas(tmp_path, valid_data):
     assert workbook["Метрики"]["D2"].value != "=0.75"
 
 
-def test_workbook_uses_russian_sheet_names_headers_and_values(tmp_path, valid_data):
+def test_workbook_uses_russian_sheet_names_headers_and_values(
+    tmp_path, valid_data, data_dir
+):
     """Catches regression to English labels in the user-facing workbook."""
     path = ExcelGroundTruthBuilder().build(
-        tmp_path / "ground_truth.xlsx", valid_data, valid_data
+        tmp_path / "ground_truth.xlsx",
+        valid_data,
+        valid_data,
+        implementation_log_entries=HarnessLogLoader().load(
+            data_dir / "harness_log.json"
+        ),
     )
     workbook = load_workbook(path, data_only=False)
 
@@ -61,11 +75,16 @@ def test_workbook_uses_russian_sheet_names_headers_and_values(tmp_path, valid_da
         "Затраты",
         "TTM",
         "Стресс-тест",
-        "Журнал сверки",
+        "Сверка Excel–Python",
+        "Harness Log",
         "Структура OPEX",
         "Допущения",
         "Проблемы данных",
     ]
+    assert workbook["Harness Log"].max_row == 8
+    assert [
+        cell.value for cell in workbook["Сверка Excel–Python"][1]
+    ][:3] == ["Метрика", "Значение Excel", "Значение Python"]
     assert [cell.value for cell in workbook["Исходные данные"][1]] == [
         "Сценарий",
         "Параметр",
@@ -121,12 +140,12 @@ def test_workbook_stress_sheet_includes_ttm_penalty_formulas(tmp_path, valid_dat
     assert ttm_row[2].startswith("=")
 
 
-def test_harness_rows_are_localized_only_in_workbook(tmp_path, valid_data):
+def test_reconciliation_rows_are_localized_only_in_workbook(tmp_path, valid_data):
     """Catches leaking internal English metric names and statuses into Excel."""
     path = ExcelGroundTruthBuilder().build(
         tmp_path / "ground_truth.xlsx", valid_data, valid_data
     )
-    entry = HarnessEntry(
+    entry = ReconciliationEntry(
         "OEE",
         0.5,
         0.5,
@@ -138,11 +157,11 @@ def test_harness_rows_are_localized_only_in_workbook(tmp_path, valid_data):
         "2026-09-14T00:00:00+00:00",
     )
 
-    ExcelGroundTruthBuilder().write_harness(path, [entry])
+    ExcelGroundTruthBuilder().write_reconciliation(path, [entry])
 
     workbook = load_workbook(path, data_only=False)
     row = list(
-        workbook["Журнал сверки"].iter_rows(min_row=2, values_only=True)
+        workbook["Сверка Excel–Python"].iter_rows(min_row=2, values_only=True)
     )[0]
     assert row[0] == "Общая эффективность оборудования (OEE)"
     assert row[6] == "СОВПАДАЕТ"

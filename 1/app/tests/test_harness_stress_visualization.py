@@ -4,9 +4,9 @@ from pathlib import Path
 
 import pytest
 
-from euv_analysis.harness import MetricsHarness
 from euv_analysis.loader import CsvProductionLoader
 from euv_analysis.metrics import OperationalMetricsCalculator
+from euv_analysis.reconciliation import MetricsReconciler
 from euv_analysis.stress import ComparisonCsvValidator, StressAnalyzer
 from euv_analysis.visualization import (
     OPEX_SHARES,
@@ -15,9 +15,9 @@ from euv_analysis.visualization import (
 )
 
 
-def test_harness_uses_numeric_tolerance():
+def test_reconciliation_uses_numeric_tolerance():
     """Catches strict float equality in the Python/Excel comparison."""
-    rows = MetricsHarness(tolerance=1e-9).compare(
+    rows = MetricsReconciler(tolerance=1e-9).compare(
         {"FPY": 0.75}, {"FPY": 0.7500000001}
     )
 
@@ -26,9 +26,9 @@ def test_harness_uses_numeric_tolerance():
     assert rows[0].relative_delta == pytest.approx(1.333333443653829e-10)
 
 
-def test_harness_detects_real_mismatch():
+def test_reconciliation_detects_real_mismatch():
     """Catches a harness that creates a false PASS outside tolerance."""
-    rows = MetricsHarness(tolerance=1e-9).compare(
+    rows = MetricsReconciler(tolerance=1e-9).compare(
         {"OEE": 0.59}, {"OEE": 0.60}
     )
 
@@ -36,9 +36,9 @@ def test_harness_detects_real_mismatch():
     assert rows[0].probable_cause == "Formula, input, or cached Excel value differs"
 
 
-def test_harness_does_not_pass_missing_excel_value():
+def test_reconciliation_does_not_pass_missing_excel_value():
     """Catches a false PASS when Excel has not supplied a cached value."""
-    rows = MetricsHarness().compare({"FPY": None}, {"FPY": 0.75})
+    rows = MetricsReconciler().compare({"FPY": None}, {"FPY": 0.75})
 
     assert rows[0].status == "NOT_COMPUTABLE"
     assert rows[0].absolute_delta is None
