@@ -5,6 +5,24 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Sequence
+
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Font, PatternFill
+
+
+HARNESS_LOG_HEADERS = (
+    "№",
+    "Этап",
+    "Запрос к ИИ / задача",
+    "Сгенерированный или изменённый фрагмент кода",
+    "Обнаруженная ошибка / галлюцинация",
+    "Причина",
+    "Как исправлено",
+    "Результат повторной проверки",
+)
+
+HARNESS_LOG_WIDTHS = (6.0, 24.0, 32.0, 40.0, 40.0, 35.0, 42.0, 38.0)
 
 
 @dataclass(frozen=True, slots=True)
@@ -75,3 +93,56 @@ class HarnessLogLoader:
             )
 
         return tuple(entries)
+
+
+class HarnessLogWorkbookBuilder:
+    """Create the approved eight-column Harness Log workbook or sheet."""
+
+    def build(self, path: Path, entries: Sequence[HarnessLogEntry]) -> Path:
+        destination = Path(path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+
+        workbook = Workbook()
+        workbook.remove(workbook.active)
+        self.add_sheet(workbook, entries)
+        workbook.save(destination)
+        return destination
+
+    def add_sheet(
+        self,
+        workbook: Workbook,
+        entries: Sequence[HarnessLogEntry],
+        *,
+        title: str = "Harness Log",
+    ):
+        sheet = workbook.create_sheet(title)
+        sheet.append(HARNESS_LOG_HEADERS)
+        for entry in entries:
+            sheet.append(
+                (
+                    entry.number,
+                    entry.stage,
+                    entry.task,
+                    entry.code_fragment,
+                    entry.issue,
+                    entry.cause,
+                    entry.resolution,
+                    entry.recheck_result,
+                )
+            )
+
+        header_fill = PatternFill(fill_type="solid", fgColor="1F4E78")
+        header_font = Font(color="FFFFFF", bold=True)
+        wrapped_top = Alignment(wrap_text=True, vertical="top")
+        for cell in sheet[1]:
+            cell.fill = header_fill
+            cell.font = header_font
+        for row in sheet.iter_rows():
+            for cell in row:
+                cell.alignment = wrapped_top
+
+        for column, width in zip("ABCDEFGH", HARNESS_LOG_WIDTHS, strict=True):
+            sheet.column_dimensions[column].width = width
+        sheet.freeze_panes = "A2"
+        sheet.auto_filter.ref = sheet.dimensions
+        return sheet

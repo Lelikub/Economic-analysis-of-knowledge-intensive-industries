@@ -170,7 +170,7 @@ feat: add structured implementation Harness Log
 - Produces: `HarnessLogWorkbookBuilder.build(path: Path, entries: Sequence[HarnessLogEntry]) -> Path`.
 - Produces: `HarnessLogWorkbookBuilder.add_sheet(workbook: Workbook, entries: Sequence[HarnessLogEntry], *, title: str = "Harness Log")`.
 
-- [ ] **Step 1: Write a failing workbook contract test**
+- [x] **Step 1: Write a failing workbook contract test**
 
 ```python
 def test_harness_log_workbook_matches_approved_example(tmp_path, data_dir):
@@ -195,7 +195,7 @@ def test_harness_log_workbook_matches_approved_example(tmp_path, data_dir):
     assert all(cell.alignment.wrap_text for row in sheet.iter_rows() for cell in row)
 ```
 
-- [ ] **Step 2: Run the workbook test to verify RED**
+- [x] **Step 2: Run the workbook test to verify RED**
 
 Run:
 
@@ -205,7 +205,7 @@ Run:
 
 Expected: import or attribute failure because `HarnessLogWorkbookBuilder` is absent.
 
-- [ ] **Step 3: Implement reusable sheet creation**
+- [x] **Step 3: Implement reusable sheet creation**
 
 `add_sheet` creates the eight headers in the approved order, appends entry fields without transformation, applies `1F4E78` header fill, white bold font, top alignment and wrapping to all cells, exact widths, filter and freeze panes. `build` creates a new workbook, removes the default sheet, calls `add_sheet`, creates the parent directory and saves the file.
 
@@ -228,7 +228,7 @@ sheet.freeze_panes = "A2"
 sheet.auto_filter.ref = sheet.dimensions
 ```
 
-- [ ] **Step 4: Verify GREEN and regression**
+- [x] **Step 4: Verify GREEN and regression**
 
 Run:
 
@@ -239,7 +239,7 @@ Run:
 
 Expected: all tests pass.
 
-- [ ] **Step 5: Commit the workbook builder**
+- [x] **Step 5: Commit the workbook builder**
 
 Verify and commit with message:
 

@@ -3,8 +3,13 @@ from __future__ import annotations
 import json
 
 import pytest
+from openpyxl import load_workbook
 
-from euv_analysis.harness_log import HarnessLogDataError, HarnessLogLoader
+from euv_analysis.harness_log import (
+    HarnessLogDataError,
+    HarnessLogLoader,
+    HarnessLogWorkbookBuilder,
+)
 
 
 VALID_TEXT_FIELDS = {
@@ -51,3 +56,36 @@ def test_harness_log_rejects_invalid_schema(tmp_path, payload, message):
 
     with pytest.raises(HarnessLogDataError, match=message):
         HarnessLogLoader().load(path)
+
+
+def test_harness_log_workbook_matches_approved_example(tmp_path, data_dir):
+    entries = HarnessLogLoader().load(data_dir / "harness_log.json")
+    path = HarnessLogWorkbookBuilder().build(tmp_path / "Harness_Log.xlsx", entries)
+    workbook = load_workbook(path)
+    sheet = workbook["Harness Log"]
+
+    assert [cell.value for cell in sheet[1]] == [
+        "№",
+        "Этап",
+        "Запрос к ИИ / задача",
+        "Сгенерированный или изменённый фрагмент кода",
+        "Обнаруженная ошибка / галлюцинация",
+        "Причина",
+        "Как исправлено",
+        "Результат повторной проверки",
+    ]
+    assert sheet.max_row == 8
+    assert sheet.freeze_panes == "A2"
+    assert sheet.auto_filter.ref == "A1:H8"
+    assert [sheet.column_dimensions[column].width for column in "ABCDEFGH"] == [
+        6.0,
+        24.0,
+        32.0,
+        40.0,
+        40.0,
+        35.0,
+        42.0,
+        38.0,
+    ]
+    assert all(cell.fill.fgColor.rgb == "001F4E78" for cell in sheet[1])
+    assert all(cell.alignment.wrap_text for row in sheet.iter_rows() for cell in row)
