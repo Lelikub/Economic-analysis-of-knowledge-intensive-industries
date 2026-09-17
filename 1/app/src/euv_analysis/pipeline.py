@@ -9,7 +9,7 @@ from pathlib import Path
 from collections.abc import Sequence
 
 from .excel import ExcelGroundTruthBuilder, ExcelGroundTruthReader, ExcelRecalculator
-from .harness_log import HarnessLogLoader
+from .harness_log import HarnessLogLoader, HarnessLogWorkbookBuilder
 from .loader import CsvProductionLoader
 from .logging_config import configure_logging
 from .metrics import OperationalMetricsCalculator
@@ -66,6 +66,15 @@ class AnalysisPipeline:
         self.log_dir.mkdir(parents=True, exist_ok=True)
         configure_logging(self.log_dir / "execution.log")
         _log(logging.INFO, "startup", "PIPELINE_STARTED work_dir=%s", self.work_dir)
+        legacy_harness_csv = self.output_dir / "harness_log.csv"
+        if legacy_harness_csv.is_file():
+            legacy_harness_csv.unlink()
+            _log(
+                logging.INFO,
+                "migration",
+                "LEGACY_HARNESS_CSV_REMOVED path=%s",
+                legacy_harness_csv,
+            )
 
         loader = CsvProductionLoader()
         input_paths = {
@@ -99,6 +108,17 @@ class AnalysisPipeline:
             logging.INFO,
             "harness_log",
             "HARNESS_LOG_LOADED entries=%d",
+            len(implementation_log_entries),
+        )
+        harness_workbook_path = HarnessLogWorkbookBuilder().build(
+            self.output_dir / "Harness_Log.xlsx",
+            implementation_log_entries,
+        )
+        _log(
+            logging.INFO,
+            "harness_log",
+            "HARNESS_LOG_CREATED path=%s entries=%d",
+            harness_workbook_path,
             len(implementation_log_entries),
         )
 
@@ -239,8 +259,9 @@ class AnalysisPipeline:
             sum(row.status == "FAIL" for row in reconciliation_rows),
             sum(row.status == "NOT_COMPUTABLE" for row in reconciliation_rows),
         )
-        self._write_harness_csv(
-            self.output_dir / "harness_log.csv", reconciliation_rows
+        reconciliation_path = self.output_dir / "excel_python_reconciliation.csv"
+        self._write_reconciliation_csv(
+            reconciliation_path, reconciliation_rows
         )
 
         excel_builder.write_reconciliation(workbook_path, reconciliation_rows)
@@ -308,7 +329,8 @@ class AnalysisPipeline:
 
         output_files = (
             workbook_path,
-            self.output_dir / "harness_log.csv",
+            harness_workbook_path,
+            reconciliation_path,
             self.output_dir / "stress_comparison.csv",
             opex_path,
             efficiency_path,
@@ -397,7 +419,7 @@ class AnalysisPipeline:
         }
 
     @staticmethod
-    def _write_harness_csv(
+    def _write_reconciliation_csv(
         path: Path, rows: Sequence[ReconciliationEntry]
     ) -> None:
         with Path(path).open("w", encoding="utf-8-sig", newline="") as stream:

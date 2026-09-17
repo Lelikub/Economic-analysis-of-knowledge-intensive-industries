@@ -493,7 +493,7 @@ feat: add implementation Harness Log to reports
 - Produces: `output/excel_python_reconciliation.csv`.
 - Logs: `HARNESS_LOG_LOADED`, `HARNESS_LOG_CREATED`, `RECONCILIATION_COMPLETED`, `LEGACY_HARNESS_CSV_REMOVED` when applicable.
 
-- [ ] **Step 1: Write failing end-to-end artifact and preservation tests**
+- [x] **Step 1: Write failing end-to-end artifact and preservation tests**
 
 In the non-COM pipeline test, create a protected sentinel before running:
 
@@ -518,7 +518,7 @@ assert {path.name for path in result.output_files} >= {
 
 Open `Harness_Log.xlsx`, assert seven data rows, and assert `result.reconciliation_rows` has 17 `PASS`, zero `FAIL`, one `NOT_COMPUTABLE` in the real-Excel test.
 
-- [ ] **Step 2: Run pipeline tests to verify RED**
+- [x] **Step 2: Run pipeline tests to verify RED**
 
 Run:
 
@@ -528,11 +528,11 @@ Run:
 
 Expected: missing `Harness_Log.xlsx`, old output name and old `PipelineResult` field cause failures.
 
-- [ ] **Step 3: Integrate loader, builders and renamed reconciliation**
+- [x] **Step 3: Integrate loader, builders and renamed reconciliation**
 
 Using the entries and reconciler already wired in Task 4, create standalone `Harness_Log.xlsx`, write `excel_python_reconciliation.csv`, call `write_reconciliation`, and update `output_files` to the exact eight required artifacts. Remove the temporary `harness.py` compatibility re-export only after `rg` confirms that source and tests contain no imports from `euv_analysis.harness` or `.harness`.
 
-- [ ] **Step 4: Implement exact legacy cleanup**
+- [x] **Step 4: Implement exact legacy cleanup**
 
 Before writing new outputs:
 
@@ -545,7 +545,7 @@ if legacy_harness_csv.is_file():
 
 Do not enumerate or remove any other file. Rename `_write_harness_csv` to `_write_reconciliation_csv` and change its output filename only; keep CSV columns and UTF-8 BOM unchanged.
 
-- [ ] **Step 5: Verify GREEN and full non-COM regression**
+- [x] **Step 5: Verify GREEN and full non-COM regression**
 
 Run:
 
@@ -556,7 +556,7 @@ Run:
 
 Expected: tests pass and protected sentinel bytes remain unchanged.
 
-- [ ] **Step 6: Commit pipeline integration**
+- [x] **Step 6: Commit pipeline integration**
 
 Verify and commit:
 

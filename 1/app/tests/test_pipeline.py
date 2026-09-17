@@ -14,6 +14,11 @@ def test_pipeline_creates_docx_and_chart_without_excel_com(
     tmp_path, data_dir, monkeypatch
 ):
     """Catches pipeline coupling of required reports to external Excel COM."""
+    output = tmp_path / "output"
+    output.mkdir()
+    protected = output / "Итоговый_отчет_ЭА_EUV_оформленный.docx"
+    protected.write_bytes(b"user-owned-report")
+    (output / "harness_log.csv").write_text("legacy", encoding="utf-8")
     monkeypatch.setattr(
         ExcelRecalculator,
         "recalculate",
@@ -27,8 +32,23 @@ def test_pipeline_creates_docx_and_chart_without_excel_com(
     result = AnalysisPipeline(data_dir=data_dir, work_dir=tmp_path).run()
 
     names = {path.name for path in result.output_files}
-    assert "сравнение_эффективности.png" in names
-    assert "Итоговый_отчет.docx" in names
+    assert names == {
+        "ground_truth.xlsx",
+        "Harness_Log.xlsx",
+        "excel_python_reconciliation.csv",
+        "stress_comparison.csv",
+        "opex_structure.png",
+        "сравнение_эффективности.png",
+        "report.md",
+        "Итоговый_отчет.docx",
+    }
+    assert protected.read_bytes() == b"user-owned-report"
+    assert not (output / "harness_log.csv").exists()
+    harness_book = load_workbook(output / "Harness_Log.xlsx", read_only=True)
+    try:
+        assert harness_book["Harness Log"].max_row == 8
+    finally:
+        harness_book.close()
     document = Document(tmp_path / "output" / "Итоговый_отчет.docx")
     assert len(document.inline_shapes) == 2
     markdown = (tmp_path / "output" / "report.md").read_text(encoding="utf-8")
@@ -47,7 +67,8 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
 
     required = {
         "ground_truth.xlsx",
-        "harness_log.csv",
+        "Harness_Log.xlsx",
+        "excel_python_reconciliation.csv",
         "stress_comparison.csv",
         "opex_structure.png",
         "сравнение_эффективности.png",
@@ -60,6 +81,12 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
     assert result.excel_recalculation_success is True
     assert result.comparison_valid is True
     assert all(row.status != "FAIL" for row in result.reconciliation_rows)
+    assert sum(row.status == "PASS" for row in result.reconciliation_rows) == 17
+    assert sum(row.status == "FAIL" for row in result.reconciliation_rows) == 0
+    assert (
+        sum(row.status == "NOT_COMPUTABLE" for row in result.reconciliation_rows)
+        == 1
+    )
     assert all(result.boundary_checks.values())
 
     report = (tmp_path / "output" / "report.md").read_text(encoding="utf-8")
@@ -105,6 +132,8 @@ def test_pipeline_creates_verified_required_artifacts(tmp_path, data_dir):
         "EXCEL_RECALC_STARTED",
         "EXCEL_RECALC_COMPLETED",
         "EXCEL_VALUE_READ",
+        "HARNESS_LOG_LOADED",
+        "HARNESS_LOG_CREATED",
         "RECONCILIATION_COMPLETED",
         "STRESS_TEST_COMPLETED",
         "OPEX_CHART_CREATED",

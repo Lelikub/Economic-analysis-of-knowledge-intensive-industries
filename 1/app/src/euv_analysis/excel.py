@@ -423,11 +423,6 @@ class ExcelGroundTruthBuilder:
             )
         workbook.save(path)
 
-    def write_harness(self, path: Path, entries: Iterable[Any]) -> None:
-        """Compatibility wrapper retained while callers migrate."""
-        self.write_reconciliation(path, entries)
-
-
 @dataclass(frozen=True, slots=True)
 class RecalculationResult:
     """Outcome and auditable stage markers for Excel automation."""
