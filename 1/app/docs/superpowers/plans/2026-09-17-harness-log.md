@@ -584,7 +584,7 @@ feat: publish Harness Log as required artifact
 - Documents: distinction between Harness Log, reconciliation and execution log.
 - Verifies: all acceptance criteria in the spec and unchanged user-owned file metadata.
 
-- [ ] **Step 1: Update README and ARCH**
+- [x] **Step 1: Update README and ARCH**
 
 README lists eight required outputs and explains:
 
@@ -596,7 +596,7 @@ execution.log — техническая хронология текущего �
 
 ARCH adds `harness_log.py`, `reconciliation.py`, JSON data flow, separate report fields, landscape Word section and the architectural conclusion that historical audit and numerical verification are different evidence types.
 
-- [ ] **Step 2: Run fresh non-COM and full COM test suites**
+- [x] **Step 2: Run fresh non-COM and full COM test suites**
 
 From `1/app` run:
 
@@ -607,7 +607,7 @@ From `1/app` run:
 
 The full command runs with system access so Excel COM can recalculate. Expected: zero failures.
 
-- [ ] **Step 3: Capture protected-file metadata and run production pipeline**
+- [x] **Step 3: Capture protected-file metadata and run production pipeline**
 
 Read, but do not open for writing, the exact user path metadata (`Length`, `CreationTimeUtc`, `LastWriteTimeUtc`). If Windows permits, also calculate SHA-256. Run:
 
@@ -617,7 +617,7 @@ Read, but do not open for writing, the exact user path metadata (`Length`, `Crea
 
 Expected log: `PIPELINE_COMPLETED files=8 excel_success=True`. Re-read protected-file metadata and assert it is identical. If the file remains locked by Word, compare length and timestamps; do not close Word or retry with write access.
 
-- [ ] **Step 4: Inspect all generated artifacts through the interpreter**
+- [x] **Step 4: Inspect all generated artifacts through the interpreter**
 
 Use `openpyxl`, `csv`, `json` and `python-docx` to assert:
 
@@ -635,11 +635,11 @@ Use `openpyxl`, `csv`, `json` and `python-docx` to assert:
 - execution.log contains no ERROR event.
 ```
 
-- [ ] **Step 5: Clean only owned pytest temporary directory**
+- [x] **Step 5: Clean only owned pytest temporary directory**
 
 Resolve the exact `.pytest-tmp-harness-final-20260917` path, verify it starts with the resolved `1/app` path plus a directory separator, then remove only that directory with native PowerShell `Remove-Item -LiteralPath -Recurse -Force`.
 
-- [ ] **Step 6: Review diff and commit final artifacts**
+- [x] **Step 6: Review diff and commit final artifacts**
 
 Run `git diff --check`, inspect `git diff --stat` and `git status --short`. Stage README, ARCH, generated required outputs, deletion of legacy CSV and the implementation-plan checkboxes. Explicitly exclude `output/Итоговый_отчет_ЭА_EUV_оформленный.docx`. Commit:
 

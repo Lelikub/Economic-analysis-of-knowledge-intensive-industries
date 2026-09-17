@@ -35,7 +35,7 @@
 
 ## 3. Архитектура решения
 
-`CSV → typed ProductionData → validation → Python calculators` и параллельно `CSV → Excel formulas → Excel recalculation`. Затем `MetricsHarness` сравнивает два результата; stress, visualization и reporting используют только рассчитанные объекты.
+`CSV → typed ProductionData → validation → Python calculators` и параллельно `CSV → Excel formulas → Excel recalculation`. Затем `MetricsReconciler` выполняет числовую сверку, а структурированный Harness Log фиксирует проблемы реализации; stress, visualization и reporting используют только рассчитанные объекты.
 
 ## 4. Проверка исходных данных
 
@@ -88,7 +88,19 @@ Comparison CSV: **PASS**.
 
 Реальный пересчёт Microsoft Excel: **COMPLETED**. Книга содержит формулы, а значения прочитаны из кэша после пересчёта.
 
-## 8. Harness
+## Harness Log — журнал реализации
+
+| № | Этап | Запрос к ИИ / задача | Сгенерированный или изменённый фрагмент кода | Обнаруженная ошибка / галлюцинация | Причина | Как исправлено | Результат повторной проверки |
+|---:|---|---|---|---|---|---|---|
+| 1 | Аудит показателей качества | Развести FPY и итоговый выход годных | fpy = first_pass_good_units / actual_output; final_yield = final_good_units / actual_output | FPY и Final Yield могли быть ошибочно приняты за один показатель | Итоговый годный объём включает продукцию после переделки | Показатели реализованы и раскрыты раздельно | Тест подтверждает FPY 75 %, Final Yield 85 % |
+| 2 | Аудит параметров TTM | Сопоставить параметры задания и CSV | assignment_ttm = ttm.calculate(delay, 0.10, 0.15, 3.0, window) | В задании r=10 %, α=15 %, а в CSV r=12 %, α=18 % | Исходные материалы задают разные сценарии | Оба сценария рассчитаны и раскрыты отдельно | Получены штрафы 26,285941 % и 28,034684 % без подмены параметров |
+| 3 | Стресс-сценарий TTM | Выбрать корректную базовую задержку | baseline_stress_ttm = ttm.calculate(comparison.delay[0], 0.10, 0.15, 3.0, window) | Pilot CSV содержит задержку 0,5 года, comparison baseline — 0 лет | Pilot и сравнительный baseline имеют разное назначение | Для стресс-сравнения использован baseline comparison CSV | Тест подтверждает изменение штрафа TTM с 0 % до 26,285941 % |
+| 4 | Аудит ресурсоёмкости | Проверить вычислимость массовой ресурсоёмкости | mass_intensity = NOT_COMPUTABLE | Масса сырья отсутствует, а стоимость не может заменить массу | В CSV нет Raw_Material_Mass_kg | Метрика помечена НЕ РАССЧИТЫВАЕТСЯ, стоимостной proxy показан отдельно | Excel и Python одинаково фиксируют одно невычислимое значение |
+| 5 | Пересчёт Excel | Получить кэшированные результаты формул | excel.CalculateFullRebuild(); workbook.Save() | openpyxl сохраняет формулы, но не вычисляет их | Библиотека не является движком Excel | Добавлен реальный пересчёт установленным Microsoft Excel | Из кэша прочитаны FPY 0,75, OEE 0,59375 и CPU 14 713,0374957 |
+| 6 | Жизненный цикл COM | Исключить сбой освобождения Excel COM | subprocess.run([sys.executable, excel_worker.py, workbook_path]) | Первый интеграционный подход мог завершаться RPC_E_DISCONNECTED | COM-прокси переживали закрытие Excel в долгоживущем процессе | Пересчёт изолирован в короткоживущем worker-процессе | Интеграционный тест завершается без RPC fault и с корректным кэшем |
+| 7 | Архитектура контрольных журналов | Развести журнал реализации и числовую сверку | implementation_log_entries и reconciliation_rows | Числовая сверка была ошибочно названа Harness Log | Два разных типа доказательств использовали одно название | Числовая проверка переименована в «Сверка Excel–Python», Harness Log выделен отдельно | Отчёты содержат два самостоятельных раздела и восемь обязательных артефактов |
+
+## Сверка Excel–Python
 
 | Metric | Excel | Python | Abs Delta | Rel Delta | Tolerance | Status | Cause |
 |---|---:|---:|---:|---:|---:|---|---|
@@ -179,7 +191,8 @@ Comparison CSV: **PASS**.
 - [x] Mass Intensity рассмотрена как Data Gap
 - [x] Excel formulas созданы
 - [x] Excel пересчитан и прочитан
-- [x] Harness выполнен без необъяснённых FAIL
+- [x] Harness Log содержит подтверждённые проблемы реализации
+- [x] Сверка Excel–Python выполнена без необъяснённых FAIL
 - [x] Boundary checks выполнены
 - [x] Stress CSV и comparison CSV обработаны
 - [x] OPEX chart создан
