@@ -1,0 +1,40 @@
+{
+    "Unit_Name": "Когенерационная паровая турбина с противодавлением (CHP Turbine)",
+    "Ambient_Temperature_T0_K": 298.15,
+    "Ambient_Pressure_P0_kPa": 101.325,
+    "High_Pressure_Steam_Inlet": {
+        "Stream_ID": 1,
+        "Exergy_Power_MW": 40.0,
+        "Exergy_Flow_GJ_per_h": 144.0,
+        "Specific_Cost_USD_per_GJ": 12.0,
+        "Cost_Rate_USD_per_h": 1728.0
+    },
+    "Low_Pressure_Steam_Outlet": {
+        "Stream_ID": 2,
+        "Exergy_Power_MW": 28.0,
+        "Exergy_Flow_GJ_per_h": 100.8,
+        "Description": "Пар на заводские ребойлеры и технологический подогрев"
+    },
+    "Electrical_Shaft_Power_Outlet": {
+        "Stream_ID": 3,
+        "Exergy_Power_MW": 10.0,
+        "Exergy_Flow_GJ_per_h": 36.0,
+        "Description": "Механическая мощность на валу электрогенератора"
+    },
+    "Exergy_Destruction_MW": 2.0,
+    "Exergy_Destruction_GJ_per_h": 7.2,
+    "Capital_and_Opex_Fix_Rate_Z_USD_per_h": 180.0,
+    "Evaluation_Models": {
+        "Variant_1_Drive_Fuel_Rule": {
+            "Description": "F-rule (Fuel Rule — правило топлива): LP-пар считается остаточным топливом c_2 = c_1 = 12 $/ГДж",
+            "Expected_c2_USD_per_GJ": 12.0,
+            "Expected_c3_Electricity_USD_per_GJ": 19.4,
+            "Expected_c3_Electricity_USD_per_kWh": 0.0698
+        },
+        "Variant_2_Cogeneration_Product_Rule": {
+            "Description": "P-rule (Product Rule — правило продукта): электроэнергия и пар — равноправные продукты c_2 = c_3 = c_P",
+            "Expected_cP_USD_per_GJ": 13.95,
+            "Expected_cP_USD_per_kWh": 0.0502
+        }
+    }
+}

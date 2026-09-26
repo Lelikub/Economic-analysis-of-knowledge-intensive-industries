@@ -1,0 +1,33 @@
+{
+    "System_Description": "Параллельная компрессорная станция цеха механообработки",
+    "Total_Mass_Flow_kg_s": 3.0,
+    "Discharge_Pressure_MPa": 0.8,
+    "Electricity_Tariff_USD_per_kWh": 0.08,
+    "Electricity_Tariff_USD_per_kJ": 2.222222e-05,
+    "Annual_Operating_Hours": 8000,
+    "Compressor_1_Piston": {
+        "Type": "Поршневой компрессор (старый парк)",
+        "Specific_Work_Equation_kJ_kg": "280 + 40 * m1",
+        "w_base_kJ_kg": 280.0,
+        "w_coeff_kJ_s_kg2": 40.0,
+        "Hourly_Opex_Fix_Z1_USD_per_h": 4.5
+    },
+    "Compressor_2_Screw_VFD": {
+        "Type": "Винтовой компрессор с ЧРП (VFD — частотно-регулируемый привод)",
+        "Specific_Work_Equation_kJ_kg": "250 + 20 * m2",
+        "w_base_kJ_kg": 250.0,
+        "w_coeff_kJ_s_kg2": 20.0,
+        "Hourly_Opex_Fix_Z2_USD_per_h": 12.0
+    },
+    "Analytical_Solution": {
+        "Optimal_m1_kg_s": 0.75,
+        "Optimal_m2_kg_s": 2.25,
+        "Optimal_Power_kW": 896.25,
+        "Optimal_Total_Hourly_Cost_USD_per_h": 88.2,
+        "Equal_Split_m1_m2_kg_s": 1.5,
+        "Equal_Split_Power_kW": 930.0,
+        "Equal_Split_Total_Hourly_Cost_USD_per_h": 90.9,
+        "Hourly_Savings_USD_per_h": 2.7,
+        "Annual_Savings_USD_per_year": 21600.0
+    }
+}

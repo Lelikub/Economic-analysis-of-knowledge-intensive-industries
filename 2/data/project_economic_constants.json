@@ -1,0 +1,27 @@
+{
+    "Study_Object": "Комплекс ТЭО (Технико-экономического обоснования) завода аммиака и ХимМаш",
+    "Base_Year": 2026,
+    "Annual_Work_Hours_tau_a": 8000,
+    "Discount_Rate_r": 0.08,
+    "Equipment_Lifetime_Years_T": 15,
+    "Capital_Recovery_Factor_CRF": 0.11683,
+    "Tariffs_and_Market_Prices": {
+        "Natural_Gas_USD_per_GJ": 8.0,
+        "Electricity_USD_per_kWh": 0.07,
+        "Cooling_Water_USD_per_m3": 0.05,
+        "Boiler_Feed_Water_USD_per_m3": 1.5,
+        "High_Pressure_Steam_Export_Credit_USD_per_ton": 22.0,
+        "CO2_Emission_Environmental_Tax_USD_per_ton": 35.0
+    },
+    "Heat_Exchanger_Optimization_Params": {
+        "Unit_Name": "Рекуперативный теплообменник синтез-газа (Feed/Effluent Exchanger)",
+        "Heat_Duty_Q_dot_kW": 25000.0,
+        "Base_Temperature_Difference_DeltaT_base_K": 20.0,
+        "Base_CAPEX_C0_USD": 850000.0,
+        "Cost_Scaling_Exponent_Beta": 0.85,
+        "Fuel_Exergy_Cost_cF_USD_per_GJ": 10.5,
+        "Ambient_Temperature_T0_K": 298.15,
+        "Min_Search_DeltaT_K": 2.0,
+        "Max_Search_DeltaT_K": 40.0
+    }
+}
