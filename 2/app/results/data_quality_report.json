@@ -1,0 +1,508 @@
+{
+  "files": {
+    "opex_ammonia_raw.csv": {
+      "rows": 6,
+      "columns": [
+        "Resource_Name",
+        "Resource_Type",
+        "Specific_Consumption_si",
+        "Consumption_Unit",
+        "Price_pi_USD",
+        "Price_Unit",
+        "Cost_per_ton_USD"
+      ],
+      "encoding": "utf-8-sig",
+      "size_bytes": 1082,
+      "sha256": "549f22e5712851750382cde8291ca312d92e504989d7b6ecc3cd2d3861987bfa",
+      "missing_values": {
+        "Resource_Name": 0,
+        "Resource_Type": 0,
+        "Specific_Consumption_si": 0,
+        "Consumption_Unit": 0,
+        "Price_pi_USD": 0,
+        "Price_Unit": 0,
+        "Cost_per_ton_USD": 0
+      },
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "numeric_ranges": {
+        "Specific_Consumption_si": [
+          1.0,
+          150.0
+        ],
+        "Price_pi_USD": [
+          0.05,
+          8.0
+        ],
+        "Cost_per_ton_USD": [
+          0.4,
+          224.0
+        ]
+      },
+      "status": "PASS"
+    },
+    "opex_ammonia_fixed.csv": {
+      "rows": 6,
+      "columns": [
+        "Cost_Item",
+        "Annual_Cost_MUSD",
+        "Description"
+      ],
+      "encoding": "utf-8-sig",
+      "size_bytes": 1605,
+      "sha256": "d524969f81a3bc562dd79299490fb6efda0bfb60314dd115f3a188d90a3e3ef8",
+      "missing_values": {
+        "Cost_Item": 0,
+        "Annual_Cost_MUSD": 0,
+        "Description": 0
+      },
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "numeric_ranges": {
+        "Annual_Cost_MUSD": [
+          2.0,
+          16.2
+        ]
+      },
+      "status": "PASS"
+    },
+    "khimmash_bom_opex.csv": {
+      "rows": 5,
+      "columns": [
+        "Cost_Item",
+        "Cost_Per_Unit_MUSD",
+        "Share_in_Variable_Pct",
+        "Engineering_Details"
+      ],
+      "encoding": "utf-8-sig",
+      "size_bytes": 1559,
+      "sha256": "adb81eeb192b9d5de80d7d6039380132b2c6bc1132f8dcc36eea4e90eb650024",
+      "missing_values": {
+        "Cost_Item": 0,
+        "Cost_Per_Unit_MUSD": 0,
+        "Share_in_Variable_Pct": 0,
+        "Engineering_Details": 0
+      },
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "numeric_ranges": {
+        "Cost_Per_Unit_MUSD": [
+          0.25,
+          1.35
+        ],
+        "Share_in_Variable_Pct": [
+          6.95,
+          37.54
+        ]
+      },
+      "status": "PASS"
+    },
+    "khimmash_fixed_opex.csv": {
+      "rows": 7,
+      "columns": [
+        "Cost_Item",
+        "Annual_Cost_MUSD",
+        "Is_Step_Fixed",
+        "Can_Be_Saved_at_Low_Load_MUSD"
+      ],
+      "encoding": "utf-8-sig",
+      "size_bytes": 1170,
+      "sha256": "35071325f6ecc5ee9b672c570ba02730dca341f8c2362e54662b8b6f93b995b7",
+      "missing_values": {
+        "Cost_Item": 0,
+        "Annual_Cost_MUSD": 0,
+        "Is_Step_Fixed": 0,
+        "Can_Be_Saved_at_Low_Load_MUSD": 0
+      },
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "numeric_ranges": {
+        "Annual_Cost_MUSD": [
+          1.5,
+          9.9
+        ],
+        "Can_Be_Saved_at_Low_Load_MUSD": [
+          0.0,
+          3.0
+        ]
+      },
+      "status": "PASS"
+    },
+    "streams_energy_balance.csv": {
+      "rows": 10,
+      "columns": [
+        "Stream_ID",
+        "Stream_Name",
+        "Mass_Flow_kg_s",
+        "Temperature_C",
+        "Pressure_bar",
+        "Enthalpy_kJ_kg",
+        "Entropy_kJ_kg_K"
+      ],
+      "encoding": "utf-8-sig",
+      "size_bytes": 1183,
+      "sha256": "064f6008ec30c3e1d8b8598b1eb6ce6b142fe46a6cd2714183d02682994128b7",
+      "missing_values": {
+        "Stream_ID": 0,
+        "Stream_Name": 0,
+        "Mass_Flow_kg_s": 0,
+        "Temperature_C": 0,
+        "Pressure_bar": 0,
+        "Enthalpy_kJ_kg": 0,
+        "Entropy_kJ_kg_K": 0
+      },
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "numeric_ranges": {
+        "Mass_Flow_kg_s": [
+          15.0,
+          837.3
+        ],
+        "Temperature_C": [
+          -5.0,
+          480.0
+        ],
+        "Pressure_bar": [
+          3.0,
+          180.0
+        ],
+        "Enthalpy_kJ_kg": [
+          104.9,
+          3450.0
+        ],
+        "Entropy_kJ_kg_K": [
+          0.367,
+          8.95
+        ]
+      },
+      "status": "PASS"
+    },
+    "sequential_chain_speco.csv": {
+      "rows": 5,
+      "columns": [
+        "Stage_Number",
+        "Unit_Name",
+        "Exergy_Fuel_In_MW",
+        "Exergy_Product_Out_MW",
+        "Exergy_Destruction_MW",
+        "Exergetic_Efficiency_eta",
+        "Z_dot_USD_per_h"
+      ],
+      "encoding": "utf-8-sig",
+      "size_bytes": 630,
+      "sha256": "fa948baec0ca824a42506e7d2935de97740850f6570f345a4c156f8ef107702f",
+      "missing_values": {
+        "Stage_Number": 0,
+        "Unit_Name": 0,
+        "Exergy_Fuel_In_MW": 0,
+        "Exergy_Product_Out_MW": 0,
+        "Exergy_Destruction_MW": 0,
+        "Exergetic_Efficiency_eta": 0,
+        "Z_dot_USD_per_h": 0
+      },
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "numeric_ranges": {
+        "Stage_Number": [
+          1.0,
+          5.0
+        ],
+        "Exergy_Fuel_In_MW": [
+          20.48,
+          50.0
+        ],
+        "Exergy_Product_Out_MW": [
+          16.38,
+          40.0
+        ],
+        "Exergy_Destruction_MW": [
+          4.1,
+          10.0
+        ],
+        "Exergetic_Efficiency_eta": [
+          0.8,
+          0.8
+        ],
+        "Z_dot_USD_per_h": [
+          60.0,
+          250.0
+        ]
+      },
+      "status": "PASS"
+    },
+    "project_economic_constants.json": {
+      "rows": 1,
+      "columns": [
+        "Study_Object",
+        "Base_Year",
+        "Annual_Work_Hours_tau_a",
+        "Discount_Rate_r",
+        "Equipment_Lifetime_Years_T",
+        "Capital_Recovery_Factor_CRF",
+        "Tariffs_and_Market_Prices",
+        "Heat_Exchanger_Optimization_Params"
+      ],
+      "encoding": "utf-8",
+      "size_bytes": 1214,
+      "sha256": "b1025fac1aef1fab2cade2fc1c954677a17aca00e054c97c2ab201c933d16b8f",
+      "missing_values": {},
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "status": "PASS"
+    },
+    "compressors_parallel.json": {
+      "rows": 1,
+      "columns": [
+        "System_Description",
+        "Total_Mass_Flow_kg_s",
+        "Discharge_Pressure_MPa",
+        "Electricity_Tariff_USD_per_kWh",
+        "Electricity_Tariff_USD_per_kJ",
+        "Annual_Operating_Hours",
+        "Compressor_1_Piston",
+        "Compressor_2_Screw_VFD",
+        "Analytical_Solution"
+      ],
+      "encoding": "utf-8",
+      "size_bytes": 1406,
+      "sha256": "ec96cb8f620e8847adfa0ce2acdb8f886d4d6c64a42262866d68c750e3b9f0b6",
+      "missing_values": {},
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "status": "PASS"
+    },
+    "exergy_cogen_speco.json": {
+      "rows": 1,
+      "columns": [
+        "Unit_Name",
+        "Ambient_Temperature_T0_K",
+        "Ambient_Pressure_P0_kPa",
+        "High_Pressure_Steam_Inlet",
+        "Low_Pressure_Steam_Outlet",
+        "Electrical_Shaft_Power_Outlet",
+        "Exergy_Destruction_MW",
+        "Exergy_Destruction_GJ_per_h",
+        "Capital_and_Opex_Fix_Rate_Z_USD_per_h",
+        "Evaluation_Models"
+      ],
+      "encoding": "utf-8",
+      "size_bytes": 1874,
+      "sha256": "4cf92b0f86c158c2976299d61387dabd310d410dd2a2b4cf4916274b7210bed6",
+      "missing_values": {},
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "status": "PASS"
+    },
+    "project_input_data_module2.xlsx": {
+      "rows": 42,
+      "columns": [
+        "OPEX_Ammonia_Var",
+        "OPEX_Ammonia_Fix",
+        "KhimMash_BOM_Var",
+        "KhimMash_Fix",
+        "Energy_Balance",
+        "Sequential_Chain",
+        "Cogen_Turbine_Inlet",
+        "Compressors_Summary",
+        "Tariffs_Utilities"
+      ],
+      "sheets": {
+        "OPEX_Ammonia_Var": {
+          "rows": 6,
+          "columns": [
+            "Resource_Name",
+            "Resource_Type",
+            "Specific_Consumption_si",
+            "Consumption_Unit",
+            "Price_pi_USD",
+            "Price_Unit",
+            "Cost_per_ton_USD"
+          ],
+          "missing_values": 0
+        },
+        "OPEX_Ammonia_Fix": {
+          "rows": 6,
+          "columns": [
+            "Cost_Item",
+            "Annual_Cost_MUSD",
+            "Description"
+          ],
+          "missing_values": 0
+        },
+        "KhimMash_BOM_Var": {
+          "rows": 5,
+          "columns": [
+            "Cost_Item",
+            "Cost_Per_Unit_MUSD",
+            "Share_in_Variable_Pct",
+            "Engineering_Details"
+          ],
+          "missing_values": 0
+        },
+        "KhimMash_Fix": {
+          "rows": 7,
+          "columns": [
+            "Cost_Item",
+            "Annual_Cost_MUSD",
+            "Is_Step_Fixed",
+            "Can_Be_Saved_at_Low_Load_MUSD"
+          ],
+          "missing_values": 0
+        },
+        "Energy_Balance": {
+          "rows": 10,
+          "columns": [
+            "Stream_ID",
+            "Stream_Name",
+            "Mass_Flow_kg_s",
+            "Temperature_C",
+            "Pressure_bar",
+            "Enthalpy_kJ_kg",
+            "Entropy_kJ_kg_K"
+          ],
+          "missing_values": 0
+        },
+        "Sequential_Chain": {
+          "rows": 5,
+          "columns": [
+            "Stage_Number",
+            "Unit_Name",
+            "Exergy_Fuel_In_MW",
+            "Exergy_Product_Out_MW",
+            "Exergy_Destruction_MW",
+            "Exergetic_Efficiency_eta",
+            "Z_dot_USD_per_h"
+          ],
+          "missing_values": 0
+        },
+        "Cogen_Turbine_Inlet": {
+          "rows": 1,
+          "columns": [
+            "Stream_ID",
+            "Exergy_Power_MW",
+            "Exergy_Flow_GJ_per_h",
+            "Specific_Cost_USD_per_GJ",
+            "Cost_Rate_USD_per_h"
+          ],
+          "missing_values": 0
+        },
+        "Compressors_Summary": {
+          "rows": 1,
+          "columns": [
+            "Optimal_m1_kg_s",
+            "Optimal_m2_kg_s",
+            "Optimal_Power_kW",
+            "Optimal_Total_Hourly_Cost_USD_per_h",
+            "Equal_Split_m1_m2_kg_s",
+            "Equal_Split_Power_kW",
+            "Equal_Split_Total_Hourly_Cost_USD_per_h",
+            "Hourly_Savings_USD_per_h",
+            "Annual_Savings_USD_per_year"
+          ],
+          "missing_values": 0
+        },
+        "Tariffs_Utilities": {
+          "rows": 1,
+          "columns": [
+            "Natural_Gas_USD_per_GJ",
+            "Electricity_USD_per_kWh",
+            "Cooling_Water_USD_per_m3",
+            "Boiler_Feed_Water_USD_per_m3",
+            "High_Pressure_Steam_Export_Credit_USD_per_ton",
+            "CO2_Emission_Environmental_Tax_USD_per_ton"
+          ],
+          "missing_values": 0
+        }
+      },
+      "encoding": "xlsx",
+      "size_bytes": 14437,
+      "sha256": "15bca745284df019c9df04b845897c2e2625c638b4cc7d9b6b580c412339f90b",
+      "missing_values": {},
+      "duplicates": 0,
+      "type_issues": [],
+      "unit_issues": [],
+      "status": "PASS"
+    }
+  },
+  "cross_checks": [
+    {
+      "csv": "opex_ammonia_raw.csv",
+      "sheet": "OPEX_Ammonia_Var",
+      "csv_rows": 6,
+      "xlsx_rows": 6,
+      "numeric_discrepancies": [],
+      "status": "PASS"
+    },
+    {
+      "csv": "opex_ammonia_fixed.csv",
+      "sheet": "OPEX_Ammonia_Fix",
+      "csv_rows": 6,
+      "xlsx_rows": 6,
+      "numeric_discrepancies": [],
+      "status": "PASS"
+    },
+    {
+      "csv": "khimmash_bom_opex.csv",
+      "sheet": "KhimMash_BOM_Var",
+      "csv_rows": 5,
+      "xlsx_rows": 5,
+      "numeric_discrepancies": [],
+      "status": "PASS"
+    },
+    {
+      "csv": "khimmash_fixed_opex.csv",
+      "sheet": "KhimMash_Fix",
+      "csv_rows": 7,
+      "xlsx_rows": 7,
+      "numeric_discrepancies": [],
+      "status": "PASS"
+    },
+    {
+      "csv": "streams_energy_balance.csv",
+      "sheet": "Energy_Balance",
+      "csv_rows": 10,
+      "xlsx_rows": 10,
+      "numeric_discrepancies": [],
+      "status": "PASS"
+    },
+    {
+      "csv": "sequential_chain_speco.csv",
+      "sheet": "Sequential_Chain",
+      "csv_rows": 5,
+      "xlsx_rows": 5,
+      "numeric_discrepancies": [],
+      "status": "PASS"
+    },
+    {
+      "json": "project_economic_constants.json",
+      "sheet": "Tariffs_Utilities",
+      "numeric_discrepancies": [],
+      "status": "PASS",
+      "role": "контроль тарифов"
+    },
+    {
+      "json": "compressors_parallel.json",
+      "sheet": "Compressors_Summary",
+      "numeric_discrepancies": [],
+      "status": "PASS",
+      "role": "только контроль после расчёта"
+    },
+    {
+      "json": "exergy_cogen_speco.json",
+      "sheet": "Cogen_Turbine_Inlet",
+      "numeric_discrepancies": [],
+      "status": "PASS",
+      "role": "только контроль после расчёта"
+    }
+  ],
+  "status": "PASS"
+}

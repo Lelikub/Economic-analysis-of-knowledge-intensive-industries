@@ -1,0 +1,527 @@
+{
+  "opex": {
+    "ammonia_base": {
+      "quantity": 500000,
+      "variable": 126700000.0,
+      "fixed": 47100000.0,
+      "total": 173800000.0,
+      "unit_cost": 347.6,
+      "variable_share_pct": 72.89988492520139,
+      "fixed_share_pct": 27.10011507479862
+    },
+    "ammonia_underload": {
+      "quantity": 400000,
+      "variable": 101360000.0,
+      "fixed": 47100000.0,
+      "total": 148460000.0,
+      "unit_cost": 371.15,
+      "variable_share_pct": 68.27428263505323,
+      "fixed_share_pct": 31.72571736494679
+    },
+    "machinery_base": {
+      "quantity": 12,
+      "variable": 43.152,
+      "fixed": 28.8,
+      "total": 71.952,
+      "unit_cost": 5.9959999999999996,
+      "variable_share_pct": 59.973315543695804,
+      "fixed_share_pct": 40.02668445630421
+    },
+    "machinery_underload": {
+      "quantity": 6,
+      "variable": 21.576,
+      "fixed": 28.8,
+      "total": 50.376000000000005,
+      "unit_cost": 8.396,
+      "variable_share_pct": 42.82991900905193,
+      "fixed_share_pct": 57.170080990948065
+    },
+    "machinery_mitigated": {
+      "quantity": 6,
+      "variable": 21.576,
+      "fixed": 24.0,
+      "total": 45.576,
+      "unit_cost": 7.596,
+      "variable_share_pct": 47.3407056345445,
+      "fixed_share_pct": 52.6592943654555
+    },
+    "ammonia_unit_change_pct": 6.775028768699642,
+    "machinery_unit_change_pct": 40.02668445630422
+  },
+  "materials": {
+    "aggregate_bom_per_unit_musd": 0.496,
+    "aggregate_bought_out_per_unit_musd": 1.0,
+    "aggregate_labor_per_unit_musd": 1.35,
+    "aggregate_materials_annual_musd": 17.951999999999998,
+    "aggregate_labor_annual_musd": 16.200000000000003,
+    "detailed_scrap_status": "SKIPPED_MISSING_INPUT",
+    "detailed_scrap_missing": "m_net,i; f_scrap,i; p_i по материалам",
+    "wip_treatment": "Working Capital; не входит в OPEX"
+  },
+  "energy": {
+    "streams": [
+      {
+        "id": "STR-01",
+        "name": "Свежий синтез-газ (N2 + 3H2)",
+        "mass_kg_s": 17.5,
+        "h_kj_kg": 310.5,
+        "energy_kw": 5433.75
+      },
+      {
+        "id": "STR-02",
+        "name": "Синтез-газ после компримирования",
+        "mass_kg_s": 17.5,
+        "h_kj_kg": 580.2,
+        "energy_kw": 10153.5
+      },
+      {
+        "id": "STR-03",
+        "name": "Циркуляционный газ на входе в реактор",
+        "mass_kg_s": 85.0,
+        "h_kj_kg": 780.0,
+        "energy_kw": 66300.0
+      },
+      {
+        "id": "STR-04",
+        "name": "Прореагировавший газ на выходе из реактора",
+        "mass_kg_s": 85.0,
+        "h_kj_kg": 1420.0,
+        "energy_kw": 120700.0
+      },
+      {
+        "id": "STR-05",
+        "name": "Газовый поток после котла-утилизатора (КУ / WHRB)",
+        "mass_kg_s": 85.0,
+        "h_kj_kg": 860.0,
+        "energy_kw": 73100.0
+      },
+      {
+        "id": "STR-06",
+        "name": "Пар перегретый высокого давления из КУ (WHRB)",
+        "mass_kg_s": 15.0,
+        "h_kj_kg": 3450.0,
+        "energy_kw": 51750.0
+      },
+      {
+        "id": "STR-07",
+        "name": "Питательная обессоленная вода в экономайзер КУ (BFW)",
+        "mass_kg_s": 15.0,
+        "h_kj_kg": 650.0,
+        "energy_kw": 9750.0
+      },
+      {
+        "id": "STR-08",
+        "name": "Оборотная вода на входе в холодильник (CW In)",
+        "mass_kg_s": 837.3,
+        "h_kj_kg": 104.9,
+        "energy_kw": 87832.77
+      },
+      {
+        "id": "STR-09",
+        "name": "Оборотная вода на выходе в градирню (CW Out)",
+        "mass_kg_s": 837.3,
+        "h_kj_kg": 146.7,
+        "energy_kw": 122831.90999999999
+      },
+      {
+        "id": "STR-10",
+        "name": "Жидкий аммиак-сырец в сепараторе",
+        "mass_kg_s": 17.36,
+        "h_kj_kg": 180.0,
+        "energy_kw": 3124.7999999999997
+      }
+    ],
+    "whrb": {
+      "energy_in_kw": 130450.0,
+      "energy_out_kw": 124850.0,
+      "residual_kw": 5600.0,
+      "relative_error": 0.04292832502874665
+    },
+    "gas_heat_release_kw": 47600.0,
+    "steam_duty_kw": 42000.0,
+    "unallocated_heat_kw": 5600.0,
+    "cooling_water_heat_kw": 34999.139999999985,
+    "cooling_water_kg_s_calculated": 837.2999999999997,
+    "cooling_water_kg_s_source": 837.3,
+    "steam_kg_s_calculated": 15.0,
+    "steam_kg_s_source": 15.0,
+    "potential_steam_credit_usd_h": 1188.0,
+    "potential_steam_credit_usd_year": 9504000.0,
+    "utility_opex_status": "SKIPPED_MISSING_INPUT",
+    "utility_opex_missing": "W_el аммиачного завода; расход покупного пара; подтверждённый экспорт выработанного пара",
+    "status": "PARTIALLY_CALCULATED"
+  },
+  "exergy": {
+    "cogen_fuel_mw": 40.0,
+    "cogen_products_mw": 38.0,
+    "cogen_destruction_mw": 2.0,
+    "cogen_efficiency": 0.95,
+    "cogen_balance_residual_mw": 0.0,
+    "stream_physical_status": "SKIPPED_MISSING_INPUT",
+    "stream_physical_missing": "h0, s0 для каждого состава потока при T0, P0",
+    "chemical_status": "SKIPPED_MISSING_INPUT",
+    "chemical_missing": "x_i, a_i, стандартные химические эксергии",
+    "gouy_stodola_status": "SKIPPED_MISSING_INPUT",
+    "gouy_stodola_missing": "полный энтропийный баланс и температуры обмена теплом",
+    "cogen_factor": 0.6756756756756758,
+    "cogen_factor_recommendation": "сбалансированная зона; требуется детальный анализ"
+  },
+  "speco": {
+    "f_rule": {
+      "steam_cost_usd_gj": 12.0,
+      "electricity_cost_usd_gj": 19.400000000000002,
+      "cost_balance_residual_usd_h": 0.0
+    },
+    "p_rule": {
+      "product_cost_usd_gj": 13.94736842105263,
+      "cost_balance_residual_usd_h": 0.0
+    },
+    "f_matrix": {
+      "steam_cost_usd_gj": 12.0,
+      "electricity_cost_usd_gj": 19.4
+    },
+    "p_matrix": {
+      "steam_cost_usd_gj": 13.947368421052634,
+      "electricity_cost_usd_gj": 13.94736842105263
+    },
+    "f_matrix_diagnostics": {
+      "rank": 2,
+      "condition_number": 318.2646357384567,
+      "determinant": -36.0,
+      "status": "PASS"
+    },
+    "p_matrix_diagnostics": {
+      "rank": 2,
+      "condition_number": 83.75004801243125,
+      "determinant": -136.80000000000007,
+      "status": "PASS"
+    },
+    "z_usd_h": 180.0
+  },
+  "chain": {
+    "base": {
+      "rows": [
+        {
+          "number": 1,
+          "name": "Головной компрессор синтез-газа",
+          "fuel_mw": 50.0,
+          "product_mw": 40.0,
+          "destruction_mw": 10.0,
+          "efficiency": 0.8,
+          "z_usd_h": 120.0,
+          "cost_coefficient_a": 1.25,
+          "cost_increment_usd_gj": 0.8333333333333334
+        },
+        {
+          "number": 2,
+          "name": "Трубчатый реактор синтеза аммиака",
+          "fuel_mw": 40.0,
+          "product_mw": 32.0,
+          "destruction_mw": 8.0,
+          "efficiency": 0.8,
+          "z_usd_h": 250.0,
+          "cost_coefficient_a": 1.5625,
+          "cost_increment_usd_gj": 3.2118055555555554
+        },
+        {
+          "number": 3,
+          "name": "Котел-утилизатор пара высокого давления",
+          "fuel_mw": 32.0,
+          "product_mw": 25.6,
+          "destruction_mw": 6.399999999999999,
+          "efficiency": 0.8,
+          "z_usd_h": 90.0,
+          "cost_coefficient_a": 1.953125,
+          "cost_increment_usd_gj": 4.991319444444444
+        },
+        {
+          "number": 4,
+          "name": "Водяной холодильник-конденсатор смеси",
+          "fuel_mw": 25.6,
+          "product_mw": 20.480000000000004,
+          "destruction_mw": 5.119999999999997,
+          "efficiency": 0.8,
+          "z_usd_h": 60.0,
+          "cost_coefficient_a": 2.44140625,
+          "cost_increment_usd_gj": 7.0529513888888875
+        },
+        {
+          "number": 5,
+          "name": "Сепаратор аммиака и рециркуляционный компрессор",
+          "fuel_mw": 20.480000000000004,
+          "product_mw": 16.384000000000004,
+          "destruction_mw": 4.096,
+          "efficiency": 0.8,
+          "z_usd_h": 110.0,
+          "cost_coefficient_a": 3.0517578125,
+          "cost_increment_usd_gj": 10.681152343749996
+        }
+      ],
+      "amplification": 3.0517578125,
+      "capital_increment_usd_gj": 10.681152343749996,
+      "outlet_mw": 16.384000000000004,
+      "status": "PARTIALLY_CALCULATED"
+    },
+    "first_degraded": {
+      "rows": [
+        {
+          "number": 1,
+          "name": "Головной компрессор синтез-газа",
+          "fuel_mw": 50.0,
+          "product_mw": 38.0,
+          "destruction_mw": 12.0,
+          "efficiency": 0.76,
+          "z_usd_h": 120.0,
+          "cost_coefficient_a": 1.3157894736842106,
+          "cost_increment_usd_gj": 0.8771929824561403
+        },
+        {
+          "number": 2,
+          "name": "Трубчатый реактор синтеза аммиака",
+          "fuel_mw": 38.0,
+          "product_mw": 30.400000000000002,
+          "destruction_mw": 7.599999999999998,
+          "efficiency": 0.8,
+          "z_usd_h": 250.0,
+          "cost_coefficient_a": 1.6447368421052633,
+          "cost_increment_usd_gj": 3.3808479532163735
+        },
+        {
+          "number": 3,
+          "name": "Котел-утилизатор пара высокого давления",
+          "fuel_mw": 30.400000000000002,
+          "product_mw": 24.320000000000004,
+          "destruction_mw": 6.079999999999998,
+          "efficiency": 0.8,
+          "z_usd_h": 90.0,
+          "cost_coefficient_a": 2.0559210526315788,
+          "cost_increment_usd_gj": 5.254020467836256
+        },
+        {
+          "number": 4,
+          "name": "Водяной холодильник-конденсатор смеси",
+          "fuel_mw": 24.320000000000004,
+          "product_mw": 19.456000000000003,
+          "destruction_mw": 4.864000000000001,
+          "efficiency": 0.8,
+          "z_usd_h": 60.0,
+          "cost_coefficient_a": 2.5699013157894735,
+          "cost_increment_usd_gj": 7.424159356725144
+        },
+        {
+          "number": 5,
+          "name": "Сепаратор аммиака и рециркуляционный компрессор",
+          "fuel_mw": 19.456000000000003,
+          "product_mw": 15.564800000000004,
+          "destruction_mw": 3.8911999999999995,
+          "efficiency": 0.8,
+          "z_usd_h": 110.0,
+          "cost_coefficient_a": 3.2123766447368416,
+          "cost_increment_usd_gj": 11.243318256578945
+        }
+      ],
+      "amplification": 3.2123766447368416,
+      "capital_increment_usd_gj": 11.243318256578945,
+      "outlet_mw": 15.564800000000004,
+      "status": "PARTIALLY_CALCULATED"
+    },
+    "last_degraded": {
+      "rows": [
+        {
+          "number": 1,
+          "name": "Головной компрессор синтез-газа",
+          "fuel_mw": 50.0,
+          "product_mw": 40.0,
+          "destruction_mw": 10.0,
+          "efficiency": 0.8,
+          "z_usd_h": 120.0,
+          "cost_coefficient_a": 1.25,
+          "cost_increment_usd_gj": 0.8333333333333334
+        },
+        {
+          "number": 2,
+          "name": "Трубчатый реактор синтеза аммиака",
+          "fuel_mw": 40.0,
+          "product_mw": 32.0,
+          "destruction_mw": 8.0,
+          "efficiency": 0.8,
+          "z_usd_h": 250.0,
+          "cost_coefficient_a": 1.5625,
+          "cost_increment_usd_gj": 3.2118055555555554
+        },
+        {
+          "number": 3,
+          "name": "Котел-утилизатор пара высокого давления",
+          "fuel_mw": 32.0,
+          "product_mw": 25.6,
+          "destruction_mw": 6.399999999999999,
+          "efficiency": 0.8,
+          "z_usd_h": 90.0,
+          "cost_coefficient_a": 1.953125,
+          "cost_increment_usd_gj": 4.991319444444444
+        },
+        {
+          "number": 4,
+          "name": "Водяной холодильник-конденсатор смеси",
+          "fuel_mw": 25.6,
+          "product_mw": 20.480000000000004,
+          "destruction_mw": 5.119999999999997,
+          "efficiency": 0.8,
+          "z_usd_h": 60.0,
+          "cost_coefficient_a": 2.44140625,
+          "cost_increment_usd_gj": 7.0529513888888875
+        },
+        {
+          "number": 5,
+          "name": "Сепаратор аммиака и рециркуляционный компрессор",
+          "fuel_mw": 20.480000000000004,
+          "product_mw": 15.564800000000004,
+          "destruction_mw": 4.9152000000000005,
+          "efficiency": 0.76,
+          "z_usd_h": 110.0,
+          "cost_coefficient_a": 3.212376644736842,
+          "cost_increment_usd_gj": 11.243318256578945
+        }
+      ],
+      "amplification": 3.212376644736842,
+      "capital_increment_usd_gj": 11.243318256578945,
+      "outlet_mw": 15.564800000000004,
+      "status": "PARTIALLY_CALCULATED"
+    },
+    "scenario_rule": "eta_new = eta * 0.95; Ex_F,1 и Z_k фиксированы; потоки следующих аппаратов пересчитываются",
+    "initial_fuel_cost_status": "SKIPPED_MISSING_INPUT",
+    "initial_fuel_cost_missing": "c_F,1 для sequential_chain_speco.csv",
+    "factors_status": "SKIPPED_MISSING_INPUT",
+    "factors_missing": "c_F,k для каждого узла цепочки",
+    "csv_balance_residuals_mw": [
+      0.0,
+      0.0,
+      -1.7763568394002505e-15,
+      8.881784197001252e-16,
+      1.7763568394002505e-15
+    ],
+    "csv_eta_residuals": [
+      0.0,
+      0.0,
+      0.0,
+      -1.1102230246251565e-16,
+      -0.00019531250000015543
+    ]
+  },
+  "compressors": {
+    "equal_m1": 1.5,
+    "equal_m2": 1.5,
+    "equal_power_kw": 930.0,
+    "equal_cost_usd_h": 90.9,
+    "optimal_m1": 0.75,
+    "optimal_m2": 2.25,
+    "optimal_power_kw": 896.25,
+    "optimal_cost_usd_h": 88.2,
+    "numeric_m1": 0.750000011124634,
+    "numeric_power_kw": 896.2499999999999,
+    "numeric_method": "scipy.optimize.minimize_scalar",
+    "hourly_savings": 2.700000000000003,
+    "annual_savings": 21600.000000000022
+  },
+  "heat_exchanger": {
+    "status": "SKIPPED_MISSING_INPUT",
+    "missing": "k_gj_per_h_k для Ex_dest = k·DeltaT"
+  },
+  "sensitivity": {
+    "gas": [
+      {
+        "gas_price_usd_gj": 4,
+        "ammonia_unit_cost_usd_t": 235.60000000000002,
+        "annual_opex_usd": 117800000.00000001
+      },
+      {
+        "gas_price_usd_gj": 5,
+        "ammonia_unit_cost_usd_t": 263.6,
+        "annual_opex_usd": 131800000.00000001
+      },
+      {
+        "gas_price_usd_gj": 6,
+        "ammonia_unit_cost_usd_t": 291.6,
+        "annual_opex_usd": 145800000.0
+      },
+      {
+        "gas_price_usd_gj": 7,
+        "ammonia_unit_cost_usd_t": 319.6,
+        "annual_opex_usd": 159800000.0
+      },
+      {
+        "gas_price_usd_gj": 8,
+        "ammonia_unit_cost_usd_t": 347.6,
+        "annual_opex_usd": 173800000.0
+      },
+      {
+        "gas_price_usd_gj": 9,
+        "ammonia_unit_cost_usd_t": 375.59999999999997,
+        "annual_opex_usd": 187799999.99999997
+      },
+      {
+        "gas_price_usd_gj": 10,
+        "ammonia_unit_cost_usd_t": 403.59999999999997,
+        "annual_opex_usd": 201799999.99999997
+      },
+      {
+        "gas_price_usd_gj": 11,
+        "ammonia_unit_cost_usd_t": 431.59999999999997,
+        "annual_opex_usd": 215799999.99999997
+      },
+      {
+        "gas_price_usd_gj": 12,
+        "ammonia_unit_cost_usd_t": 459.59999999999997,
+        "annual_opex_usd": 229799999.99999997
+      },
+      {
+        "gas_price_usd_gj": 13,
+        "ammonia_unit_cost_usd_t": 487.59999999999997,
+        "annual_opex_usd": 243799999.99999997
+      },
+      {
+        "gas_price_usd_gj": 14,
+        "ammonia_unit_cost_usd_t": 515.6,
+        "annual_opex_usd": 257800000.0
+      },
+      {
+        "gas_price_usd_gj": 15,
+        "ammonia_unit_cost_usd_t": 543.6,
+        "annual_opex_usd": 271800000.0
+      },
+      {
+        "gas_price_usd_gj": 16,
+        "ammonia_unit_cost_usd_t": 571.6,
+        "annual_opex_usd": 285800000.0
+      }
+    ],
+    "electricity": [
+      {
+        "electricity_price_usd_kwh": 0.035,
+        "ammonia_unit_cost_usd_t": 342.35,
+        "annual_opex_usd": 171175000.0
+      },
+      {
+        "electricity_price_usd_kwh": 0.052500000000000005,
+        "ammonia_unit_cost_usd_t": 344.975,
+        "annual_opex_usd": 172487500.0
+      },
+      {
+        "electricity_price_usd_kwh": 0.07,
+        "ammonia_unit_cost_usd_t": 347.6,
+        "annual_opex_usd": 173800000.0
+      },
+      {
+        "electricity_price_usd_kwh": 0.08750000000000001,
+        "ammonia_unit_cost_usd_t": 350.225,
+        "annual_opex_usd": 175112500.0
+      },
+      {
+        "electricity_price_usd_kwh": 0.10500000000000001,
+        "ammonia_unit_cost_usd_t": 352.85,
+        "annual_opex_usd": 176425000.0
+      }
+    ],
+    "electricity_range_rule": "50–150% базового тарифа, шаг 25%"
+  }
+}
