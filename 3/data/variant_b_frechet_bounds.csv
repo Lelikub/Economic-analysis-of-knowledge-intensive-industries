@@ -1,0 +1,5 @@
+﻿Pair_Node_1,Pair_Node_2,Reliability_R1,Reliability_R2,Frechet_Rho_Min,Frechet_Rho_Max,Theoretical_Limit
+Node_1_PGM,Node_2_UltraPure_HF_Main,0.95,0.92,-0.0677,0.778,[-0.0677; 0.778]
+Node_2_UltraPure_HF_Main,Node_2_UltraPure_HF_Backup,0.92,0.9,-0.0983,0.8847,[-0.0983; 0.8847]
+Node_3_Monomer,Node_4_Liquid_Nitrogen,0.98,0.96,-0.0292,0.6999,[-0.0292; 0.6999]
+Node_1_PGM,Node_5_Membrane_Reactor,0.95,0.94,-0.058,0.9081,[-0.058; 0.9081]

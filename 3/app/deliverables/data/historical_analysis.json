@@ -1,0 +1,442 @@
+{
+  "count": 50,
+  "downtime_mean": 10.3076,
+  "downtime_median": 8.89,
+  "downtime_q1": 5.4425,
+  "downtime_q3": 13.75,
+  "downtime_std": 6.091573825660277,
+  "downtime_min": 2.46,
+  "downtime_max": 26.17,
+  "outlier_count": 0,
+  "outlier_upper": 26.21125,
+  "loss_mean": 86.4608,
+  "loss_median": 75.12,
+  "loss_std": 48.73259060528222,
+  "loss_min": 23.68,
+  "loss_max": 213.36,
+  "mu_fitted": 2.1736873327130057,
+  "sigma_fitted": 0.5640791359622735,
+  "shapiro_stat": 0.9803226000572673,
+  "shapiro_p": 0.5656478207399279,
+  "ks_fitted_stat": 0.07066691129754576,
+  "ks_bootstrap_p": 0.7604790419161677,
+  "ks_prior_stat": 0.11168344800924945,
+  "ks_prior_p": 0.5245864968971861,
+  "residual_mean": 0.0,
+  "residual_max_abs": 0.0,
+  "residual_nonzero": 0,
+  "pareto": {
+    "tail_count": 50,
+    "threshold_days": 2.0,
+    "prior_alpha": 1.3,
+    "fitted_alpha": 0.675429165866093,
+    "ks_fitted_stat": 0.3418241151716703,
+    "ks_bootstrap_p": 0.001996007984031936,
+    "aic_pareto": 358.6094321575517,
+    "bic_pareto": 360.5214551629798,
+    "aic_truncated_lognormal": 305.52905220315967,
+    "bic_truncated_lognormal": 309.353098214016,
+    "prior_ks_p": 8.92272147019688e-16,
+    "truncated_lognormal_fit_success": true
+  },
+  "residual_rows": [
+    {
+      "id": "INC-2021-030",
+      "observed": 190.0,
+      "model": 190.0,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-017",
+      "observed": 91.04,
+      "model": 91.04,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-016",
+      "observed": 53.2,
+      "model": 53.2,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-046",
+      "observed": 87.6,
+      "model": 87.6,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-004",
+      "observed": 75.28,
+      "model": 75.28,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-019",
+      "observed": 42.48,
+      "model": 42.48,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-006",
+      "observed": 68.0,
+      "model": 68.0,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-039",
+      "observed": 114.48,
+      "model": 114.48,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-031",
+      "observed": 40.8,
+      "model": 40.8,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-026",
+      "observed": 76.64,
+      "model": 76.64,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-042",
+      "observed": 134.32,
+      "model": 134.32,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-038",
+      "observed": 23.68,
+      "model": 23.68,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-002",
+      "observed": 195.92,
+      "model": 195.92,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-013",
+      "observed": 46.24,
+      "model": 46.24,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-021",
+      "observed": 38.32,
+      "model": 38.32,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-024",
+      "observed": 205.36,
+      "model": 205.36,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-033",
+      "observed": 74.96,
+      "model": 74.96,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-007",
+      "observed": 116.56,
+      "model": 116.56,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-032",
+      "observed": 46.56,
+      "model": 46.56,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-035",
+      "observed": 33.92,
+      "model": 33.92,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-011",
+      "observed": 213.36,
+      "model": 213.36,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-015",
+      "observed": 73.36,
+      "model": 73.36,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-020",
+      "observed": 182.32,
+      "model": 182.32,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-010",
+      "observed": 95.52,
+      "model": 95.52,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-044",
+      "observed": 52.8,
+      "model": 52.8,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-040",
+      "observed": 127.28,
+      "model": 127.28,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-048",
+      "observed": 76.32,
+      "model": 76.32,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-009",
+      "observed": 66.88,
+      "model": 66.88,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-027",
+      "observed": 97.12,
+      "model": 97.12,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-028",
+      "observed": 117.12,
+      "model": 117.12,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-014",
+      "observed": 56.88,
+      "model": 56.88,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-043",
+      "observed": 32.56,
+      "model": 32.56,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-034",
+      "observed": 46.8,
+      "model": 46.8,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-047",
+      "observed": 83.44,
+      "model": 83.44,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-008",
+      "observed": 62.72,
+      "model": 62.72,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-022",
+      "observed": 93.52,
+      "model": 93.52,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-005",
+      "observed": 38.24,
+      "model": 38.24,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-003",
+      "observed": 41.04,
+      "model": 41.04,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-045",
+      "observed": 62.56,
+      "model": 62.56,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-029",
+      "observed": 66.88,
+      "model": 66.88,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-049",
+      "observed": 44.0,
+      "model": 44.0,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-036",
+      "observed": 148.64,
+      "model": 148.64,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-018",
+      "observed": 116.48,
+      "model": 116.48,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-023",
+      "observed": 83.12,
+      "model": 83.12,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-041",
+      "observed": 40.0,
+      "model": 40.0,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2019-001",
+      "observed": 76.96,
+      "model": 76.96,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2022-037",
+      "observed": 112.56,
+      "model": 112.56,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2023-050",
+      "observed": 153.44,
+      "model": 153.44,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2020-012",
+      "observed": 49.76,
+      "model": 49.76,
+      "residual": 0.0
+    },
+    {
+      "id": "INC-2021-025",
+      "observed": 56.0,
+      "model": 56.0,
+      "residual": 0.0
+    }
+  ],
+  "tail_sensitivity": [
+    {
+      "duration": "lognormal",
+      "n": 2000,
+      "seed": 314359,
+      "el": 17.940878248926857,
+      "var99": 155.10504195761712,
+      "cvar99": 225.056139581935
+    },
+    {
+      "duration": "lognormal",
+      "n": 2000,
+      "seed": 314360,
+      "el": 17.986049462159304,
+      "var99": 167.23766120151356,
+      "cvar99": 226.50212559746055
+    },
+    {
+      "duration": "lognormal",
+      "n": 2000,
+      "seed": 314361,
+      "el": 18.023089388610515,
+      "var99": 153.31050816960698,
+      "cvar99": 194.37099800440603
+    },
+    {
+      "duration": "lognormal",
+      "n": 10000,
+      "seed": 314359,
+      "el": 17.99178364496224,
+      "var99": 162.19964957241322,
+      "cvar99": 206.34829234894207
+    },
+    {
+      "duration": "lognormal",
+      "n": 10000,
+      "seed": 314360,
+      "el": 17.78063001478265,
+      "var99": 165.6581520571202,
+      "cvar99": 210.03019610135107
+    },
+    {
+      "duration": "lognormal",
+      "n": 10000,
+      "seed": 314361,
+      "el": 17.72080507997797,
+      "var99": 162.19541586166963,
+      "cvar99": 206.93356334590467
+    },
+    {
+      "duration": "pareto",
+      "n": 2000,
+      "seed": 314359,
+      "el": 20.521899924203097,
+      "var99": 122.94428273799332,
+      "cvar99": 1168.2839082402934
+    },
+    {
+      "duration": "pareto",
+      "n": 2000,
+      "seed": 314360,
+      "el": 14.279671948363815,
+      "var99": 155.18544367047508,
+      "cvar99": 574.9148162359452
+    },
+    {
+      "duration": "pareto",
+      "n": 2000,
+      "seed": 314361,
+      "el": 12.960624591269926,
+      "var99": 182.4067171493926,
+      "cvar99": 335.81791509051436
+    },
+    {
+      "duration": "pareto",
+      "n": 10000,
+      "seed": 314359,
+      "el": 14.817220589737408,
+      "var99": 204.74340370885355,
+      "cvar99": 543.5180074210172
+    },
+    {
+      "duration": "pareto",
+      "n": 10000,
+      "seed": 314360,
+      "el": 16.492316945811325,
+      "var99": 207.0966694508832,
+      "cvar99": 730.3481293501205
+    },
+    {
+      "duration": "pareto",
+      "n": 10000,
+      "seed": 314361,
+      "el": 14.111329849683738,
+      "var99": 180.99437765982856,
+      "cvar99": 514.0345108516224
+    }
+  ]
+}

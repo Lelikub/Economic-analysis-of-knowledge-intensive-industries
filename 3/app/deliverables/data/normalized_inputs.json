@@ -1,0 +1,365 @@
+{
+  "nodes": {
+    "Node_1_PGM": {
+      "node_id": "Node_1_PGM",
+      "name_ru": "Прекурсор платиновой группы (H2PtCl6 / RuCl3)",
+      "reliability": 0.95,
+      "unreliability": 0.05,
+      "availability": 0.95,
+      "failure_rate_year": 0.05,
+      "mtbf_hours": 175200.0,
+      "mttr_hours": 9221.0,
+      "lead_time_days": 45.0,
+      "criticality": "Critical SPOF (Единая точка отказа)",
+      "supplier_cluster": "ЮАР / Аффинажный завод (экспортный риск)",
+      "source": "USGS PGM Commodity Summaries / Johnson Matthey"
+    },
+    "Node_2_UltraPure_HF_Main": {
+      "node_id": "Node_2_UltraPure_HF_Main",
+      "name_ru": "Сверхчистый безводный HF (основной поставщик)",
+      "reliability": 0.92,
+      "unreliability": 0.08,
+      "availability": 0.92001,
+      "failure_rate_year": 0.08,
+      "mtbf_hours": 109500.0,
+      "mttr_hours": 9521.0,
+      "lead_time_days": 30.0,
+      "criticality": "Дублируемый узел (Dual-Sourcing Candidate)",
+      "supplier_cluster": "Азиатско-Тихоокеанский регион (квоты на экспорт)",
+      "source": "USGS Fluorspar / UN Comtrade HS 281111"
+    },
+    "Node_2_UltraPure_HF_Backup": {
+      "node_id": "Node_2_UltraPure_HF_Backup",
+      "name_ru": "Сверхчистый безводный HF (резервный поставщик)",
+      "reliability": 0.9,
+      "unreliability": 0.1,
+      "availability": 0.9,
+      "failure_rate_year": 0.1,
+      "mtbf_hours": 87600.0,
+      "mttr_hours": 9733.0,
+      "lead_time_days": 14.0,
+      "criticality": "Резервный дублирующий канал (Backup Redundancy)",
+      "supplier_cluster": "Внутренний / Европейский кластер",
+      "source": "Альтернативный локальный химический синтез"
+    },
+    "Node_3_Monomer": {
+      "node_id": "Node_3_Monomer",
+      "name_ru": "Мономер полимеризационной чистоты (этилен/пропилен)",
+      "reliability": 0.98,
+      "unreliability": 0.02,
+      "availability": 0.98,
+      "failure_rate_year": 0.02,
+      "mtbf_hours": 438000.0,
+      "mttr_hours": 8938.0,
+      "lead_time_days": 5.0,
+      "criticality": "Высоконадежный поточный трубопроводный узел",
+      "supplier_cluster": "Региональный нефтехимический комплекс",
+      "source": "World Bank Pink Sheet / FRED Basic Chemical Index"
+    },
+    "Node_4_Liquid_Nitrogen": {
+      "node_id": "Node_4_Liquid_Nitrogen",
+      "name_ru": "Жидкий азот технологического контура (ASU)",
+      "reliability": 0.96,
+      "unreliability": 0.04,
+      "availability": 0.96,
+      "failure_rate_year": 0.04,
+      "mtbf_hours": 219000.0,
+      "mttr_hours": 9125.0,
+      "lead_time_days": 3.0,
+      "criticality": "Локальное криогенное снабжение (риск энергосети)",
+      "supplier_cluster": "Локальная воздухоразделительная станция",
+      "source": "U.S. EIA Electricity Data / Промышленный криогенный блок"
+    },
+    "Node_5_Membrane_Reactor": {
+      "node_id": "Node_5_Membrane_Reactor",
+      "name_ru": "Мембранный каталитический реактор синтеза",
+      "reliability": 0.94,
+      "unreliability": 0.06,
+      "availability": 0.94,
+      "failure_rate_year": 0.06,
+      "mtbf_hours": 146000.0,
+      "mttr_hours": 9319.0,
+      "lead_time_days": 60.0,
+      "criticality": "Внутризаводское технологическое оборудование",
+      "supplier_cluster": "Специализированное химическое машиностроение",
+      "source": "IAEA TECDOC-930 / Barringer Process Reliability"
+    }
+  },
+  "financial": {
+    "c_day": 8.0,
+    "c_scrap": 4.0,
+    "annual_budget": 120.0,
+    "currency": "USD millions"
+  },
+  "downtime": {
+    "lognorm_mu": 2.0794,
+    "lognorm_sigma": 0.55,
+    "pareto_alpha": 1.3,
+    "pareto_xm_days": 2.0
+  },
+  "redundancy": {
+    "capex_qual": 6.0,
+    "r_amor": 0.3333,
+    "opex_audit": 0.4,
+    "delta_c_proc": 0.6,
+    "stated_tco": 2.9998
+  },
+  "matrix_kind": "target_binary_pearson",
+  "matrix_nodes": [
+    "Node_1_PGM",
+    "Node_2_UltraPure_HF_Main",
+    "Node_2_UltraPure_HF_Backup",
+    "Node_3_Monomer",
+    "Node_4_Liquid_Nitrogen",
+    "Node_5_Membrane_Reactor"
+  ],
+  "base_matrix": [
+    [
+      1.0,
+      0.15,
+      0.05,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.15,
+      1.0,
+      0.2,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.05,
+      0.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.1,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.1,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "stress_matrix": [
+    [
+      1.0,
+      0.45,
+      0.35,
+      0.1,
+      0.0,
+      0.0
+    ],
+    [
+      0.45,
+      1.0,
+      0.55,
+      0.15,
+      0.0,
+      0.0
+    ],
+    [
+      0.35,
+      0.55,
+      1.0,
+      0.1,
+      0.0,
+      0.0
+    ],
+    [
+      0.1,
+      0.15,
+      0.1,
+      1.0,
+      0.25,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.25,
+      1.0,
+      0.05
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.05,
+      1.0
+    ]
+  ],
+  "source_records": [
+    {
+      "file": "variant_b_catalyst_chain_config.json",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_catalyst_chain_config.json",
+      "size": 8737,
+      "sha256": "bbcf8045680d99361017b748a6709fc2b739753fcc488dfa94e59df824f730d8",
+      "read_utc": "2026-10-11T09:39:23.347210+00:00",
+      "keys": [
+        "metadata",
+        "financial_parameters",
+        "downtime_parameters",
+        "redundancy_tco",
+        "nodes",
+        "correlation_matrices",
+        "frechet_bounds"
+      ]
+    },
+    {
+      "file": "variant_b_nodes_parameters.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_nodes_parameters.csv",
+      "size": 2309,
+      "sha256": "75693d44bb9bae013a9c356c3df927328a831cd4f75447e3016dd17c0b6e9bfc",
+      "read_utc": "2026-10-11T09:39:23.347336+00:00",
+      "rows": 6,
+      "columns": [
+        "Node_ID",
+        "Node_Name_RU",
+        "Reliability_R",
+        "Unreliability_Q",
+        "Operational_Availability_A",
+        "Failure_Rate_Lambda_per_year",
+        "MTBF_Hours",
+        "MTTR_Hours",
+        "Lead_Time_Days",
+        "Criticality_Level",
+        "Supplier_Cluster",
+        "Benchmark_Source"
+      ]
+    },
+    {
+      "file": "variant_b_financial_parameters.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_financial_parameters.csv",
+      "size": 698,
+      "sha256": "76c3b628a19e56279f7ef2e09fbc1c3d78b0666920729ab90d640dae92ea5cc3",
+      "read_utc": "2026-10-11T09:39:23.347426+00:00",
+      "rows": 6,
+      "columns": [
+        "Parameter",
+        "Value",
+        "Unit"
+      ]
+    },
+    {
+      "file": "variant_b_corr_matrix_base.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_corr_matrix_base.csv",
+      "size": 337,
+      "sha256": "5a8ef1559ea8cdccf42cb6f3ce75efb5a67a65a0e21ae179e4366d22dac45d27",
+      "read_utc": "2026-10-11T09:39:23.347510+00:00",
+      "rows": 6,
+      "columns": [
+        "Node_1_PGM",
+        "Node_2_UltraPure_HF_Main",
+        "Node_2_UltraPure_HF_Backup",
+        "Node_3_Monomer",
+        "Node_4_Liquid_Nitrogen",
+        "Node_5_Membrane_Reactor"
+      ]
+    },
+    {
+      "file": "variant_b_corr_matrix_stress.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_corr_matrix_stress.csv",
+      "size": 345,
+      "sha256": "bf181baec090e50c3018a8fa6a9e29b773a22fdda01d091d7540b29a0f85bb3c",
+      "read_utc": "2026-10-11T09:39:23.347589+00:00",
+      "rows": 6,
+      "columns": [
+        "Node_1_PGM",
+        "Node_2_UltraPure_HF_Main",
+        "Node_2_UltraPure_HF_Backup",
+        "Node_3_Monomer",
+        "Node_4_Liquid_Nitrogen",
+        "Node_5_Membrane_Reactor"
+      ]
+    },
+    {
+      "file": "variant_b_frechet_bounds.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_frechet_bounds.csv",
+      "size": 440,
+      "sha256": "b374efd374f3c1bd567e1b14f3930ca14975ef52cac201f860b3fb70b8310259",
+      "read_utc": "2026-10-11T09:39:23.347665+00:00",
+      "rows": 4,
+      "columns": [
+        "Pair_Node_1",
+        "Pair_Node_2",
+        "Reliability_R1",
+        "Reliability_R2",
+        "Frechet_Rho_Min",
+        "Frechet_Rho_Max",
+        "Theoretical_Limit"
+      ]
+    },
+    {
+      "file": "variant_b_redundancy_tco.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_redundancy_tco.csv",
+      "size": 636,
+      "sha256": "70f31328798bfdd52c25ef9d892906709f3f7605126e4af15f357649808b5f50",
+      "read_utc": "2026-10-11T09:39:23.347739+00:00",
+      "rows": 5,
+      "columns": [
+        "Cost_Component",
+        "Value",
+        "Unit"
+      ]
+    },
+    {
+      "file": "variant_b_historical_incidents_log.csv",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\variant_b_historical_incidents_log.csv",
+      "size": 7252,
+      "sha256": "72ffcab87c84ef984d8a9843547e8921cf30a5c657fb2ed598efa4b3714a7e67",
+      "read_utc": "2026-10-11T09:39:23.347827+00:00",
+      "rows": 50,
+      "columns": [
+        "Incident_ID",
+        "Date",
+        "Failed_Node",
+        "Root_Cause",
+        "Downtime_Days",
+        "Direct_Loss_USD_Millions"
+      ]
+    },
+    {
+      "file": "Шаблон_отчета_ЭА_краткий_v2.docx",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\end_template\\Шаблон_отчета_ЭА_краткий_v2.docx",
+      "size": 131113,
+      "sha256": "cf8b89262c58256410a4d8f80fc3b6a5a47e2166413eb183cea41e67a30189e7"
+    },
+    {
+      "file": "Задание_к_практическому_занятию_3_ЭА.pdf",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\3\\data\\Задание_к_практическому_занятию_3_ЭА.pdf",
+      "size": 301346,
+      "sha256": "c7a200dd2d0ef1a001d3ce0aedf73ac586c7dc32c3b100a30a5674790e786918"
+    },
+    {
+      "file": "Лекция 5 ЭА слайды.pdf",
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\lection\\Лекция 5 ЭА слайды.pdf",
+      "size": 721198,
+      "sha256": "71f14e5d4f2db2bb98286ad3480dc03c7853972c1e67f376fb3882375d648529"
+    }
+  ]
+}

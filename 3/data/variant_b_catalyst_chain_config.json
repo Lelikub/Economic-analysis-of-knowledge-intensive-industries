@@ -1,0 +1,248 @@
+{
+    "metadata": {
+        "variant": "Вариант Б: Производство катализаторов полимеризации (Наукоёмкая химия)",
+        "benchmark_standards": [
+            "USGS MCS",
+            "IAEA TECDOC-930",
+            "World Bank Pink Sheet",
+            "NY Fed GSCPI"
+        ],
+        "currency": "USD (Millions)",
+        "time_horizon": "1 год (8760 часов)"
+    },
+    "financial_parameters": {
+        "c_day": 8.0,
+        "c_scrap": 4.0,
+        "annual_budget": 120.0
+    },
+    "downtime_parameters": {
+        "lognorm_mu": 2.0794,
+        "lognorm_sigma": 0.55,
+        "pareto_alpha": 1.3,
+        "pareto_xm_days": 2.0
+    },
+    "redundancy_tco": {
+        "capex_qual": 6.0,
+        "r_amor": 0.3333,
+        "opex_audit": 0.4,
+        "delta_c_proc": 0.6,
+        "description": "Затраты на внедрение дублирующего поставщика фтороводорода (Узел 2)",
+        "tco_annual_calculated": 2.9998
+    },
+    "nodes": {
+        "Node_1_PGM": {
+            "name_ru": "Прекурсор платиновой группы (H2PtCl6 / RuCl3)",
+            "source": "USGS PGM Commodity Summaries / Johnson Matthey",
+            "R_i": 0.95,
+            "MTBF_hours": 175200.0,
+            "MTTR_hours": 9221.0,
+            "lead_time_days": 45,
+            "criticality": "Critical SPOF (Единая точка отказа)",
+            "supplier_origin": "ЮАР / Аффинажный завод (экспортный риск)",
+            "stage": "Последовательный блок 1"
+        },
+        "Node_2_UltraPure_HF_Main": {
+            "name_ru": "Сверхчистый безводный HF (основной поставщик)",
+            "source": "USGS Fluorspar / UN Comtrade HS 281111",
+            "R_i": 0.92,
+            "MTBF_hours": 109500.0,
+            "MTTR_hours": 9521.0,
+            "lead_time_days": 30,
+            "criticality": "Дублируемый узел (Dual-Sourcing Candidate)",
+            "supplier_origin": "Азиатско-Тихоокеанский регион (квоты на экспорт)",
+            "stage": "Последовательный блок 2 (Основной)"
+        },
+        "Node_2_UltraPure_HF_Backup": {
+            "name_ru": "Сверхчистый безводный HF (резервный поставщик)",
+            "source": "Альтернативный локальный химический синтез",
+            "R_i": 0.9,
+            "MTBF_hours": 87600.0,
+            "MTTR_hours": 9733.0,
+            "lead_time_days": 14,
+            "criticality": "Резервный дублирующий канал (Backup Redundancy)",
+            "supplier_origin": "Внутренний / Европейский кластер",
+            "stage": "Последовательный блок 2 (Резервный)"
+        },
+        "Node_3_Monomer": {
+            "name_ru": "Мономер полимеризационной чистоты (этилен/пропилен)",
+            "source": "World Bank Pink Sheet / FRED Basic Chemical Index",
+            "R_i": 0.98,
+            "MTBF_hours": 438000.0,
+            "MTTR_hours": 8938.0,
+            "lead_time_days": 5,
+            "criticality": "Высоконадежный поточный трубопроводный узел",
+            "supplier_origin": "Региональный нефтехимический комплекс",
+            "stage": "Последовательный блок 3"
+        },
+        "Node_4_Liquid_Nitrogen": {
+            "name_ru": "Жидкий азот технологического контура (ASU)",
+            "source": "U.S. EIA Electricity Data / Промышленный криогенный блок",
+            "R_i": 0.96,
+            "MTBF_hours": 219000.0,
+            "MTTR_hours": 9125.0,
+            "lead_time_days": 3,
+            "criticality": "Локальное криогенное снабжение (риск энергосети)",
+            "supplier_origin": "Локальная воздухоразделительная станция",
+            "stage": "Последовательный блок 4"
+        },
+        "Node_5_Membrane_Reactor": {
+            "name_ru": "Мембранный каталитический реактор синтеза",
+            "source": "IAEA TECDOC-930 / Barringer Process Reliability",
+            "R_i": 0.94,
+            "MTBF_hours": 146000.0,
+            "MTTR_hours": 9319.0,
+            "lead_time_days": 60,
+            "criticality": "Внутризаводское технологическое оборудование",
+            "supplier_origin": "Специализированное химическое машиностроение",
+            "stage": "Последовательный блок 5"
+        }
+    },
+    "correlation_matrices": {
+        "nodes_order": [
+            "Node_1_PGM",
+            "Node_2_HF_Main",
+            "Node_2_HF_Backup",
+            "Node_3_Monomer",
+            "Node_4_Nitrogen",
+            "Node_5_Reactor"
+        ],
+        "base_case": [
+            [
+                1.0,
+                0.15,
+                0.05,
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.15,
+                1.0,
+                0.2,
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.05,
+                0.2,
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.1,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                0.1,
+                1.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        ],
+        "stress_shock_case": [
+            [
+                1.0,
+                0.45,
+                0.35,
+                0.1,
+                0.0,
+                0.0
+            ],
+            [
+                0.45,
+                1.0,
+                0.55,
+                0.15,
+                0.0,
+                0.0
+            ],
+            [
+                0.35,
+                0.55,
+                1.0,
+                0.1,
+                0.0,
+                0.0
+            ],
+            [
+                0.1,
+                0.15,
+                0.1,
+                1.0,
+                0.25,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                0.25,
+                1.0,
+                0.05
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.05,
+                1.0
+            ]
+        ]
+    },
+    "frechet_bounds": [
+        {
+            "Pair_Node_1": "Node_1_PGM",
+            "Pair_Node_2": "Node_2_UltraPure_HF_Main",
+            "Reliability_R1": 0.95,
+            "Reliability_R2": 0.92,
+            "Frechet_Rho_Min": -0.0677,
+            "Frechet_Rho_Max": 0.778,
+            "Theoretical_Limit": "[-0.0677; 0.778]"
+        },
+        {
+            "Pair_Node_1": "Node_2_UltraPure_HF_Main",
+            "Pair_Node_2": "Node_2_UltraPure_HF_Backup",
+            "Reliability_R1": 0.92,
+            "Reliability_R2": 0.9,
+            "Frechet_Rho_Min": -0.0983,
+            "Frechet_Rho_Max": 0.8847,
+            "Theoretical_Limit": "[-0.0983; 0.8847]"
+        },
+        {
+            "Pair_Node_1": "Node_3_Monomer",
+            "Pair_Node_2": "Node_4_Liquid_Nitrogen",
+            "Reliability_R1": 0.98,
+            "Reliability_R2": 0.96,
+            "Frechet_Rho_Min": -0.0292,
+            "Frechet_Rho_Max": 0.6999,
+            "Theoretical_Limit": "[-0.0292; 0.6999]"
+        },
+        {
+            "Pair_Node_1": "Node_1_PGM",
+            "Pair_Node_2": "Node_5_Membrane_Reactor",
+            "Reliability_R1": 0.95,
+            "Reliability_R2": 0.94,
+            "Frechet_Rho_Min": -0.058,
+            "Frechet_Rho_Max": 0.9081,
+            "Theoretical_Limit": "[-0.058; 0.9081]"
+        }
+    ]
+}

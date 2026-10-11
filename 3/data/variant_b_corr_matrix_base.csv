@@ -1,0 +1,7 @@
+﻿,Node_1_PGM,Node_2_HF_Main,Node_2_HF_Backup,Node_3_Monomer,Node_4_Nitrogen,Node_5_Reactor
+Node_1_PGM,1.0,0.15,0.05,0.0,0.0,0.0
+Node_2_HF_Main,0.15,1.0,0.2,0.0,0.0,0.0
+Node_2_HF_Backup,0.05,0.2,1.0,0.0,0.0,0.0
+Node_3_Monomer,0.0,0.0,0.0,1.0,0.1,0.0
+Node_4_Nitrogen,0.0,0.0,0.0,0.1,1.0,0.0
+Node_5_Reactor,0.0,0.0,0.0,0.0,0.0,1.0
