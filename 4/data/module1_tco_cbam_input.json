@@ -1,0 +1,99 @@
+{
+    "cargo_profile": {
+        "material_name": "Electronic Grade Anhydrous HF (Grade 10N)",
+        "volume_tons": 20.0,
+        "price_usd_per_ton": 22000.0,
+        "insurance_rate": 0.006,
+        "wacc_baseline": 0.15,
+        "pack_comp_cost_usd": 14500.0,
+        "p_fail_base": 0.005,
+        "l_fail_loss_usd": 1200000.0
+    },
+    "cbam_parameters": {
+        "see_prod_tco2_per_ton": 2.45,
+        "benchmark_eu_tco2_per_ton": 1.15,
+        "p_eu_ets_eur": 85.0,
+        "p_carbon_origin_eur": 12.0,
+        "eur_usd_rate": 1.08
+    },
+    "scenarios": {
+        "Air_Express": {
+            "description": "Экспресс-авиадоставка для минимизации потерь оборотного капитала",
+            "legs": [
+                {
+                    "name": "Pre-carriage (Truck)",
+                    "distance_km": 180,
+                    "tariff_usd_tkm": 0.45,
+                    "lead_time_days": 0.5,
+                    "emission_g_tkm": 120.0
+                },
+                {
+                    "name": "Air Freight",
+                    "distance_km": 7900,
+                    "tariff_usd_tkm": 1.95,
+                    "lead_time_days": 1.5,
+                    "emission_g_tkm": 620.0
+                },
+                {
+                    "name": "On-carriage (Truck)",
+                    "distance_km": 220,
+                    "tariff_usd_tkm": 0.45,
+                    "lead_time_days": 0.5,
+                    "emission_g_tkm": 120.0
+                }
+            ]
+        },
+        "Rail_Express": {
+            "description": "Транссибирский/Трансевразийский железнодорожный контейнерный шаттл",
+            "legs": [
+                {
+                    "name": "Pre-carriage (Truck)",
+                    "distance_km": 250,
+                    "tariff_usd_tkm": 0.35,
+                    "lead_time_days": 1.0,
+                    "emission_g_tkm": 110.0
+                },
+                {
+                    "name": "Rail Mainline",
+                    "distance_km": 9400,
+                    "tariff_usd_tkm": 0.16,
+                    "lead_time_days": 16.0,
+                    "emission_g_tkm": 24.0
+                },
+                {
+                    "name": "On-carriage (Truck)",
+                    "distance_km": 350,
+                    "tariff_usd_tkm": 0.35,
+                    "lead_time_days": 1.5,
+                    "emission_g_tkm": 110.0
+                }
+            ]
+        },
+        "Sea_Road_Multimodal": {
+            "description": "Традиционный морской фрахт deep-sea с низким тарифом и длительным lead time",
+            "legs": [
+                {
+                    "name": "Drayage to Port",
+                    "distance_km": 120,
+                    "tariff_usd_tkm": 0.3,
+                    "lead_time_days": 1.0,
+                    "emission_g_tkm": 105.0
+                },
+                {
+                    "name": "Deep-Sea Maritime",
+                    "distance_km": 18500,
+                    "tariff_usd_tkm": 0.038,
+                    "lead_time_days": 38.0,
+                    "emission_g_tkm": 14.5
+                },
+                {
+                    "name": "Port-to-Fab Haulage",
+                    "distance_km": 480,
+                    "tariff_usd_tkm": 0.32,
+                    "lead_time_days": 2.5,
+                    "emission_g_tkm": 115.0
+                }
+            ]
+        }
+    }
+}
