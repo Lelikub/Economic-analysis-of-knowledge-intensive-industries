@@ -1,0 +1,44 @@
+{
+    "metadata": {
+        "variant_number": 2,
+        "target_system": "Вакуумная подсистема чистой комнаты Clean-Room (турбомолекулярные насосы)",
+        "industry_standard": "ISO 14644-1 / ГОСТ Р 57700.37-2021"
+    },
+    "fleet_specs": {
+        "pumps_count_units": 140,
+        "cycles_per_unit_annual": 250,
+        "annual_fund_hours": 8760.0,
+        "planning_horizon_years": 5
+    },
+    "financial_macro": {
+        "wacc": 0.108,
+        "profit_tax_rate": 0.2
+    },
+    "weibull_distribution": {
+        "shape_parameter_beta": 2.3,
+        "scale_parameter_eta_hours": 7500.0,
+        "annual_failures_mean": 22
+    },
+    "confusion_matrix_economics": {
+        "cost_catastrophic_usd": 480000.0,
+        "cost_fp_usd": 24000.0,
+        "cost_plan_usd": 30000.0,
+        "target_fpr": 0.007,
+        "baseline_recall": 0.9
+    },
+    "capex_structure_usd": {
+        "edge_ai_hardware": 1000000.0,
+        "digital_twin_software_licenses": 1300000.0,
+        "isa95_system_integration": 550000.0,
+        "cleanroom_iso_validation": 350000.0
+    },
+    "opex_structure_usd": {
+        "sensors_maintenance_annual": 55000.0,
+        "software_cloud_subscription_annual": 120000.0,
+        "mlops_reliability_labor_annual": 230000.0,
+        "sensor_recalibration_drift_annual": 45000.0
+    },
+    "working_capital_impact": {
+        "annual_nwc_inflow_usd": 110000.0
+    }
+}
