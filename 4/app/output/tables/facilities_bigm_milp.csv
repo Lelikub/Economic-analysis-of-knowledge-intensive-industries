@@ -1,0 +1,5 @@
+﻿facility_id,opened_y,load_tons,capacity_tons,capacity_slack,physical_overload
+A,0,0,850,0,0
+B,0,0,700,0,0
+C,1,1600,550,999998400,1050
+D,0,0,650,0,0

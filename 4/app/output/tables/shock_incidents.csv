@@ -1,0 +1,2 @@
+﻿kind,start_index,end_index,start,end_observed,interval_end,count,duration_minutes,minimum,maximum,axis
+REAL_INCIDENT_SHOCK,920,920,2026-04-13 12:40:00,2026-04-13 12:40:00,2026-04-13 12:40:00,1,0,0.95,2.65,Z

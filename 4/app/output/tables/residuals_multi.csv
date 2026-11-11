@@ -1,0 +1,14 @@
+﻿constraint,identifier,value
+demand,1,0
+demand,2,0
+demand,3,0
+demand,4,0
+demand,5,0
+capacity,A,0
+capacity,B,20
+capacity,C,10
+capacity,D,270
+binary,A,0
+binary,B,0
+binary,C,0
+binary,D,0

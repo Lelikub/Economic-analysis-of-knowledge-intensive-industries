@@ -1,0 +1,901 @@
+2026-10-25 13:38:32,663 INFO pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca START PREPARE
+2026-10-25 13:38:32,665 ERROR pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS python_launcher FAIL python.exe launcher недоступен
+2026-10-25 13:38:32,665 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS python_launcher FIXED_AND_RETESTED Исправление подтверждено запуском Python/PuLP/CBC и 35 тестами ядра
+2026-10-25 13:38:32,669 ERROR pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS pip_network FAIL Первая установка PuLP: WinError 10013
+2026-10-25 13:38:32,670 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS pip_network FIXED_AND_RETESTED Исправление подтверждено запуском Python/PuLP/CBC и 35 тестами ядра
+2026-10-25 13:38:32,671 ERROR pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS initial_red FAIL До реализации pytest завершился ModuleNotFoundError: src
+2026-10-25 13:38:32,671 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS initial_red FIXED_AND_RETESTED Исправление подтверждено запуском Python/PuLP/CBC и 35 тестами ядра
+2026-10-25 13:38:32,672 ERROR pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS pulp_acl FAIL Первый прогон ядра: 31 passed, 4 failed; pulp.LpProblem отсутствует
+2026-10-25 13:38:32,672 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS pulp_acl FIXED_AND_RETESTED Исправление подтверждено запуском Python/PuLP/CBC и 35 тестами ядра
+2026-10-25 13:38:32,673 ERROR pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS cbc_thread FAIL CBC зависал при threads=1; стек faulthandler в subprocess.wait
+2026-10-25 13:38:32,674 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS cbc_thread FIXED_AND_RETESTED Исправление подтверждено запуском Python/PuLP/CBC и 35 тестами ядра
+2026-10-25 13:38:32,841 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:38:32,841 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:38:32,842 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 13:38:32,843 DEBUG pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 13:38:32,843 INFO pipeline stage=PREPARE run_id=20261025T103832Z-e41156ca END PREPARE seconds=0.180
+2026-10-25 13:38:32,843 INFO pipeline stage=LOAD run_id=20261025T103832Z-e41156ca START LOAD
+2026-10-25 13:38:32,852 INFO pipeline stage=LOAD run_id=20261025T103832Z-e41156ca LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 13:38:32,852 INFO pipeline stage=LOAD run_id=20261025T103832Z-e41156ca END LOAD seconds=0.009
+2026-10-25 13:38:32,852 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T103832Z-e41156ca START VALIDATE_INPUT
+2026-10-25 13:38:32,858 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T103832Z-e41156ca HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 13:38:32,858 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T103832Z-e41156ca HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 13:38:32,859 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T103832Z-e41156ca HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 13:38:32,859 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T103832Z-e41156ca END VALIDATE_INPUT seconds=0.006
+2026-10-25 13:38:32,859 INFO pipeline stage=BUILD_MODELS run_id=20261025T103832Z-e41156ca START BUILD_MODELS
+2026-10-25 13:38:32,859 INFO pipeline stage=BUILD_MODELS run_id=20261025T103832Z-e41156ca END BUILD_MODELS seconds=0.000
+2026-10-25 13:38:32,859 INFO pipeline stage=CALCULATE_TCO run_id=20261025T103832Z-e41156ca START CALCULATE_TCO
+2026-10-25 13:38:32,866 INFO pipeline stage=CALCULATE_TCO run_id=20261025T103832Z-e41156ca TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 13:38:32,867 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T103832Z-e41156ca HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 13:38:32,867 INFO pipeline stage=CALCULATE_TCO run_id=20261025T103832Z-e41156ca END CALCULATE_TCO seconds=0.008
+2026-10-25 13:38:32,867 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca START SOLVE_CFLP
+2026-10-25 13:38:32,925 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_K_MILP status=Optimal wall_seconds=0.056662
+2026-10-25 13:38:32,984 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_K_MILP status=Optimal wall_seconds=0.058873
+2026-10-25 13:38:33,044 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_K_MILP status=Optimal wall_seconds=0.059016
+2026-10-25 13:38:33,113 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC single_K_MILP status=Optimal wall_seconds=0.067827
+2026-10-25 13:38:33,187 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC single_K_MILP status=Optimal wall_seconds=0.074146
+2026-10-25 13:38:33,253 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC single_K_MILP status=Optimal wall_seconds=0.064160
+2026-10-25 13:38:33,279 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_K_LP status=Optimal wall_seconds=0.025584
+2026-10-25 13:38:33,304 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_K_LP status=Optimal wall_seconds=0.023038
+2026-10-25 13:38:33,325 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_K_LP status=Optimal wall_seconds=0.020027
+2026-10-25 13:38:33,355 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_M_MILP status=Optimal wall_seconds=0.029015
+2026-10-25 13:38:33,379 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_M_MILP status=Optimal wall_seconds=0.024138
+2026-10-25 13:38:33,407 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_M_MILP status=Optimal wall_seconds=0.027215
+2026-10-25 13:38:33,423 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_M_LP status=Optimal wall_seconds=0.014678
+2026-10-25 13:38:33,444 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_M_LP status=Optimal wall_seconds=0.020635
+2026-10-25 13:38:33,469 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca CBC multi_M_LP status=Optimal wall_seconds=0.023146
+2026-10-25 13:38:33,469 INFO pipeline stage=SOLVE_CFLP run_id=20261025T103832Z-e41156ca END SOLVE_CFLP seconds=0.603
+2026-10-25 13:38:33,469 INFO pipeline stage=PROCESS_IOT run_id=20261025T103832Z-e41156ca START PROCESS_IOT
+2026-10-25 13:38:33,474 INFO pipeline stage=PROCESS_IOT run_id=20261025T103832Z-e41156ca IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 13:38:33,474 INFO pipeline stage=PROCESS_IOT run_id=20261025T103832Z-e41156ca END PROCESS_IOT seconds=0.004
+2026-10-25 13:38:33,474 INFO pipeline stage=GENERATE_DPP run_id=20261025T103832Z-e41156ca START GENERATE_DPP
+2026-10-25 13:38:33,475 INFO pipeline stage=GENERATE_DPP run_id=20261025T103832Z-e41156ca END GENERATE_DPP seconds=0.001
+2026-10-25 13:38:33,475 INFO pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca START VERIFY
+2026-10-25 13:38:33,477 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Air_Express_decimal PASS 
+2026-10-25 13:38:33,477 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Air_Express_component_sum PASS 
+2026-10-25 13:38:33,478 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Air_Express_currency PASS 
+2026-10-25 13:38:33,479 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Rail_Express_decimal PASS 
+2026-10-25 13:38:33,479 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Rail_Express_component_sum PASS 
+2026-10-25 13:38:33,480 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Rail_Express_currency PASS 
+2026-10-25 13:38:33,480 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 13:38:33,481 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 13:38:33,481 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 13:38:33,482 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:38:33,482 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_sign_change PASS 
+2026-10-25 13:38:33,483 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 13:38:33,483 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_sign_change PASS 
+2026-10-25 13:38:33,484 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 13:38:33,484 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_sign_change PASS 
+2026-10-25 13:38:33,485 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 13:38:33,485 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_sign_change PASS 
+2026-10-25 13:38:33,486 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:38:33,486 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_sign_change PASS 
+2026-10-25 13:38:33,487 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 13:38:33,487 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS root_sign_change PASS 
+2026-10-25 13:38:33,488 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS multi_demand PASS 
+2026-10-25 13:38:33,489 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS multi_cost PASS 
+2026-10-25 13:38:33,489 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS multi_capacity PASS 
+2026-10-25 13:38:33,490 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS single_demand PASS 
+2026-10-25 13:38:33,490 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS single_cost PASS 
+2026-10-25 13:38:33,491 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS single_capacity PASS 
+2026-10-25 13:38:33,491 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS physical_lp_demand PASS 
+2026-10-25 13:38:33,492 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS physical_lp_cost PASS 
+2026-10-25 13:38:33,492 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS physical_lp_capacity PASS 
+2026-10-25 13:38:33,493 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_milp_demand PASS 
+2026-10-25 13:38:33,493 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_milp_cost PASS 
+2026-10-25 13:38:33,494 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_milp_capacity PASS 
+2026-10-25 13:38:33,494 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_lp_demand PASS 
+2026-10-25 13:38:33,495 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_lp_cost PASS 
+2026-10-25 13:38:33,495 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_lp_capacity PASS 
+2026-10-25 13:38:33,497 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS single_enumeration PASS 
+2026-10-25 13:38:42,281 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS multi_highs_enumeration PASS 
+2026-10-25 13:38:42,339 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 13:38:42,340 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS multi_lp_bound PASS 
+2026-10-25 13:38:42,342 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 13:38:42,344 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS iot_start PASS 
+2026-10-25 13:38:42,345 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS iot_end PASS 
+2026-10-25 13:38:42,347 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS iot_duration PASS 
+2026-10-25 13:38:42,348 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS iot_shock PASS 
+2026-10-25 13:38:42,350 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS dynamic_risk_delta PASS 
+2026-10-25 13:38:42,352 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS dpp_tco PASS 
+2026-10-25 13:38:42,354 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS dpp_scope3 PASS 
+2026-10-25 13:38:42,357 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS telemetry_sha256 PASS 
+2026-10-25 13:38:42,362 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS gps_independent_cosine PASS 
+2026-10-25 13:38:42,362 INFO pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T103832Z-e41156ca_core.xml']
+2026-10-25 13:38:44,393 DEBUG pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca HARNESS pytest_core PASS failed=0; skipped=0; 2.028s
+2026-10-25 13:38:44,393 INFO pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca pytest core: 45 passed; 0 failed; 0 skipped
+2026-10-25 13:38:44,393 INFO pipeline stage=VERIFY run_id=20261025T103832Z-e41156ca END VERIFY seconds=10.918
+2026-10-25 13:38:44,622 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T103832Z-e41156ca START PLOT_AND_VALIDATE
+2026-10-25 13:38:46,051 ERROR pipeline stage=PLOT_AND_VALIDATE run_id=20261025T103832Z-e41156ca FAIL PLOT_AND_VALIDATE
+Traceback (most recent call last):
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 59, in stage
+    yield
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 150, in run
+    plots=PlotBuilder(self.output).build()
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\plotting.py", line 82, in build
+    self.finish(fig,{'wacc':'02_wacc','cargo_value':'03_price','lead_time':'04_lead'}[key],title,'module1_tco_cbam_input.json → '+key+'.csv')
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\plotting.py", line 37, in finish
+    if not inside: raise ValueError(f'{key}: подпись вне рисунка: {label.get_text()}')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 02_wacc: подпись вне рисунка: 0
+2026-10-25 13:38:46,063 ERROR pipeline stage=PLOT_AND_VALIDATE run_id=20261025T103832Z-e41156ca HARNESS stage_PLOT_AND_VALIDATE FAIL 02_wacc: подпись вне рисунка: 0
+2026-10-25 13:41:16,830 INFO pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e START PREPARE
+2026-10-25 13:41:16,964 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:41:16,965 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:41:16,965 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 13:41:16,966 DEBUG pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 13:41:16,966 INFO pipeline stage=PREPARE run_id=20261025T104116Z-0376e48e END PREPARE seconds=0.137
+2026-10-25 13:41:16,966 INFO pipeline stage=LOAD run_id=20261025T104116Z-0376e48e START LOAD
+2026-10-25 13:41:16,975 INFO pipeline stage=LOAD run_id=20261025T104116Z-0376e48e LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 13:41:16,975 INFO pipeline stage=LOAD run_id=20261025T104116Z-0376e48e END LOAD seconds=0.008
+2026-10-25 13:41:16,975 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104116Z-0376e48e START VALIDATE_INPUT
+2026-10-25 13:41:16,980 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104116Z-0376e48e HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 13:41:16,980 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104116Z-0376e48e HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 13:41:16,981 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T104116Z-0376e48e HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 13:41:16,981 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104116Z-0376e48e END VALIDATE_INPUT seconds=0.006
+2026-10-25 13:41:16,981 INFO pipeline stage=BUILD_MODELS run_id=20261025T104116Z-0376e48e START BUILD_MODELS
+2026-10-25 13:41:16,981 INFO pipeline stage=BUILD_MODELS run_id=20261025T104116Z-0376e48e END BUILD_MODELS seconds=0.000
+2026-10-25 13:41:16,981 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104116Z-0376e48e START CALCULATE_TCO
+2026-10-25 13:41:16,988 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104116Z-0376e48e TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 13:41:16,989 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T104116Z-0376e48e HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 13:41:16,989 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104116Z-0376e48e END CALCULATE_TCO seconds=0.008
+2026-10-25 13:41:16,989 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e START SOLVE_CFLP
+2026-10-25 13:41:17,046 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_K_MILP status=Optimal wall_seconds=0.056245
+2026-10-25 13:41:17,115 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_K_MILP status=Optimal wall_seconds=0.068838
+2026-10-25 13:41:17,181 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_K_MILP status=Optimal wall_seconds=0.064214
+2026-10-25 13:41:17,254 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC single_K_MILP status=Optimal wall_seconds=0.071747
+2026-10-25 13:41:17,322 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC single_K_MILP status=Optimal wall_seconds=0.067668
+2026-10-25 13:41:17,387 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC single_K_MILP status=Optimal wall_seconds=0.064598
+2026-10-25 13:41:17,410 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_K_LP status=Optimal wall_seconds=0.021583
+2026-10-25 13:41:17,429 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_K_LP status=Optimal wall_seconds=0.018487
+2026-10-25 13:41:17,447 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_K_LP status=Optimal wall_seconds=0.017364
+2026-10-25 13:41:17,472 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_M_MILP status=Optimal wall_seconds=0.024285
+2026-10-25 13:41:17,498 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_M_MILP status=Optimal wall_seconds=0.025654
+2026-10-25 13:41:17,527 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_M_MILP status=Optimal wall_seconds=0.028236
+2026-10-25 13:41:17,546 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_M_LP status=Optimal wall_seconds=0.018845
+2026-10-25 13:41:17,568 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_M_LP status=Optimal wall_seconds=0.020494
+2026-10-25 13:41:17,582 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e CBC multi_M_LP status=Optimal wall_seconds=0.013791
+2026-10-25 13:41:17,582 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104116Z-0376e48e END SOLVE_CFLP seconds=0.594
+2026-10-25 13:41:17,582 INFO pipeline stage=PROCESS_IOT run_id=20261025T104116Z-0376e48e START PROCESS_IOT
+2026-10-25 13:41:17,586 INFO pipeline stage=PROCESS_IOT run_id=20261025T104116Z-0376e48e IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 13:41:17,586 INFO pipeline stage=PROCESS_IOT run_id=20261025T104116Z-0376e48e END PROCESS_IOT seconds=0.004
+2026-10-25 13:41:17,586 INFO pipeline stage=GENERATE_DPP run_id=20261025T104116Z-0376e48e START GENERATE_DPP
+2026-10-25 13:41:17,587 INFO pipeline stage=GENERATE_DPP run_id=20261025T104116Z-0376e48e END GENERATE_DPP seconds=0.001
+2026-10-25 13:41:17,587 INFO pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e START VERIFY
+2026-10-25 13:41:17,588 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Air_Express_decimal PASS 
+2026-10-25 13:41:17,589 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Air_Express_component_sum PASS 
+2026-10-25 13:41:17,589 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Air_Express_currency PASS 
+2026-10-25 13:41:17,590 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Rail_Express_decimal PASS 
+2026-10-25 13:41:17,591 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Rail_Express_component_sum PASS 
+2026-10-25 13:41:17,591 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Rail_Express_currency PASS 
+2026-10-25 13:41:17,592 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 13:41:17,592 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 13:41:17,593 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 13:41:17,594 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:41:17,594 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_sign_change PASS 
+2026-10-25 13:41:17,595 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 13:41:17,595 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_sign_change PASS 
+2026-10-25 13:41:17,596 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 13:41:17,596 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_sign_change PASS 
+2026-10-25 13:41:17,597 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 13:41:17,597 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_sign_change PASS 
+2026-10-25 13:41:17,598 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:41:17,598 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_sign_change PASS 
+2026-10-25 13:41:17,599 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 13:41:17,599 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS root_sign_change PASS 
+2026-10-25 13:41:17,600 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS multi_demand PASS 
+2026-10-25 13:41:17,601 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS multi_cost PASS 
+2026-10-25 13:41:17,601 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS multi_capacity PASS 
+2026-10-25 13:41:17,602 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS single_demand PASS 
+2026-10-25 13:41:17,602 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS single_cost PASS 
+2026-10-25 13:41:17,603 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS single_capacity PASS 
+2026-10-25 13:41:17,603 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS physical_lp_demand PASS 
+2026-10-25 13:41:17,603 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS physical_lp_cost PASS 
+2026-10-25 13:41:17,604 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS physical_lp_capacity PASS 
+2026-10-25 13:41:17,604 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_milp_demand PASS 
+2026-10-25 13:41:17,605 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_milp_cost PASS 
+2026-10-25 13:41:17,605 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_milp_capacity PASS 
+2026-10-25 13:41:17,606 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_lp_demand PASS 
+2026-10-25 13:41:17,606 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_lp_cost PASS 
+2026-10-25 13:41:17,607 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_lp_capacity PASS 
+2026-10-25 13:41:17,609 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS single_enumeration PASS 
+2026-10-25 13:41:18,015 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS multi_highs_enumeration PASS 
+2026-10-25 13:41:18,039 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 13:41:18,040 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS multi_lp_bound PASS 
+2026-10-25 13:41:18,040 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 13:41:18,041 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS iot_start PASS 
+2026-10-25 13:41:18,042 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS iot_end PASS 
+2026-10-25 13:41:18,042 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS iot_duration PASS 
+2026-10-25 13:41:18,043 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS iot_shock PASS 
+2026-10-25 13:41:18,043 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS dynamic_risk_delta PASS 
+2026-10-25 13:41:18,044 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS dpp_tco PASS 
+2026-10-25 13:41:18,044 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS dpp_scope3 PASS 
+2026-10-25 13:41:18,045 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS telemetry_sha256 PASS 
+2026-10-25 13:41:18,046 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS gps_independent_cosine PASS 
+2026-10-25 13:41:18,046 INFO pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T104116Z-0376e48e_core.xml']
+2026-10-25 13:41:20,563 DEBUG pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e HARNESS pytest_core PASS failed=0; skipped=0; 2.514s
+2026-10-25 13:41:20,563 INFO pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e pytest core: 46 passed; 0 failed; 0 skipped
+2026-10-25 13:41:20,564 INFO pipeline stage=VERIFY run_id=20261025T104116Z-0376e48e END VERIFY seconds=2.976
+2026-10-25 13:41:20,801 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e START PLOT_AND_VALIDATE
+2026-10-25 13:41:31,306 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_01_tco PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,309 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_02_wacc PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,311 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_03_price PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,312 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_04_lead PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,315 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_05_ets PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,316 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_06_multi PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,318 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_07_single PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,319 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_08_capacity PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,320 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_09_bigm PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,322 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_10_temperature PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,323 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_11_shock PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,324 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e HARNESS plot_12_gps PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:41:31,324 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104116Z-0376e48e END PLOT_AND_VALIDATE seconds=10.523
+2026-10-25 13:41:31,325 INFO pipeline stage=BUILD_REPORT run_id=20261025T104116Z-0376e48e START BUILD_REPORT
+2026-10-25 13:41:32,736 DEBUG pipeline stage=BUILD_REPORT run_id=20261025T104116Z-0376e48e HARNESS docx_structure PASS ZIP CRC, XML, картинки, ширина и повторное открытие проверены
+2026-10-25 13:41:32,736 INFO pipeline stage=BUILD_REPORT run_id=20261025T104116Z-0376e48e END BUILD_REPORT seconds=1.411
+2026-10-25 13:41:32,737 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104116Z-0376e48e START FINAL_AUDIT
+2026-10-25 13:41:32,737 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104116Z-0376e48e pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_artifacts.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T104116Z-0376e48e_artifacts.xml']
+2026-10-25 13:41:34,673 ERROR pipeline stage=FINAL_AUDIT run_id=20261025T104116Z-0376e48e HARNESS pytest_artifacts FAIL failed=1; skipped=0; 1.932s
+2026-10-25 13:41:34,675 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104116Z-0376e48e pytest artifacts: 8 passed; 1 failed; 0 skipped
+2026-10-25 13:41:34,677 ERROR pipeline stage=FINAL_AUDIT run_id=20261025T104116Z-0376e48e FAIL FINAL_AUDIT
+Traceback (most recent call last):
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 59, in stage
+    yield
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 158, in run
+    self.run_tests('artifacts',['test_artifacts.py'],artifact=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 83, in run_tests
+    if proc.returncode!=0: raise RuntimeError('pytest failed; '+str(log))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: pytest failed; C:\work\Economic analysis of knowledge‑intensive industries\4\app\logs\20261025T104116Z-0376e48e_artifacts.txt
+2026-10-25 13:41:34,690 ERROR pipeline stage=FINAL_AUDIT run_id=20261025T104116Z-0376e48e HARNESS stage_FINAL_AUDIT FAIL pytest failed; C:\work\Economic analysis of knowledge‑intensive industries\4\app\logs\20261025T104116Z-0376e48e_artifacts.txt
+2026-10-25 13:46:06,236 INFO pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 START PREPARE
+2026-10-25 13:46:06,379 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:06,379 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:06,380 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:06,380 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 13:46:06,381 DEBUG pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 13:46:06,381 INFO pipeline stage=PREPARE run_id=20261025T104606Z-4c8a0736 END PREPARE seconds=0.145
+2026-10-25 13:46:06,392 INFO pipeline stage=LOAD run_id=20261025T104606Z-4c8a0736 START LOAD
+2026-10-25 13:46:06,400 INFO pipeline stage=LOAD run_id=20261025T104606Z-4c8a0736 LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 13:46:06,400 INFO pipeline stage=LOAD run_id=20261025T104606Z-4c8a0736 END LOAD seconds=0.008
+2026-10-25 13:46:06,401 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104606Z-4c8a0736 START VALIDATE_INPUT
+2026-10-25 13:46:06,406 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104606Z-4c8a0736 HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 13:46:06,406 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104606Z-4c8a0736 HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 13:46:06,407 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T104606Z-4c8a0736 HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 13:46:06,407 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104606Z-4c8a0736 END VALIDATE_INPUT seconds=0.006
+2026-10-25 13:46:06,418 INFO pipeline stage=BUILD_MODELS run_id=20261025T104606Z-4c8a0736 START BUILD_MODELS
+2026-10-25 13:46:06,418 INFO pipeline stage=BUILD_MODELS run_id=20261025T104606Z-4c8a0736 END BUILD_MODELS seconds=0.000
+2026-10-25 13:46:06,419 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104606Z-4c8a0736 START CALCULATE_TCO
+2026-10-25 13:46:06,426 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104606Z-4c8a0736 TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 13:46:06,427 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T104606Z-4c8a0736 HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 13:46:06,427 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104606Z-4c8a0736 END CALCULATE_TCO seconds=0.008
+2026-10-25 13:46:06,438 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 START SOLVE_CFLP
+2026-10-25 13:46:06,497 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_K_MILP status=Optimal wall_seconds=0.055124
+2026-10-25 13:46:06,562 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_K_MILP status=Optimal wall_seconds=0.063872
+2026-10-25 13:46:06,619 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_K_MILP status=Optimal wall_seconds=0.056069
+2026-10-25 13:46:06,688 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC single_K_MILP status=Optimal wall_seconds=0.068207
+2026-10-25 13:46:06,751 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC single_K_MILP status=Optimal wall_seconds=0.062398
+2026-10-25 13:46:06,824 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC single_K_MILP status=Optimal wall_seconds=0.072813
+2026-10-25 13:46:06,846 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_K_LP status=Optimal wall_seconds=0.020565
+2026-10-25 13:46:06,868 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_K_LP status=Optimal wall_seconds=0.021290
+2026-10-25 13:46:06,892 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_K_LP status=Optimal wall_seconds=0.024170
+2026-10-25 13:46:06,920 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_M_MILP status=Optimal wall_seconds=0.026529
+2026-10-25 13:46:06,947 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_M_MILP status=Optimal wall_seconds=0.025956
+2026-10-25 13:46:06,975 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_M_MILP status=Optimal wall_seconds=0.026697
+2026-10-25 13:46:06,999 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_M_LP status=Optimal wall_seconds=0.023149
+2026-10-25 13:46:07,021 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_M_LP status=Optimal wall_seconds=0.020789
+2026-10-25 13:46:07,040 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 CBC multi_M_LP status=Optimal wall_seconds=0.018179
+2026-10-25 13:46:07,040 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104606Z-4c8a0736 END SOLVE_CFLP seconds=0.602
+2026-10-25 13:46:07,041 INFO pipeline stage=PROCESS_IOT run_id=20261025T104606Z-4c8a0736 START PROCESS_IOT
+2026-10-25 13:46:07,045 INFO pipeline stage=PROCESS_IOT run_id=20261025T104606Z-4c8a0736 IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 13:46:07,045 INFO pipeline stage=PROCESS_IOT run_id=20261025T104606Z-4c8a0736 END PROCESS_IOT seconds=0.004
+2026-10-25 13:46:07,046 INFO pipeline stage=GENERATE_DPP run_id=20261025T104606Z-4c8a0736 START GENERATE_DPP
+2026-10-25 13:46:07,046 INFO pipeline stage=GENERATE_DPP run_id=20261025T104606Z-4c8a0736 END GENERATE_DPP seconds=0.001
+2026-10-25 13:46:07,047 INFO pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 START VERIFY
+2026-10-25 13:46:07,048 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Air_Express_decimal PASS 
+2026-10-25 13:46:07,050 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Air_Express_component_sum PASS 
+2026-10-25 13:46:07,050 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Air_Express_currency PASS 
+2026-10-25 13:46:07,051 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Rail_Express_decimal PASS 
+2026-10-25 13:46:07,052 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Rail_Express_component_sum PASS 
+2026-10-25 13:46:07,052 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Rail_Express_currency PASS 
+2026-10-25 13:46:07,053 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 13:46:07,054 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 13:46:07,054 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 13:46:07,055 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:46:07,055 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_sign_change PASS 
+2026-10-25 13:46:07,056 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 13:46:07,057 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_sign_change PASS 
+2026-10-25 13:46:07,057 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 13:46:07,058 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_sign_change PASS 
+2026-10-25 13:46:07,059 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 13:46:07,060 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_sign_change PASS 
+2026-10-25 13:46:07,061 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:46:07,061 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_sign_change PASS 
+2026-10-25 13:46:07,062 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 13:46:07,063 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS root_sign_change PASS 
+2026-10-25 13:46:07,063 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS multi_demand PASS 
+2026-10-25 13:46:07,064 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS multi_cost PASS 
+2026-10-25 13:46:07,065 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS multi_capacity PASS 
+2026-10-25 13:46:07,066 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS single_demand PASS 
+2026-10-25 13:46:07,066 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS single_cost PASS 
+2026-10-25 13:46:07,067 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS single_capacity PASS 
+2026-10-25 13:46:07,067 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS physical_lp_demand PASS 
+2026-10-25 13:46:07,068 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS physical_lp_cost PASS 
+2026-10-25 13:46:07,068 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS physical_lp_capacity PASS 
+2026-10-25 13:46:07,069 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_milp_demand PASS 
+2026-10-25 13:46:07,069 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_milp_cost PASS 
+2026-10-25 13:46:07,070 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_milp_capacity PASS 
+2026-10-25 13:46:07,070 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_lp_demand PASS 
+2026-10-25 13:46:07,071 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_lp_cost PASS 
+2026-10-25 13:46:07,072 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_lp_capacity PASS 
+2026-10-25 13:46:07,074 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS single_enumeration PASS 
+2026-10-25 13:46:07,566 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS multi_highs_enumeration PASS 
+2026-10-25 13:46:07,584 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 13:46:07,585 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS multi_lp_bound PASS 
+2026-10-25 13:46:07,585 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 13:46:07,586 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS iot_start PASS 
+2026-10-25 13:46:07,586 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS iot_end PASS 
+2026-10-25 13:46:07,587 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS iot_duration PASS 
+2026-10-25 13:46:07,588 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS iot_shock PASS 
+2026-10-25 13:46:07,588 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS dynamic_risk_delta PASS 
+2026-10-25 13:46:07,589 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS dpp_tco PASS 
+2026-10-25 13:46:07,589 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS dpp_scope3 PASS 
+2026-10-25 13:46:07,591 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS telemetry_sha256 PASS 
+2026-10-25 13:46:07,593 DEBUG pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS gps_independent_cosine PASS 
+2026-10-25 13:46:07,593 INFO pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T104606Z-4c8a0736_core.xml']
+2026-10-25 13:46:13,462 ERROR pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS pytest_core FAIL failed=6; skipped=0; 5.866s
+2026-10-25 13:46:13,463 INFO pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 pytest core: 41 passed; 6 failed; 0 skipped
+2026-10-25 13:46:13,463 ERROR pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 FAIL VERIFY
+Traceback (most recent call last):
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 59, in stage
+    yield
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 150, in run
+    self.run_tests('core',['test_calculations.py','test_loaders.py','test_plot_integrity.py'])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 90, in run_tests
+    if proc.returncode!=0: raise RuntimeError('pytest failed; '+str(log))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: pytest failed; C:\work\Economic analysis of knowledge‑intensive industries\4\app\logs\20261025T104606Z-4c8a0736_core.txt
+2026-10-25 13:46:13,470 ERROR pipeline stage=VERIFY run_id=20261025T104606Z-4c8a0736 HARNESS stage_VERIFY FAIL pytest failed; C:\work\Economic analysis of knowledge‑intensive industries\4\app\logs\20261025T104606Z-4c8a0736_core.txt
+2026-10-25 13:46:40,926 INFO pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 START PREPARE
+2026-10-25 13:46:41,076 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:41,076 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:41,077 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:41,077 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 13:46:41,078 DEBUG pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 13:46:41,078 INFO pipeline stage=PREPARE run_id=20261025T104640Z-9a2d6bf7 END PREPARE seconds=0.152
+2026-10-25 13:46:41,090 INFO pipeline stage=LOAD run_id=20261025T104640Z-9a2d6bf7 START LOAD
+2026-10-25 13:46:41,099 INFO pipeline stage=LOAD run_id=20261025T104640Z-9a2d6bf7 LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 13:46:41,099 INFO pipeline stage=LOAD run_id=20261025T104640Z-9a2d6bf7 END LOAD seconds=0.009
+2026-10-25 13:46:41,101 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104640Z-9a2d6bf7 START VALIDATE_INPUT
+2026-10-25 13:46:41,106 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104640Z-9a2d6bf7 HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 13:46:41,106 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104640Z-9a2d6bf7 HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 13:46:41,107 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T104640Z-9a2d6bf7 HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 13:46:41,107 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104640Z-9a2d6bf7 END VALIDATE_INPUT seconds=0.006
+2026-10-25 13:46:41,119 INFO pipeline stage=BUILD_MODELS run_id=20261025T104640Z-9a2d6bf7 START BUILD_MODELS
+2026-10-25 13:46:41,119 INFO pipeline stage=BUILD_MODELS run_id=20261025T104640Z-9a2d6bf7 END BUILD_MODELS seconds=0.000
+2026-10-25 13:46:41,120 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104640Z-9a2d6bf7 START CALCULATE_TCO
+2026-10-25 13:46:41,127 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104640Z-9a2d6bf7 TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 13:46:41,128 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T104640Z-9a2d6bf7 HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 13:46:41,128 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104640Z-9a2d6bf7 END CALCULATE_TCO seconds=0.008
+2026-10-25 13:46:41,159 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 START SOLVE_CFLP
+2026-10-25 13:46:41,222 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_K_MILP status=Optimal wall_seconds=0.062284
+2026-10-25 13:46:41,283 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_K_MILP status=Optimal wall_seconds=0.059379
+2026-10-25 13:46:41,346 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_K_MILP status=Optimal wall_seconds=0.062840
+2026-10-25 13:46:41,412 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC single_K_MILP status=Optimal wall_seconds=0.065223
+2026-10-25 13:46:41,490 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC single_K_MILP status=Optimal wall_seconds=0.077366
+2026-10-25 13:46:41,577 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC single_K_MILP status=Optimal wall_seconds=0.086233
+2026-10-25 13:46:41,618 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_K_LP status=Optimal wall_seconds=0.039851
+2026-10-25 13:46:41,647 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_K_LP status=Optimal wall_seconds=0.028561
+2026-10-25 13:46:41,670 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_K_LP status=Optimal wall_seconds=0.022258
+2026-10-25 13:46:41,696 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_M_MILP status=Optimal wall_seconds=0.025466
+2026-10-25 13:46:41,724 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_M_MILP status=Optimal wall_seconds=0.027767
+2026-10-25 13:46:41,756 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_M_MILP status=Optimal wall_seconds=0.031194
+2026-10-25 13:46:41,780 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_M_LP status=Optimal wall_seconds=0.023284
+2026-10-25 13:46:41,800 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_M_LP status=Optimal wall_seconds=0.018979
+2026-10-25 13:46:41,823 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 CBC multi_M_LP status=Optimal wall_seconds=0.023160
+2026-10-25 13:46:41,824 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104640Z-9a2d6bf7 END SOLVE_CFLP seconds=0.665
+2026-10-25 13:46:41,825 INFO pipeline stage=PROCESS_IOT run_id=20261025T104640Z-9a2d6bf7 START PROCESS_IOT
+2026-10-25 13:46:41,829 INFO pipeline stage=PROCESS_IOT run_id=20261025T104640Z-9a2d6bf7 IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 13:46:41,829 INFO pipeline stage=PROCESS_IOT run_id=20261025T104640Z-9a2d6bf7 END PROCESS_IOT seconds=0.004
+2026-10-25 13:46:41,830 INFO pipeline stage=GENERATE_DPP run_id=20261025T104640Z-9a2d6bf7 START GENERATE_DPP
+2026-10-25 13:46:41,830 INFO pipeline stage=GENERATE_DPP run_id=20261025T104640Z-9a2d6bf7 END GENERATE_DPP seconds=0.001
+2026-10-25 13:46:41,831 INFO pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 START VERIFY
+2026-10-25 13:46:41,832 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Air_Express_decimal PASS 
+2026-10-25 13:46:41,833 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Air_Express_component_sum PASS 
+2026-10-25 13:46:41,834 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Air_Express_currency PASS 
+2026-10-25 13:46:41,834 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Rail_Express_decimal PASS 
+2026-10-25 13:46:41,835 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Rail_Express_component_sum PASS 
+2026-10-25 13:46:41,835 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Rail_Express_currency PASS 
+2026-10-25 13:46:41,836 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 13:46:41,837 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 13:46:41,837 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 13:46:41,838 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:46:41,839 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_sign_change PASS 
+2026-10-25 13:46:41,840 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 13:46:41,841 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_sign_change PASS 
+2026-10-25 13:46:41,841 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 13:46:41,842 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_sign_change PASS 
+2026-10-25 13:46:41,842 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 13:46:41,843 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_sign_change PASS 
+2026-10-25 13:46:41,843 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:46:41,844 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_sign_change PASS 
+2026-10-25 13:46:41,844 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 13:46:41,844 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS root_sign_change PASS 
+2026-10-25 13:46:41,846 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS multi_demand PASS 
+2026-10-25 13:46:41,846 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS multi_cost PASS 
+2026-10-25 13:46:41,847 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS multi_capacity PASS 
+2026-10-25 13:46:41,847 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS single_demand PASS 
+2026-10-25 13:46:41,848 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS single_cost PASS 
+2026-10-25 13:46:41,848 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS single_capacity PASS 
+2026-10-25 13:46:41,849 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS physical_lp_demand PASS 
+2026-10-25 13:46:41,849 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS physical_lp_cost PASS 
+2026-10-25 13:46:41,850 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS physical_lp_capacity PASS 
+2026-10-25 13:46:41,850 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_milp_demand PASS 
+2026-10-25 13:46:41,851 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_milp_cost PASS 
+2026-10-25 13:46:41,852 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_milp_capacity PASS 
+2026-10-25 13:46:41,852 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_lp_demand PASS 
+2026-10-25 13:46:41,853 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_lp_cost PASS 
+2026-10-25 13:46:41,853 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_lp_capacity PASS 
+2026-10-25 13:46:41,855 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS single_enumeration PASS 
+2026-10-25 13:46:42,308 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS multi_highs_enumeration PASS 
+2026-10-25 13:46:42,326 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 13:46:42,327 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS multi_lp_bound PASS 
+2026-10-25 13:46:42,328 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 13:46:42,328 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS iot_start PASS 
+2026-10-25 13:46:42,329 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS iot_end PASS 
+2026-10-25 13:46:42,330 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS iot_duration PASS 
+2026-10-25 13:46:42,330 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS iot_shock PASS 
+2026-10-25 13:46:42,331 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS dynamic_risk_delta PASS 
+2026-10-25 13:46:42,331 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS dpp_tco PASS 
+2026-10-25 13:46:42,332 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS dpp_scope3 PASS 
+2026-10-25 13:46:42,333 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS telemetry_sha256 PASS 
+2026-10-25 13:46:42,334 DEBUG pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS gps_independent_cosine PASS 
+2026-10-25 13:46:42,334 INFO pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T104640Z-9a2d6bf7_core.xml']
+2026-10-25 13:46:45,255 ERROR pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS pytest_core FAIL failed=6; skipped=0; 2.919s
+2026-10-25 13:46:45,256 INFO pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 pytest core: 41 passed; 6 failed; 0 skipped
+2026-10-25 13:46:45,256 ERROR pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 FAIL VERIFY
+Traceback (most recent call last):
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 59, in stage
+    yield
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 150, in run
+    self.run_tests('core',['test_calculations.py','test_loaders.py','test_plot_integrity.py'])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\Economic analysis of knowledge‑intensive industries\4\app\src\orchestrator.py", line 90, in run_tests
+    if proc.returncode!=0: raise RuntimeError('pytest failed; '+str(log))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: pytest failed; C:\work\Economic analysis of knowledge‑intensive industries\4\app\logs\20261025T104640Z-9a2d6bf7_core.txt
+2026-10-25 13:46:45,263 ERROR pipeline stage=VERIFY run_id=20261025T104640Z-9a2d6bf7 HARNESS stage_VERIFY FAIL pytest failed; C:\work\Economic analysis of knowledge‑intensive industries\4\app\logs\20261025T104640Z-9a2d6bf7_core.txt
+2026-10-25 13:47:19,164 INFO pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c START PREPARE
+2026-10-25 13:47:19,332 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:47:19,332 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:47:19,333 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:47:19,333 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 13:47:19,334 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 13:47:19,335 DEBUG pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 13:47:19,335 INFO pipeline stage=PREPARE run_id=20261025T104719Z-8f9f110c END PREPARE seconds=0.170
+2026-10-25 13:47:19,347 INFO pipeline stage=LOAD run_id=20261025T104719Z-8f9f110c START LOAD
+2026-10-25 13:47:19,357 INFO pipeline stage=LOAD run_id=20261025T104719Z-8f9f110c LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 13:47:19,357 INFO pipeline stage=LOAD run_id=20261025T104719Z-8f9f110c END LOAD seconds=0.009
+2026-10-25 13:47:19,358 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104719Z-8f9f110c START VALIDATE_INPUT
+2026-10-25 13:47:19,364 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104719Z-8f9f110c HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 13:47:19,365 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T104719Z-8f9f110c HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 13:47:19,365 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T104719Z-8f9f110c HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 13:47:19,365 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T104719Z-8f9f110c END VALIDATE_INPUT seconds=0.007
+2026-10-25 13:47:19,378 INFO pipeline stage=BUILD_MODELS run_id=20261025T104719Z-8f9f110c START BUILD_MODELS
+2026-10-25 13:47:19,378 INFO pipeline stage=BUILD_MODELS run_id=20261025T104719Z-8f9f110c END BUILD_MODELS seconds=0.000
+2026-10-25 13:47:19,379 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104719Z-8f9f110c START CALCULATE_TCO
+2026-10-25 13:47:19,387 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104719Z-8f9f110c TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 13:47:19,388 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T104719Z-8f9f110c HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 13:47:19,388 INFO pipeline stage=CALCULATE_TCO run_id=20261025T104719Z-8f9f110c END CALCULATE_TCO seconds=0.009
+2026-10-25 13:47:19,420 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c START SOLVE_CFLP
+2026-10-25 13:47:19,487 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_K_MILP status=Optimal wall_seconds=0.065862
+2026-10-25 13:47:19,554 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_K_MILP status=Optimal wall_seconds=0.066346
+2026-10-25 13:47:19,620 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_K_MILP status=Optimal wall_seconds=0.065449
+2026-10-25 13:47:19,689 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC single_K_MILP status=Optimal wall_seconds=0.068027
+2026-10-25 13:47:19,769 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC single_K_MILP status=Optimal wall_seconds=0.078800
+2026-10-25 13:47:19,839 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC single_K_MILP status=Optimal wall_seconds=0.068605
+2026-10-25 13:47:19,866 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_K_LP status=Optimal wall_seconds=0.026163
+2026-10-25 13:47:19,897 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_K_LP status=Optimal wall_seconds=0.030449
+2026-10-25 13:47:19,927 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_K_LP status=Optimal wall_seconds=0.028811
+2026-10-25 13:47:19,959 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_M_MILP status=Optimal wall_seconds=0.029543
+2026-10-25 13:47:19,985 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_M_MILP status=Optimal wall_seconds=0.025339
+2026-10-25 13:47:20,022 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_M_MILP status=Optimal wall_seconds=0.036012
+2026-10-25 13:47:20,042 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_M_LP status=Optimal wall_seconds=0.019048
+2026-10-25 13:47:20,067 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_M_LP status=Optimal wall_seconds=0.025049
+2026-10-25 13:47:20,087 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c CBC multi_M_LP status=Optimal wall_seconds=0.018717
+2026-10-25 13:47:20,088 INFO pipeline stage=SOLVE_CFLP run_id=20261025T104719Z-8f9f110c END SOLVE_CFLP seconds=0.668
+2026-10-25 13:47:20,089 INFO pipeline stage=PROCESS_IOT run_id=20261025T104719Z-8f9f110c START PROCESS_IOT
+2026-10-25 13:47:20,093 INFO pipeline stage=PROCESS_IOT run_id=20261025T104719Z-8f9f110c IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 13:47:20,094 INFO pipeline stage=PROCESS_IOT run_id=20261025T104719Z-8f9f110c END PROCESS_IOT seconds=0.005
+2026-10-25 13:47:20,095 INFO pipeline stage=GENERATE_DPP run_id=20261025T104719Z-8f9f110c START GENERATE_DPP
+2026-10-25 13:47:20,096 INFO pipeline stage=GENERATE_DPP run_id=20261025T104719Z-8f9f110c END GENERATE_DPP seconds=0.001
+2026-10-25 13:47:20,097 INFO pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c START VERIFY
+2026-10-25 13:47:20,098 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Air_Express_decimal PASS 
+2026-10-25 13:47:20,099 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Air_Express_component_sum PASS 
+2026-10-25 13:47:20,099 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Air_Express_currency PASS 
+2026-10-25 13:47:20,100 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Rail_Express_decimal PASS 
+2026-10-25 13:47:20,101 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Rail_Express_component_sum PASS 
+2026-10-25 13:47:20,101 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Rail_Express_currency PASS 
+2026-10-25 13:47:20,102 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 13:47:20,102 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 13:47:20,103 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 13:47:20,103 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:47:20,104 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_sign_change PASS 
+2026-10-25 13:47:20,104 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 13:47:20,105 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_sign_change PASS 
+2026-10-25 13:47:20,105 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 13:47:20,106 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_sign_change PASS 
+2026-10-25 13:47:20,106 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 13:47:20,107 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_sign_change PASS 
+2026-10-25 13:47:20,107 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 13:47:20,107 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_sign_change PASS 
+2026-10-25 13:47:20,108 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 13:47:20,108 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS root_sign_change PASS 
+2026-10-25 13:47:20,109 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS multi_demand PASS 
+2026-10-25 13:47:20,110 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS multi_cost PASS 
+2026-10-25 13:47:20,110 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS multi_capacity PASS 
+2026-10-25 13:47:20,111 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS single_demand PASS 
+2026-10-25 13:47:20,112 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS single_cost PASS 
+2026-10-25 13:47:20,113 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS single_capacity PASS 
+2026-10-25 13:47:20,113 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS physical_lp_demand PASS 
+2026-10-25 13:47:20,114 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS physical_lp_cost PASS 
+2026-10-25 13:47:20,114 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS physical_lp_capacity PASS 
+2026-10-25 13:47:20,115 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_milp_demand PASS 
+2026-10-25 13:47:20,115 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_milp_cost PASS 
+2026-10-25 13:47:20,116 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_milp_capacity PASS 
+2026-10-25 13:47:20,116 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_lp_demand PASS 
+2026-10-25 13:47:20,117 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_lp_cost PASS 
+2026-10-25 13:47:20,117 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_lp_capacity PASS 
+2026-10-25 13:47:20,119 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS single_enumeration PASS 
+2026-10-25 13:47:20,643 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS multi_highs_enumeration PASS 
+2026-10-25 13:47:20,663 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 13:47:20,664 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS multi_lp_bound PASS 
+2026-10-25 13:47:20,664 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 13:47:20,665 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS iot_start PASS 
+2026-10-25 13:47:20,665 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS iot_end PASS 
+2026-10-25 13:47:20,666 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS iot_duration PASS 
+2026-10-25 13:47:20,667 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS iot_shock PASS 
+2026-10-25 13:47:20,667 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS dynamic_risk_delta PASS 
+2026-10-25 13:47:20,668 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS dpp_tco PASS 
+2026-10-25 13:47:20,669 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS dpp_scope3 PASS 
+2026-10-25 13:47:20,670 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS telemetry_sha256 PASS 
+2026-10-25 13:47:20,672 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS gps_independent_cosine PASS 
+2026-10-25 13:47:20,672 INFO pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T104719Z-8f9f110c_core.xml']
+2026-10-25 13:47:24,079 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS pytest_core PASS failed=0; skipped=0; 3.405s
+2026-10-25 13:47:24,079 INFO pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c pytest core: 47 passed; 0 failed; 0 skipped
+2026-10-25 13:47:24,080 INFO pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c END VERIFY seconds=3.982
+2026-10-25 13:47:24,124 DEBUG pipeline stage=VERIFY run_id=20261025T104719Z-8f9f110c HARNESS stage_VERIFY FIXED_AND_RETESTED Повторный полный запуск стадии успешен; исходная ошибка сохранена в 20261025T104640Z-9a2d6bf7
+2026-10-25 13:47:24,369 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c START PLOT_AND_VALIDATE
+2026-10-25 13:47:34,294 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_01_tco PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,297 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_02_wacc PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,300 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_03_price PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,303 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_04_lead PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,306 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_05_ets PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,309 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_06_multi PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,312 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_07_single PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,314 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_08_capacity PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,316 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_09_bigm PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,319 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_10_temperature PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,319 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_11_shock PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,321 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS plot_12_gps PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 13:47:34,322 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c END PLOT_AND_VALIDATE seconds=9.953
+2026-10-25 13:47:34,365 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T104719Z-8f9f110c HARNESS stage_PLOT_AND_VALIDATE FIXED_AND_RETESTED Повторный полный запуск стадии успешен; исходная ошибка сохранена в 20261025T103832Z-e41156ca
+2026-10-25 13:47:34,366 INFO pipeline stage=BUILD_REPORT run_id=20261025T104719Z-8f9f110c START BUILD_REPORT
+2026-10-25 13:47:35,700 DEBUG pipeline stage=BUILD_REPORT run_id=20261025T104719Z-8f9f110c HARNESS docx_structure PASS ZIP CRC, XML, картинки, ширина и повторное открытие проверены
+2026-10-25 13:47:35,700 INFO pipeline stage=BUILD_REPORT run_id=20261025T104719Z-8f9f110c END BUILD_REPORT seconds=1.334
+2026-10-25 13:47:35,742 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c START FINAL_AUDIT
+2026-10-25 13:47:35,743 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_artifacts.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T104719Z-8f9f110c_artifacts.xml']
+2026-10-25 13:47:37,612 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c HARNESS pytest_artifacts PASS failed=0; skipped=0; 1.868s
+2026-10-25 13:47:37,612 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c pytest artifacts: 9 passed; 0 failed; 0 skipped
+2026-10-25 13:47:50,233 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c HARNESS word_render PASS Реальный Word/PDF; все12рисунков и подписей на тех же страницах
+2026-10-25 13:47:50,237 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c END FINAL_AUDIT seconds=14.494
+2026-10-25 13:47:50,252 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c HARNESS stage_FINAL_AUDIT FIXED_AND_RETESTED Повторный полный запуск стадии успешен; исходная ошибка сохранена в 20261025T104116Z-0376e48e
+2026-10-25 13:47:50,607 INFO pipeline stage=FINAL_AUDIT run_id=20261025T104719Z-8f9f110c COMPLETE status=PASS report=C:\work\Economic analysis of knowledge‑intensive industries\4\app\output\Итоговый_отчет_практическая_4_ЭА.docx
+2026-10-25 14:00:52,968 INFO pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 START PREPARE
+2026-10-25 14:00:53,106 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 14:00:53,106 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 14:00:53,107 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 14:00:53,107 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 14:00:53,108 DEBUG pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 14:00:53,108 INFO pipeline stage=PREPARE run_id=20261025T110052Z-d0b46e75 END PREPARE seconds=0.140
+2026-10-25 14:00:53,119 INFO pipeline stage=LOAD run_id=20261025T110052Z-d0b46e75 START LOAD
+2026-10-25 14:00:53,127 INFO pipeline stage=LOAD run_id=20261025T110052Z-d0b46e75 LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 14:00:53,127 INFO pipeline stage=LOAD run_id=20261025T110052Z-d0b46e75 END LOAD seconds=0.008
+2026-10-25 14:00:53,129 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T110052Z-d0b46e75 START VALIDATE_INPUT
+2026-10-25 14:00:53,133 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T110052Z-d0b46e75 HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 14:00:53,134 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T110052Z-d0b46e75 HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 14:00:53,135 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T110052Z-d0b46e75 HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 14:00:53,135 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T110052Z-d0b46e75 END VALIDATE_INPUT seconds=0.006
+2026-10-25 14:00:53,145 INFO pipeline stage=BUILD_MODELS run_id=20261025T110052Z-d0b46e75 START BUILD_MODELS
+2026-10-25 14:00:53,145 INFO pipeline stage=BUILD_MODELS run_id=20261025T110052Z-d0b46e75 END BUILD_MODELS seconds=0.000
+2026-10-25 14:00:53,147 INFO pipeline stage=CALCULATE_TCO run_id=20261025T110052Z-d0b46e75 START CALCULATE_TCO
+2026-10-25 14:00:53,153 INFO pipeline stage=CALCULATE_TCO run_id=20261025T110052Z-d0b46e75 TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 14:00:53,154 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T110052Z-d0b46e75 HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 14:00:53,154 INFO pipeline stage=CALCULATE_TCO run_id=20261025T110052Z-d0b46e75 END CALCULATE_TCO seconds=0.008
+2026-10-25 14:00:53,165 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 START SOLVE_CFLP
+2026-10-25 14:00:53,225 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_K_MILP status=Optimal wall_seconds=0.058139
+2026-10-25 14:00:53,280 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_K_MILP status=Optimal wall_seconds=0.054825
+2026-10-25 14:00:53,337 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_K_MILP status=Optimal wall_seconds=0.055795
+2026-10-25 14:00:53,408 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC single_K_MILP status=Optimal wall_seconds=0.069992
+2026-10-25 14:00:53,473 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC single_K_MILP status=Optimal wall_seconds=0.064076
+2026-10-25 14:00:53,538 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC single_K_MILP status=Optimal wall_seconds=0.064726
+2026-10-25 14:00:53,561 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_K_LP status=Optimal wall_seconds=0.022692
+2026-10-25 14:00:53,580 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_K_LP status=Optimal wall_seconds=0.017344
+2026-10-25 14:00:53,598 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_K_LP status=Optimal wall_seconds=0.017724
+2026-10-25 14:00:53,622 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_M_MILP status=Optimal wall_seconds=0.022851
+2026-10-25 14:00:53,645 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_M_MILP status=Optimal wall_seconds=0.022400
+2026-10-25 14:00:53,672 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_M_MILP status=Optimal wall_seconds=0.026842
+2026-10-25 14:00:53,689 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_M_LP status=Optimal wall_seconds=0.016345
+2026-10-25 14:00:53,706 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_M_LP status=Optimal wall_seconds=0.016301
+2026-10-25 14:00:53,724 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 CBC multi_M_LP status=Optimal wall_seconds=0.017365
+2026-10-25 14:00:53,725 INFO pipeline stage=SOLVE_CFLP run_id=20261025T110052Z-d0b46e75 END SOLVE_CFLP seconds=0.559
+2026-10-25 14:00:53,726 INFO pipeline stage=PROCESS_IOT run_id=20261025T110052Z-d0b46e75 START PROCESS_IOT
+2026-10-25 14:00:53,730 INFO pipeline stage=PROCESS_IOT run_id=20261025T110052Z-d0b46e75 IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 14:00:53,730 INFO pipeline stage=PROCESS_IOT run_id=20261025T110052Z-d0b46e75 END PROCESS_IOT seconds=0.004
+2026-10-25 14:00:53,732 INFO pipeline stage=GENERATE_DPP run_id=20261025T110052Z-d0b46e75 START GENERATE_DPP
+2026-10-25 14:00:53,733 INFO pipeline stage=GENERATE_DPP run_id=20261025T110052Z-d0b46e75 END GENERATE_DPP seconds=0.001
+2026-10-25 14:00:53,734 INFO pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 START VERIFY
+2026-10-25 14:00:53,735 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Air_Express_decimal PASS 
+2026-10-25 14:00:53,735 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Air_Express_component_sum PASS 
+2026-10-25 14:00:53,736 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Air_Express_currency PASS 
+2026-10-25 14:00:53,737 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Rail_Express_decimal PASS 
+2026-10-25 14:00:53,737 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Rail_Express_component_sum PASS 
+2026-10-25 14:00:53,738 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Rail_Express_currency PASS 
+2026-10-25 14:00:53,738 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 14:00:53,739 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 14:00:53,739 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 14:00:53,739 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 14:00:53,740 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_sign_change PASS 
+2026-10-25 14:00:53,740 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 14:00:53,741 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_sign_change PASS 
+2026-10-25 14:00:53,741 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 14:00:53,742 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_sign_change PASS 
+2026-10-25 14:00:53,742 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 14:00:53,743 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_sign_change PASS 
+2026-10-25 14:00:53,743 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 14:00:53,744 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_sign_change PASS 
+2026-10-25 14:00:53,744 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 14:00:53,745 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS root_sign_change PASS 
+2026-10-25 14:00:53,745 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS multi_demand PASS 
+2026-10-25 14:00:53,746 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS multi_cost PASS 
+2026-10-25 14:00:53,746 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS multi_capacity PASS 
+2026-10-25 14:00:53,746 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS single_demand PASS 
+2026-10-25 14:00:53,747 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS single_cost PASS 
+2026-10-25 14:00:53,747 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS single_capacity PASS 
+2026-10-25 14:00:53,748 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS physical_lp_demand PASS 
+2026-10-25 14:00:53,748 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS physical_lp_cost PASS 
+2026-10-25 14:00:53,749 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS physical_lp_capacity PASS 
+2026-10-25 14:00:53,749 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_milp_demand PASS 
+2026-10-25 14:00:53,750 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_milp_cost PASS 
+2026-10-25 14:00:53,750 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_milp_capacity PASS 
+2026-10-25 14:00:53,751 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_lp_demand PASS 
+2026-10-25 14:00:53,751 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_lp_cost PASS 
+2026-10-25 14:00:53,752 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_lp_capacity PASS 
+2026-10-25 14:00:53,754 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS single_enumeration PASS 
+2026-10-25 14:00:54,152 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS multi_highs_enumeration PASS 
+2026-10-25 14:00:54,170 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 14:00:54,171 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS multi_lp_bound PASS 
+2026-10-25 14:00:54,171 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 14:00:54,172 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS iot_start PASS 
+2026-10-25 14:00:54,172 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS iot_end PASS 
+2026-10-25 14:00:54,173 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS iot_duration PASS 
+2026-10-25 14:00:54,174 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS iot_shock PASS 
+2026-10-25 14:00:54,175 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS dynamic_risk_delta PASS 
+2026-10-25 14:00:54,175 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS dpp_tco PASS 
+2026-10-25 14:00:54,176 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS dpp_scope3 PASS 
+2026-10-25 14:00:54,177 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS telemetry_sha256 PASS 
+2026-10-25 14:00:54,178 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS gps_independent_cosine PASS 
+2026-10-25 14:00:54,178 INFO pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T110052Z-d0b46e75_core.xml']
+2026-10-25 14:00:56,598 DEBUG pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 HARNESS pytest_core PASS failed=0; skipped=0; 2.418s
+2026-10-25 14:00:56,598 INFO pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 pytest core: 47 passed; 0 failed; 0 skipped
+2026-10-25 14:00:56,598 INFO pipeline stage=VERIFY run_id=20261025T110052Z-d0b46e75 END VERIFY seconds=2.864
+2026-10-25 14:00:56,908 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 START PLOT_AND_VALIDATE
+2026-10-25 14:01:08,026 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_01_tco PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,028 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_02_wacc PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,030 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_03_price PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,031 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_04_lead PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,033 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_05_ets PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,035 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_06_multi PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,036 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_07_single PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,038 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_08_capacity PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,040 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_09_bigm PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,041 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_10_temperature PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,043 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_11_shock PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,045 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 HARNESS plot_12_gps PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 14:01:08,045 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T110052Z-d0b46e75 END PLOT_AND_VALIDATE seconds=11.136
+2026-10-25 14:01:08,080 INFO pipeline stage=BUILD_REPORT run_id=20261025T110052Z-d0b46e75 START BUILD_REPORT
+2026-10-25 14:01:09,643 DEBUG pipeline stage=BUILD_REPORT run_id=20261025T110052Z-d0b46e75 HARNESS docx_structure PASS ZIP CRC, XML, картинки, ширина и повторное открытие проверены
+2026-10-25 14:01:09,643 INFO pipeline stage=BUILD_REPORT run_id=20261025T110052Z-d0b46e75 END BUILD_REPORT seconds=1.563
+2026-10-25 14:01:09,673 INFO pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 START FINAL_AUDIT
+2026-10-25 14:01:09,674 INFO pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_artifacts.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T110052Z-d0b46e75_artifacts.xml']
+2026-10-25 14:01:11,115 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 HARNESS pytest_artifacts PASS failed=0; skipped=0; 1.440s
+2026-10-25 14:01:11,115 INFO pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 pytest artifacts: 9 passed; 0 failed; 0 skipped
+2026-10-25 14:01:33,983 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 HARNESS word_render PASS Реальный Word/PDF; все12рисунков и подписей на тех же страницах
+2026-10-25 14:01:33,990 INFO pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 END FINAL_AUDIT seconds=24.317
+2026-10-25 14:01:34,205 INFO pipeline stage=FINAL_AUDIT run_id=20261025T110052Z-d0b46e75 COMPLETE status=PASS report=C:\work\Economic analysis of knowledge‑intensive industries\4\app\output\Итоговый_отчет_практическая_4_ЭА.docx
+2026-10-25 15:14:21,729 INFO pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 START PREPARE
+2026-10-25 15:14:22,165 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 HARNESS archive_module1_tco_cbam_input.json PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 15:14:22,166 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 HARNESS archive_module2_cflp_customers.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 15:14:22,167 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 HARNESS archive_module2_cflp_facilities.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 HARNESS archive_module2_cflp_tariffs.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 HARNESS archive_module3_iot_telemetry.csv PASS SHA-256 архивного содержимого и первичного файла
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE logistics_hightech_data.rar sha256=09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc bytes=32882
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE module1_tco_cbam_input.json sha256=b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839 bytes=3678
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE module2_cflp_customers.csv sha256=7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8 bytes=244
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE module2_cflp_facilities.csv sha256=9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52 bytes=287
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE module2_cflp_tariffs.csv sha256=52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd bytes=150
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE module3_iot_telemetry.csv sha256=c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9 bytes=103831
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE Задание_к_практическому_занятию_4_ЭА.pdf sha256=fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24 bytes=351415
+2026-10-25 15:14:22,168 DEBUG pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 SOURCE Лекция 7 ЭА слайды.pdf sha256=7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c bytes=692738
+2026-10-25 15:14:22,169 INFO pipeline stage=PREPARE run_id=20261025T121421Z-3602c105 END PREPARE seconds=0.439
+2026-10-25 15:14:22,206 INFO pipeline stage=LOAD run_id=20261025T121421Z-3602c105 START LOAD
+2026-10-25 15:14:22,221 INFO pipeline stage=LOAD run_id=20261025T121421Z-3602c105 LOAD: 3 routes, 5 customers, 4 facilities, 1440 telemetry rows
+2026-10-25 15:14:22,221 INFO pipeline stage=LOAD run_id=20261025T121421Z-3602c105 END LOAD seconds=0.016
+2026-10-25 15:14:22,226 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T121421Z-3602c105 START VALIDATE_INPUT
+2026-10-25 15:14:22,234 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T121421Z-3602c105 HARNESS quality_540–548 PASS Сохранить эпизод, применить регламент >30 минут
+2026-10-25 15:14:22,235 DEBUG pipeline stage=VALIDATE_INPUT run_id=20261025T121421Z-3602c105 HARNESS quality_920 PASS Сохранить удар, отдельная диагностика
+2026-10-25 15:14:22,236 WARNING pipeline stage=VALIDATE_INPUT run_id=20261025T121421Z-3602c105 HARNESS quality_sum capacity WARNING Гарантия из одной суммы математически неверна; проверить CBC и перебором
+2026-10-25 15:14:22,236 INFO pipeline stage=VALIDATE_INPUT run_id=20261025T121421Z-3602c105 END VALIDATE_INPUT seconds=0.010
+2026-10-25 15:14:22,275 INFO pipeline stage=BUILD_MODELS run_id=20261025T121421Z-3602c105 START BUILD_MODELS
+2026-10-25 15:14:22,275 INFO pipeline stage=BUILD_MODELS run_id=20261025T121421Z-3602c105 END BUILD_MODELS seconds=0.000
+2026-10-25 15:14:22,278 INFO pipeline stage=CALCULATE_TCO run_id=20261025T121421Z-3602c105 START CALCULATE_TCO
+2026-10-25 15:14:22,291 INFO pipeline stage=CALCULATE_TCO run_id=20261025T121421Z-3602c105 TCO baseline={'Air_Express': 345140.74759452057, 'Rail_Express': 63274.84035945205, 'Sea_Road_Multimodal': 51075.8332290411}
+2026-10-25 15:14:22,292 WARNING pipeline stage=CALCULATE_TCO run_id=20261025T121421Z-3602c105 HARNESS air_gap_290000 WARNING Ориентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море
+2026-10-25 15:14:22,293 INFO pipeline stage=CALCULATE_TCO run_id=20261025T121421Z-3602c105 END CALCULATE_TCO seconds=0.015
+2026-10-25 15:14:22,329 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 START SOLVE_CFLP
+2026-10-25 15:14:22,394 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_MILP status=Optimal wall_seconds=0.063796
+2026-10-25 15:14:22,461 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_MILP status=Optimal wall_seconds=0.065939
+2026-10-25 15:14:22,529 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_MILP status=Optimal wall_seconds=0.067760
+2026-10-25 15:14:22,608 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC single_K_MILP status=Optimal wall_seconds=0.077397
+2026-10-25 15:14:22,680 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC single_K_MILP status=Optimal wall_seconds=0.071325
+2026-10-25 15:14:22,751 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC single_K_MILP status=Optimal wall_seconds=0.070354
+2026-10-25 15:14:22,775 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_LP status=Optimal wall_seconds=0.023613
+2026-10-25 15:14:22,802 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_LP status=Optimal wall_seconds=0.024763
+2026-10-25 15:14:22,830 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_LP status=Optimal wall_seconds=0.026233
+2026-10-25 15:14:22,871 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_M_MILP status=Optimal wall_seconds=0.039180
+2026-10-25 15:14:22,909 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_M_MILP status=Optimal wall_seconds=0.035597
+2026-10-25 15:14:22,951 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_M_MILP status=Optimal wall_seconds=0.039350
+2026-10-25 15:14:22,978 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_M_LP status=Optimal wall_seconds=0.026232
+2026-10-25 15:14:23,015 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_M_LP status=Optimal wall_seconds=0.033685
+2026-10-25 15:14:23,055 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_M_LP status=Optimal wall_seconds=0.035811
+2026-10-25 15:14:25,022 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC multi_K_MILP status=Optimal wall_seconds=0.110707
+2026-10-25 15:14:25,215 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 CBC single_K_MILP status=Optimal wall_seconds=0.190607
+2026-10-25 15:14:25,256 DEBUG pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 HARNESS multi_single_equivalence PASS Графики совпадают корректно: оптимум разрешающей дробление модели уже удовлетворяет запрету дробления; независимые решения и нижняя граница совпали
+2026-10-25 15:14:25,259 DEBUG pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 HARNESS multi_single_distinction PASS Контроль B — Тверь 650 тонн/год: модели дают разные потоки и стоимости; первичные данные не менялись
+2026-10-25 15:14:25,259 INFO pipeline stage=SOLVE_CFLP run_id=20261025T121421Z-3602c105 END SOLVE_CFLP seconds=2.930
+2026-10-25 15:14:25,299 INFO pipeline stage=PROCESS_IOT run_id=20261025T121421Z-3602c105 START PROCESS_IOT
+2026-10-25 15:14:25,321 INFO pipeline stage=PROCESS_IOT run_id=20261025T121421Z-3602c105 IoT episodes=1 shocks=1 delta_TCO=1194000.0000000002 distance_km=1676.560249615
+2026-10-25 15:14:25,322 INFO pipeline stage=PROCESS_IOT run_id=20261025T121421Z-3602c105 END PROCESS_IOT seconds=0.023
+2026-10-25 15:14:25,337 INFO pipeline stage=GENERATE_DPP run_id=20261025T121421Z-3602c105 START GENERATE_DPP
+2026-10-25 15:14:25,345 INFO pipeline stage=GENERATE_DPP run_id=20261025T121421Z-3602c105 END GENERATE_DPP seconds=0.007
+2026-10-25 15:14:25,360 INFO pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 START VERIFY
+2026-10-25 15:14:25,366 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Air_Express_decimal PASS 
+2026-10-25 15:14:25,370 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Air_Express_component_sum PASS 
+2026-10-25 15:14:25,372 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Air_Express_currency PASS 
+2026-10-25 15:14:25,376 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Rail_Express_decimal PASS 
+2026-10-25 15:14:25,378 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Rail_Express_component_sum PASS 
+2026-10-25 15:14:25,381 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Rail_Express_currency PASS 
+2026-10-25 15:14:25,384 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Sea_Road_Multimodal_decimal PASS 
+2026-10-25 15:14:25,386 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Sea_Road_Multimodal_component_sum PASS 
+2026-10-25 15:14:25,389 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS Sea_Road_Multimodal_currency PASS 
+2026-10-25 15:14:25,392 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_Air_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 15:14:25,394 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_sign_change PASS 
+2026-10-25 15:14:25,395 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.15 PASS 
+2026-10-25 15:14:25,397 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_sign_change PASS 
+2026-10-25 15:14:25,401 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.2 PASS 
+2026-10-25 15:14:25,405 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_sign_change PASS 
+2026-10-25 15:14:25,407 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.25 PASS 
+2026-10-25 15:14:25,410 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_sign_change PASS 
+2026-10-25 15:14:25,415 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_Rail_Express_Sea_Road_Multimodal_price_usd_per_t_0.3 PASS 
+2026-10-25 15:14:25,418 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_sign_change PASS 
+2026-10-25 15:14:25,422 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_Sea_Road_Multimodal_Rail_Express_sea_total_days_0.15 PASS 
+2026-10-25 15:14:25,426 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS root_sign_change PASS 
+2026-10-25 15:14:25,428 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS multi_demand PASS 
+2026-10-25 15:14:25,431 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS multi_cost PASS 
+2026-10-25 15:14:25,433 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS multi_capacity PASS 
+2026-10-25 15:14:25,435 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS single_demand PASS 
+2026-10-25 15:14:25,440 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS single_cost PASS 
+2026-10-25 15:14:25,441 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS single_capacity PASS 
+2026-10-25 15:14:25,445 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS physical_lp_demand PASS 
+2026-10-25 15:14:25,448 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS physical_lp_cost PASS 
+2026-10-25 15:14:25,450 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS physical_lp_capacity PASS 
+2026-10-25 15:14:25,453 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_milp_demand PASS 
+2026-10-25 15:14:25,458 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_milp_cost PASS 
+2026-10-25 15:14:25,462 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_milp_capacity PASS 
+2026-10-25 15:14:25,464 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_lp_demand PASS 
+2026-10-25 15:14:25,467 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_lp_cost PASS 
+2026-10-25 15:14:25,472 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_lp_capacity PASS 
+2026-10-25 15:14:25,478 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS single_enumeration PASS 
+2026-10-25 15:14:25,503 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS multi_highs_enumeration PASS 
+2026-10-25 15:14:25,632 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_milp_highs_enumeration PASS 
+2026-10-25 15:14:25,638 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS multi_lp_bound PASS 
+2026-10-25 15:14:25,640 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS bigm_milp_lp_bound PASS 
+2026-10-25 15:14:25,646 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS iot_start PASS 
+2026-10-25 15:14:25,650 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS iot_end PASS 
+2026-10-25 15:14:25,652 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS iot_duration PASS 
+2026-10-25 15:14:25,657 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS iot_shock PASS 
+2026-10-25 15:14:25,671 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS dynamic_risk_delta PASS 
+2026-10-25 15:14:25,674 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS dpp_tco PASS 
+2026-10-25 15:14:25,677 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS dpp_scope3 PASS 
+2026-10-25 15:14:25,683 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS telemetry_sha256 PASS 
+2026-10-25 15:14:25,692 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS gps_independent_cosine PASS 
+2026-10-25 15:14:25,693 INFO pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.xml']
+2026-10-25 15:14:30,612 DEBUG pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 HARNESS pytest_core PASS failed=0; skipped=0; 4.916s
+2026-10-25 15:14:30,612 INFO pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 pytest core: 48 passed; 0 failed; 0 skipped
+2026-10-25 15:14:30,613 INFO pipeline stage=VERIFY run_id=20261025T121421Z-3602c105 END VERIFY seconds=5.252
+2026-10-25 15:14:30,918 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 START PLOT_AND_VALIDATE
+2026-10-25 15:14:41,636 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_01_tco PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,638 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_02_wacc PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,639 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_03_price PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,641 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_04_lead PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,643 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_05_ets PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,645 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_06_multi PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,646 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_07_single PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,648 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_08_capacity PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,650 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_09_bigm PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,653 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_10_temperature PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,654 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_11_shock PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,655 DEBUG pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 HARNESS plot_12_gps PASS PNG, конечность рядов, подписи, границы осей, размеры и легенды проверены
+2026-10-25 15:14:41,655 INFO pipeline stage=PLOT_AND_VALIDATE run_id=20261025T121421Z-3602c105 END PLOT_AND_VALIDATE seconds=10.737
+2026-10-25 15:14:41,688 INFO pipeline stage=BUILD_REPORT run_id=20261025T121421Z-3602c105 START BUILD_REPORT
+2026-10-25 15:14:43,519 DEBUG pipeline stage=BUILD_REPORT run_id=20261025T121421Z-3602c105 HARNESS docx_structure PASS ZIP CRC, XML, картинки, ширина и повторное открытие проверены
+2026-10-25 15:14:43,519 INFO pipeline stage=BUILD_REPORT run_id=20261025T121421Z-3602c105 END BUILD_REPORT seconds=1.831
+2026-10-25 15:14:43,573 INFO pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 START FINAL_AUDIT
+2026-10-25 15:14:43,574 INFO pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 pytest command=['C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_artifacts.py', '-q', '-p', 'no:cacheprovider', '--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.xml']
+2026-10-25 15:14:46,422 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 HARNESS pytest_artifacts PASS failed=0; skipped=0; 2.842s
+2026-10-25 15:14:46,422 INFO pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 pytest artifacts: 10 passed; 0 failed; 0 skipped
+2026-10-25 15:15:12,974 DEBUG pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 HARNESS word_render PASS Реальный Word/PDF; все12рисунков и подписей на тех же страницах
+2026-10-25 15:15:12,983 INFO pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 END FINAL_AUDIT seconds=29.409
+2026-10-25 15:15:13,328 INFO pipeline stage=FINAL_AUDIT run_id=20261025T121421Z-3602c105 COMPLETE status=PASS report=C:\work\Economic analysis of knowledge‑intensive industries\4\app\output\Итоговый_отчет_практическая_4_ЭА.docx

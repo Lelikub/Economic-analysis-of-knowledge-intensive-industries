@@ -1,0 +1,4 @@
+﻿file,row_or_key,kind,rule,value,boundary,decision
+module3_iot_telemetry.csv,540–548,REAL_INCIDENT,"temperature in [-22,-18]",-16.03,-18,"Сохранить эпизод, применить регламент >30 минут"
+module3_iot_telemetry.csv,920,REAL_INCIDENT,abs(axis)<=2.5g,2.65,2.5,"Сохранить удар, отдельная диагностика"
+Задание PDF с.2,sum capacity,WARNING,Сумма мощностей гарантирует SSCFLP,2750,1600,Гарантия из одной суммы математически неверна; проверить CBC и перебором

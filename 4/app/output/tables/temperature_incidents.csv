@@ -1,0 +1,2 @@
+﻿kind,start_index,end_index,start,end_observed,interval_end,count,duration_minutes,minimum,maximum,axis
+REAL_INCIDENT_TEMPERATURE,540,548,2026-04-12 05:00:00,2026-04-12 05:40:00,2026-04-12 05:45:00,9,45,-17.5,-16.03,

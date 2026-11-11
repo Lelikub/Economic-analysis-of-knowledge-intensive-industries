@@ -1,0 +1,15 @@
+﻿parameter,a,b,wacc,low,high,status,value,extrapolated_value,residual_usd,sign_left,sign_right
+price_usd_per_t,Air_Express,Rail_Express,0.15,20000,500000,NO_CROSSING_IN_RANGE,,2165355.33627,,,
+price_usd_per_t,Air_Express,Rail_Express,0.2,20000,500000,NO_CROSSING_IN_RANGE,,1624016.5022,,,
+price_usd_per_t,Air_Express,Rail_Express,0.25,20000,500000,NO_CROSSING_IN_RANGE,,1299213.20176,,,
+price_usd_per_t,Air_Express,Rail_Express,0.3,20000,500000,NO_CROSSING_IN_RANGE,,1082677.66813,,,
+price_usd_per_t,Air_Express,Sea_Road_Multimodal,0.15,20000,500000,NO_CROSSING_IN_RANGE,,939381.997807,,,
+price_usd_per_t,Air_Express,Sea_Road_Multimodal,0.2,20000,500000,NO_CROSSING_IN_RANGE,,704536.498355,,,
+price_usd_per_t,Air_Express,Sea_Road_Multimodal,0.25,20000,500000,NO_CROSSING_IN_RANGE,,563629.198684,,,
+price_usd_per_t,Air_Express,Sea_Road_Multimodal,0.3,20000,500000,CROSSING,469690.998903,469690.998903,-5.82076609135e-11,0.0301116968039,-0.0301116969786
+price_usd_per_t,Rail_Express,Sea_Road_Multimodal,0.15,20000,500000,CROSSING,86530.9797478,86530.9797478,0,0.00163579112268,-0.00163579113723
+price_usd_per_t,Rail_Express,Sea_Road_Multimodal,0.2,20000,500000,CROSSING,64898.2348109,64898.2348109,0,0.00163579110813,-0.00163579112268
+price_usd_per_t,Rail_Express,Sea_Road_Multimodal,0.25,20000,500000,CROSSING,51918.5878487,51918.5878487,1.45519152284e-11,0.00163579113723,-0.00163579112268
+price_usd_per_t,Rail_Express,Sea_Road_Multimodal,0.3,20000,500000,CROSSING,43265.4898739,43265.4898739,0,0.00163579113723,-0.00163579112268
+sea_total_days,Sea_Road_Multimodal,Air_Express,0.15,10,120,NO_CROSSING_IN_RANGE,,1667.76808702,,,
+sea_total_days,Sea_Road_Multimodal,Rail_Express,0.15,10,120,CROSSING,108.9642061,108.9642061,-7.27595761418e-12,-0.0180821917893,0.0180821917747

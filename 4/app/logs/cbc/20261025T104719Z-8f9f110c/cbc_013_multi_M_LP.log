@@ -1,0 +1,27 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - C:\work\Economic analysis of knowledge-intensive industries\4\app\vendor\pulp\apis\../solverdir/cbc/win/i64/cbc.exe C:\Users\ildar\AppData\Local\Temp\7dfc967ea7dd4283ab7bdaa5465906db-pulp.mps -sec 60 -randomSeed 1 -integerTolerance 1e-9 -primalTolerance 1e-9 -ratio 0 -threads 0 -timeMode elapsed -branch -printingOptions all -solution C:\Users\ildar\AppData\Local\Temp\7dfc967ea7dd4283ab7bdaa5465906db-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 14 COLUMNS
+At line 83 RHS
+At line 93 BOUNDS
+At line 98 ENDATA
+Problem MODEL has 9 rows, 24 columns and 44 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 60
+randomSeed was changed from 1234567 to 1
+integerTolerance was changed from 1e-07 to 1e-09
+primalTolerance was changed from 1e-07 to 1e-09
+ratioGap was changed from 0 to 0
+Option for timeMode changed from cpu to elapsed
+Presolve 9 (0) rows, 24 (0) columns and 44 (0) elements
+0  Obj 0 Primal inf 8.9974612 (5)
+9  Obj 17944060
+Optimal - objective value 17944060
+Optimal objective 17944060.08 - 9 iterations time 0.002
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+

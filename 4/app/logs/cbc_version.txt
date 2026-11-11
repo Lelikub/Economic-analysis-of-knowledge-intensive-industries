@@ -1,0 +1,7 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - C:\work\Economic analysis of knowledge-intensive industries\4\app\vendor\pulp\apis\../solverdir/cbc/win/i64/cbc.exe -stop (default strategy 1)
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+

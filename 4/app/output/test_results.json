@@ -1,0 +1,44 @@
+[
+  {
+    "name": "core",
+    "command": [
+      "C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py",
+      "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py",
+      "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.xml"
+    ],
+    "exit_code": 0,
+    "passed": 48,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 4.916215099976398,
+    "log": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.txt",
+    "junit_xml": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.xml"
+  },
+  {
+    "name": "artifacts",
+    "command": [
+      "C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_artifacts.py",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.xml"
+    ],
+    "exit_code": 0,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 2.841832500009332,
+    "log": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.txt",
+    "junit_xml": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.xml"
+  }
+]

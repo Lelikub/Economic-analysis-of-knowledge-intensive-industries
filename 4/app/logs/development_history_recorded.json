@@ -1,0 +1,37 @@
+[
+  [
+    "python_launcher",
+    "FAIL",
+    "python.exe launcher недоступен",
+    "Windows App Execution Alias",
+    "Выбран .venv/Scripts/python.exe"
+  ],
+  [
+    "pip_network",
+    "FAIL",
+    "Первая установка PuLP: WinError 10013",
+    "Ограничение сетевого доступа песочницы",
+    "Разрешённая установка из PyPI в 4/app/vendor"
+  ],
+  [
+    "initial_red",
+    "FAIL",
+    "До реализации pytest завершился ModuleNotFoundError: src",
+    "Ожидаемый RED, тесты написаны первыми",
+    "Реализованы предметные классы и калькуляторы"
+  ],
+  [
+    "pulp_acl",
+    "FAIL",
+    "Первый прогон ядра: 31 passed, 4 failed; pulp.LpProblem отсутствует",
+    "Установленные файлы не читались из песочницы из-за ACL; namespace package",
+    "icacls 4/app/vendor /reset /T; PuLP стал доступен"
+  ],
+  [
+    "cbc_thread",
+    "FAIL",
+    "CBC зависал при threads=1; стек faulthandler в subprocess.wait",
+    "Потоковый режим CBC 2.10.3 в данной Windows-песочнице",
+    "Выбран threads=0: последовательный режим; оптимум подтверждён"
+  ]
+]

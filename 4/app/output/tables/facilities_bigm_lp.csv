@@ -1,0 +1,5 @@
+﻿facility_id,opened_y,load_tons,capacity_tons,capacity_slack,physical_overload
+A,4.2e-07,420,850,0,419.999643
+B,2.6e-07,260,700,0,259.999818
+C,5.4e-07,540,550,0,539.999703
+D,3.8e-07,380,650,0,379.999753

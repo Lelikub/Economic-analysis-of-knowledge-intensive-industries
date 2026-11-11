@@ -1,0 +1,10 @@
+﻿constraint,identifier,value
+demand,1,0
+demand,2,0
+demand,3,0
+demand,4,0
+demand,5,0
+capacity,A,2.49999999369e-06
+capacity,B,-9.99999997475e-07
+capacity,C,-9.99999997475e-07
+capacity,D,-2.99999999243e-06

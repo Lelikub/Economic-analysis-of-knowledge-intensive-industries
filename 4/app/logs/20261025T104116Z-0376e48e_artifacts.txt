@@ -1,0 +1,18 @@
+........F                                                                [100%]
+================================== FAILURES ===================================
+________________________ test_report_contains_results _________________________
+
+artifacts = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/output')
+
+    def test_report_contains_results(artifacts):
+        from docx import Document
+        d=Document(artifacts/REPORT_NAME)
+        text='\n'.join([p.text for p in d.paragraphs]+[c.text for t in d.tables for r in t.rows for c in r.cells])
+        for x in ['SCRAP_WRITE_OFF','123 624 000','6.1.','6.2.','6.3.','45,00']:
+>           assert x in text
+E           AssertionError: assert '45,00' in 'МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РФ\nРоссийский химико-технологический университет имени Д.И. Менделеева\n\n\...ть CBC и перебором\nair_gap_290000\nWARNING\nОриентир >290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море'
+
+4\app\tests\test_artifacts.py:62: AssertionError
+=========================== short test summary info ===========================
+FAILED 4/app/tests/test_artifacts.py::test_report_contains_results - Assertio...
+1 failed, 8 passed in 1.25s

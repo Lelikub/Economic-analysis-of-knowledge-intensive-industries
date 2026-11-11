@@ -1,0 +1,178 @@
+{
+  "status": "PASS",
+  "baseline": {
+    "multi_rub_year": 123624000.0,
+    "single_rub_year": 123624000.0,
+    "independent_multi_rub_year": 123624000.0,
+    "independent_single_rub_year": 123624000.0,
+    "max_flow_difference_tons_year": 0.0,
+    "identical_flows": true,
+    "multi_source_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "single_source_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "open_hub_ids": [
+      "B",
+      "C",
+      "D"
+    ],
+    "lower_bounds_by_open_set": [
+      {
+        "open_hubs": [
+          "A",
+          "B",
+          "C"
+        ],
+        "capacity_tons_year": 2100.0,
+        "fixed_rub_year": 117000000.0,
+        "unconstrained_transport_lower_bound_rub_year": 23834000.0,
+        "total_lower_bound_rub_year": 140834000.0
+      },
+      {
+        "open_hubs": [
+          "A",
+          "B",
+          "D"
+        ],
+        "capacity_tons_year": 2200.0,
+        "fixed_rub_year": 121000000.0,
+        "unconstrained_transport_lower_bound_rub_year": 20614000.0,
+        "total_lower_bound_rub_year": 141614000.0
+      },
+      {
+        "open_hubs": [
+          "A",
+          "C",
+          "D"
+        ],
+        "capacity_tons_year": 2050.0,
+        "fixed_rub_year": 114000000.0,
+        "unconstrained_transport_lower_bound_rub_year": 18282000.0,
+        "total_lower_bound_rub_year": 132282000.0
+      },
+      {
+        "open_hubs": [
+          "B",
+          "C",
+          "D"
+        ],
+        "capacity_tons_year": 1900.0,
+        "fixed_rub_year": 104000000.0,
+        "unconstrained_transport_lower_bound_rub_year": 19624000.0,
+        "total_lower_bound_rub_year": 123624000.0
+      },
+      {
+        "open_hubs": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "capacity_tons_year": 2750.0,
+        "fixed_rub_year": 152000000.0,
+        "unconstrained_transport_lower_bound_rub_year": 17944000.0,
+        "total_lower_bound_rub_year": 169944000.0
+      }
+    ],
+    "minimum_lower_bound_rub_year": 123624000.0,
+    "sum_two_largest_capacities_tons_year": 1550.0
+  },
+  "diagnostic": {
+    "description": "Только контроль: мощность B — Тверь снижена с 700 до 650 тонн/год; первичные файлы не менялись",
+    "facility_id": "B",
+    "capacity_tons_year": 650,
+    "baseline_unchanged": true,
+    "multi_status": "Optimal",
+    "single_status": "Optimal",
+    "multi_rub_year": 124021000.0,
+    "single_rub_year": 128070000.0,
+    "independent_multi_rub_year": 124021000.0,
+    "independent_single_rub_year": 128070000.0,
+    "multi_flows": {
+      "A": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "B": {
+        "1": 410.0,
+        "2": 240.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "C": {
+        "1": 10.0,
+        "2": 0.0,
+        "3": 310.0,
+        "4": 0.0,
+        "5": 230.0
+      },
+      "D": {
+        "1": 0.0,
+        "2": 20.0,
+        "3": 0.0,
+        "4": 380.0,
+        "5": 0.0
+      }
+    },
+    "single_flows": {
+      "A": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "B": {
+        "1": 420.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "C": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 310.0,
+        "4": 0.0,
+        "5": 230.0
+      },
+      "D": {
+        "1": 0.0,
+        "2": 260.0,
+        "3": 0.0,
+        "4": 380.0,
+        "5": 0.0
+      }
+    },
+    "multi_source_counts": {
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "single_source_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "extra_cost_single_rub_year": 4049000.0
+  },
+  "interpretation": "В базовом оптимуме дробление разрешено, но не требуется; совпадение графиков корректно. Диагностический сценарий подтверждает различие моделей."
+}

@@ -1,0 +1,10 @@
+﻿route_id,name,distance_km,tariff_usd_tkm,lead_time_days,emission_g_tkm,freight_usd,emissions_tco2_per_t
+Air_Express,Pre-carriage (Truck),180,0.45,0.5,120,1620,0.0216
+Air_Express,Air Freight,7900,1.95,1.5,620,308100,4.898
+Air_Express,On-carriage (Truck),220,0.45,0.5,120,1980,0.0264
+Rail_Express,Pre-carriage (Truck),250,0.35,1,110,1750,0.0275
+Rail_Express,Rail Mainline,9400,0.16,16,24,30080,0.2256
+Rail_Express,On-carriage (Truck),350,0.35,1.5,110,2450,0.0385
+Sea_Road_Multimodal,Drayage to Port,120,0.3,1,105,720,0.0126
+Sea_Road_Multimodal,Deep-Sea Maritime,18500,0.038,38,14.5,14060,0.26825
+Sea_Road_Multimodal,Port-to-Fab Haulage,480,0.32,2.5,115,3072,0.0552

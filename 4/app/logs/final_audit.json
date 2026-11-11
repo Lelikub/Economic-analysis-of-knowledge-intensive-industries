@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "run_id": "20261025T121421Z-3602c105",
+  "artifacts_verified": 54,
+  "sources_verified": 8,
+  "template_unchanged": true,
+  "all_12_stages_passed": true,
+  "tests_passed": 58,
+  "failed": 0,
+  "skipped": 0,
+  "identical_tco_runs": 7,
+  "word_pages": 24,
+  "same_page_image_caption_pairs": 12
+}

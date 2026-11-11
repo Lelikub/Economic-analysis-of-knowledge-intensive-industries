@@ -1,0 +1,6 @@
+vendor/
+__pycache__/
+.pytest_cache/
+*.pyc
+logs/.pytest_tmp/
+output/.tmp/

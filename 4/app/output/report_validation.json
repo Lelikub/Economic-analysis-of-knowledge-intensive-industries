@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "zip_crc": "PASS",
+  "xml": "PASS",
+  "embedded_images": 12,
+  "image_width": "PASS",
+  "opened_python_docx": true,
+  "placeholders": "ABSENT",
+  "page_render_status": "PASS",
+  "page_count": 24,
+  "page_render_engine": "Microsoft Word 16.0"
+}

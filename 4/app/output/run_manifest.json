@@ -1,0 +1,458 @@
+{
+  "run_id": "20261025T121421Z-3602c105",
+  "status": "PASS",
+  "stages": [
+    {
+      "stage": "PREPARE",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:21.730078+00:00",
+      "seconds": 0.4389462000108324
+    },
+    {
+      "stage": "LOAD",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:22.206435+00:00",
+      "seconds": 0.015533600002527237
+    },
+    {
+      "stage": "VALIDATE_INPUT",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:22.226490+00:00",
+      "seconds": 0.010256199981085956
+    },
+    {
+      "stage": "BUILD_MODELS",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:22.275741+00:00",
+      "seconds": 2.5599991204217076e-05
+    },
+    {
+      "stage": "CALCULATE_TCO",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:22.278546+00:00",
+      "seconds": 0.014504600025247782
+    },
+    {
+      "stage": "SOLVE_CFLP",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:22.329695+00:00",
+      "seconds": 2.9298752000031527
+    },
+    {
+      "stage": "PROCESS_IOT",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:25.299687+00:00",
+      "seconds": 0.02306989999487996
+    },
+    {
+      "stage": "GENERATE_DPP",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:25.338341+00:00",
+      "seconds": 0.006829699996160343
+    },
+    {
+      "stage": "VERIFY",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:25.360751+00:00",
+      "seconds": 5.252301300002728
+    },
+    {
+      "stage": "PLOT_AND_VALIDATE",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:30.918437+00:00",
+      "seconds": 10.737482600001385
+    },
+    {
+      "stage": "BUILD_REPORT",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:41.689005+00:00",
+      "seconds": 1.8306555000017397
+    },
+    {
+      "stage": "FINAL_AUDIT",
+      "status": "PASS",
+      "started_utc": "2026-10-25T12:14:43.573924+00:00",
+      "seconds": 29.409081199992215
+    }
+  ],
+  "input_sources": {
+    "logistics_hightech_data.rar": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\logistics_hightech_data.rar",
+      "sha256": "09a7417fd431ad36e28e71ec51e3ec346581f7cd08a7557a9da124bf8f8e0cbc",
+      "bytes": 32882
+    },
+    "module1_tco_cbam_input.json": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\module1_tco_cbam_input.json",
+      "sha256": "b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839",
+      "bytes": 3678
+    },
+    "module2_cflp_customers.csv": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\module2_cflp_customers.csv",
+      "sha256": "7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8",
+      "bytes": 244
+    },
+    "module2_cflp_facilities.csv": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\module2_cflp_facilities.csv",
+      "sha256": "9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52",
+      "bytes": 287
+    },
+    "module2_cflp_tariffs.csv": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\module2_cflp_tariffs.csv",
+      "sha256": "52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd",
+      "bytes": 150
+    },
+    "module3_iot_telemetry.csv": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\module3_iot_telemetry.csv",
+      "sha256": "c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9",
+      "bytes": 103831
+    },
+    "Задание_к_практическому_занятию_4_ЭА.pdf": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\Задание_к_практическому_занятию_4_ЭА.pdf",
+      "sha256": "fd9809bcb45e56c91d894046a9fbc371fe6d1f2b387fb4d39e480824c708eb24",
+      "bytes": 351415
+    },
+    "Лекция 7 ЭА слайды.pdf": {
+      "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\data\\Лекция 7 ЭА слайды.pdf",
+      "sha256": "7a3a17649aa96a175d2370e1d76b42a4f0970f0f735bc8aec85a8a51ef02a72c",
+      "bytes": 692738
+    }
+  },
+  "archive_comparison": [
+    {
+      "member": "module1_tco_cbam_input.json",
+      "sha256_archive": "b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839",
+      "sha256_primary": "b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839",
+      "equal": true
+    },
+    {
+      "member": "module2_cflp_customers.csv",
+      "sha256_archive": "7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8",
+      "sha256_primary": "7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8",
+      "equal": true
+    },
+    {
+      "member": "module2_cflp_facilities.csv",
+      "sha256_archive": "9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52",
+      "sha256_primary": "9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52",
+      "equal": true
+    },
+    {
+      "member": "module2_cflp_tariffs.csv",
+      "sha256_archive": "52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd",
+      "sha256_primary": "52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd",
+      "equal": true
+    },
+    {
+      "member": "module3_iot_telemetry.csv",
+      "sha256_archive": "c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9",
+      "sha256_primary": "c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9",
+      "equal": true
+    }
+  ],
+  "environment": {
+    "python": "3.14.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "matplotlib": "3.11.2",
+      "python-docx": "1.2.0",
+      "pytest": "9.1.1",
+      "pulp": "3.3.0",
+      "scipy": "1.18.1",
+      "Pillow": "12.3.0",
+      "pypdf": "6.18.1"
+    },
+    "cbc_settings": {
+      "threads": 0,
+      "execution": "serial, CBC threading disabled",
+      "time_limit_seconds": 60,
+      "gap_relative": 0,
+      "random_seed": 1,
+      "integer_tolerance": 1e-09,
+      "primal_tolerance": 1e-09
+    },
+    "earth_radius_km": 6371.0088,
+    "gps_max_speed_kmh": 200,
+    "telemetry_timezone": "не задана источником; время без преобразования"
+  },
+  "tests": [
+    {
+      "name": "core",
+      "command": [
+        "C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_calculations.py",
+        "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_loaders.py",
+        "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_plot_integrity.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.xml"
+      ],
+      "exit_code": 0,
+      "passed": 48,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 4.916215099976398,
+      "log": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.txt",
+      "junit_xml": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_core.xml"
+    },
+    {
+      "name": "artifacts",
+      "command": [
+        "C:\\work\\Economic analysis of knowledge‑intensive industries\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\tests\\test_artifacts.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.xml"
+      ],
+      "exit_code": 0,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 2.841832500009332,
+      "log": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.txt",
+      "junit_xml": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\20261025T121421Z-3602c105_artifacts.xml"
+    }
+  ],
+  "harness_current_counts": {
+    "PASS": 75,
+    "WARNING": 2
+  },
+  "development_history": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\HARNESS_LOG.csv",
+  "artifacts": {
+    "analysis.json": {
+      "sha256": "05ba66e847d0b4a469c0d85cf96a97457ce89ced52da18413174095c7012c980",
+      "bytes": 12668
+    },
+    "archive_comparison.json": {
+      "sha256": "fcdcf9ded5dc8b58e14f522d04b50085c6da14f6a5b5a49ea996dddcd1c696b6",
+      "bytes": 1287
+    },
+    "dpp_passport.json": {
+      "sha256": "413a13630f7e530e06c38ef9b465281588b8e29352591ab07dd71619eec7bec0",
+      "bytes": 442
+    },
+    "metrics.json": {
+      "sha256": "4a43c6708724759316988deb8dcfd1d27b962ab8c7b8c28aad583c289aea1cff",
+      "bytes": 472112
+    },
+    "plot_validation.json": {
+      "sha256": "e692f2e40c150851f921314b0369d90d24f145073825aae8955f22f9f05c7cfd",
+      "bytes": 24039
+    },
+    "report_validation.json": {
+      "sha256": "ccc412b7f9b847882f0a0d6b34cd48a600c4e973845256f4a029b5d9545c0fdb",
+      "bytes": 278
+    },
+    "sourcing_audit.json": {
+      "sha256": "44f7c8a92480977ad6c4d99f23bbca897d65832f0243e87241569c3ad4f6f0c2",
+      "bytes": 4371
+    },
+    "test_results.json": {
+      "sha256": "c23dc68ad5918ddb9139144a0ede01c6760f7d294f18f845ab1830670592896e",
+      "bytes": 1983
+    },
+    "word_render_validation.json": {
+      "sha256": "2bbc411ba521558cf9e0797cd488b53a060c717bebcfe96d4f7e1c2789736567",
+      "bytes": 4661
+    },
+    "Итоговый_отчет_практическая_4_ЭА.docx": {
+      "sha256": "62dd1555bfe9f02611e41244f0ca36b9b8d0cc735959eeb13eeb90a967db4cff",
+      "bytes": 1340196
+    },
+    "Итоговый_отчет_практическая_4_ЭА.pdf": {
+      "sha256": "593624279c5bcc9bba09db08ad9b26b49e1115c0cb5fe6a230c3d1a524b7f5a5",
+      "bytes": 1718651
+    },
+    "figures\\01_tco.png": {
+      "sha256": "f29204ce63df83283c3f2f2940ab5e24b0b2db942f5f03dfae205698c7a0c75b",
+      "bytes": 77952
+    },
+    "figures\\02_wacc.png": {
+      "sha256": "69caabe270713cf4a3370eebb65a4065921a3b4696045285f6ad1e20970afc8b",
+      "bytes": 75696
+    },
+    "figures\\03_price.png": {
+      "sha256": "757fec2b4b5da1195eaddd776e9af6f0b585efbc018b4b3c3e53fb4b4cc17979",
+      "bytes": 99443
+    },
+    "figures\\04_lead.png": {
+      "sha256": "a809b13f5657699c2c324486da4069c217088a7e0d76b33c7fd6a904a30282d1",
+      "bytes": 79991
+    },
+    "figures\\05_ets.png": {
+      "sha256": "d91541c5f02b0cc90000a3460e6754c5fc1617a720598aacfdf8975f127ad3f4",
+      "bytes": 125832
+    },
+    "figures\\06_multi.png": {
+      "sha256": "e771c3340a9dee16875b552c240440ad0a920263509267831bcef42d7c64e552",
+      "bytes": 85955
+    },
+    "figures\\07_single.png": {
+      "sha256": "328bf3f6f46e911dc3737e89fa1a9700292779af384268f62ef97ffe162e588a",
+      "bytes": 84904
+    },
+    "figures\\08_capacity.png": {
+      "sha256": "9825b78c91541dc2f9b6a0cec807b9e920781ecb59a0665ff767a5945750cb23",
+      "bytes": 60550
+    },
+    "figures\\09_bigm.png": {
+      "sha256": "08209218f5df730f5fa4404935983d7654889df2c5d496c8e36532ca4883c12e",
+      "bytes": 87301
+    },
+    "figures\\10_temperature.png": {
+      "sha256": "104add14aa021c1e113b95f4674f81868df35f11927023e6130dc0327c1edece",
+      "bytes": 147080
+    },
+    "figures\\11_shock.png": {
+      "sha256": "caa4bf699b190ebed85d2ee7f05586b71206c96ce3b3201fca5afe231d92ba34",
+      "bytes": 257207
+    },
+    "figures\\12_gps.png": {
+      "sha256": "629d6828f2d3db1da428c4586c305298b481efcce142a6ef191d2ab6c2dbce12",
+      "bytes": 99039
+    },
+    "tables\\break_even.csv": {
+      "sha256": "dd98049acdca054691bddabe878a788cfd892c568eb5ead6fa1d620ccb1f52cf",
+      "bytes": 1790
+    },
+    "tables\\cargo_value.csv": {
+      "sha256": "cf94f702faede3828538ca5a3aa524d816a98731df7e6b070b692589645053ac",
+      "bytes": 4864
+    },
+    "tables\\cflp_comparison.csv": {
+      "sha256": "ca4fec0a528cf3ade7e645f9df2ce2934e47be6d1d9ebe9c25392740be41726c",
+      "bytes": 532
+    },
+    "tables\\dynamic_tco.csv": {
+      "sha256": "2e55fd7b356cf6207193250e42e96106b61c9d5acd5596fa287380c3d4410a0a",
+      "bytes": 429
+    },
+    "tables\\ets.csv": {
+      "sha256": "32ef2339536b0fe4b574baa7d54a160adeeb86fb7c939110ad6f36a6b537103c",
+      "bytes": 7864
+    },
+    "tables\\ets_thresholds.csv": {
+      "sha256": "e746671babc97dd84f5966884c7bb325187238b3a3d7f2d0ec016a8401628efe",
+      "bytes": 427
+    },
+    "tables\\facilities_bigm_lp.csv": {
+      "sha256": "cc5f0b5273d73cc3953ad2b271f252d518e15a0dc5e98699abd6a2708bd79c91",
+      "bytes": 210
+    },
+    "tables\\facilities_bigm_milp.csv": {
+      "sha256": "18bb5fb22a5c9b977edeb5416fdb8261f328a455d59f82d2f58413adf514345e",
+      "bytes": 156
+    },
+    "tables\\facilities_multi.csv": {
+      "sha256": "c36f6273b717fd9919ab4edd3daea44d77102d9fa57786e37f0191f1057eeb0b",
+      "bytes": 152
+    },
+    "tables\\facilities_physical_lp.csv": {
+      "sha256": "c0abe1d5e6577f70ec13d93bd5f4483c18061f83ae61622a6106dfab347850c8",
+      "bytes": 301
+    },
+    "tables\\facilities_single.csv": {
+      "sha256": "c36f6273b717fd9919ab4edd3daea44d77102d9fa57786e37f0191f1057eeb0b",
+      "bytes": 152
+    },
+    "tables\\flows_bigm_lp.csv": {
+      "sha256": "bf4786b91e0ce8e8077eae489672a8ff62ac84b9e77ea130c3aed4ed3e37563c",
+      "bytes": 88
+    },
+    "tables\\flows_bigm_milp.csv": {
+      "sha256": "ca0f44321bf614f160c57c109949c152642cbed589d30fb09450f0c2e61342e1",
+      "bytes": 88
+    },
+    "tables\\flows_multi.csv": {
+      "sha256": "57507b4b401d9e322880c2a22221527789277904e53bbf10a1c58e71a486ea5a",
+      "bytes": 88
+    },
+    "tables\\flows_physical_lp.csv": {
+      "sha256": "bf4786b91e0ce8e8077eae489672a8ff62ac84b9e77ea130c3aed4ed3e37563c",
+      "bytes": 88
+    },
+    "tables\\flows_single.csv": {
+      "sha256": "57507b4b401d9e322880c2a22221527789277904e53bbf10a1c58e71a486ea5a",
+      "bytes": 88
+    },
+    "tables\\gps_segments.csv": {
+      "sha256": "b08d4ecadb9fc72c4de51528c7d176a7014dd0e90ceaba733b0dfdef2facf5d7",
+      "bytes": 88318
+    },
+    "tables\\lead_time.csv": {
+      "sha256": "a1866c6974b5c67ab3c13a98e98258d7f6028e9cb2f12ad73bf60de92071ebfa",
+      "bytes": 5175
+    },
+    "tables\\quality.csv": {
+      "sha256": "812311baceb37f6985b63c05126b08663eb0657cad2ec0b280dc8160cba95796",
+      "bytes": 622
+    },
+    "tables\\residuals_bigm_lp.csv": {
+      "sha256": "f01815ef5fd2717c8c5d9a0e13a28a806c3d0225a354c72d4eef5aa6995830de",
+      "bytes": 148
+    },
+    "tables\\residuals_bigm_milp.csv": {
+      "sha256": "4afaa596e8d39e6091b36d5929e1b146b1c09614b72b3f9167cac96bf72f783d",
+      "bytes": 204
+    },
+    "tables\\residuals_multi.csv": {
+      "sha256": "e1fff4f5b2abe66d79e6d3bd90442c37c67fdbe2b13f2aa6fba2b9d69e211455",
+      "bytes": 200
+    },
+    "tables\\residuals_physical_lp.csv": {
+      "sha256": "1acf49d6d3ff0cae118cc453ce9e9f58162d342d76cc0e1cdd7922489a302762",
+      "bytes": 215
+    },
+    "tables\\residuals_single.csv": {
+      "sha256": "3830fbfae22a72c3af030a750dd5384f92e1500b1dfe70fdacbfe71a62edc1e5",
+      "bytes": 720
+    },
+    "tables\\route_legs.csv": {
+      "sha256": "090c21b6d05ecc6fa2fa0c9cefbf4aa31dfdc7446b9b4f31eb6229e315552bb0",
+      "bytes": 676
+    },
+    "tables\\shock_incidents.csv": {
+      "sha256": "52be616f900e6d71787e24a30c51d1acade1b0ac4a47a11737ae01409720dc1a",
+      "bytes": 212
+    },
+    "tables\\solver_timings.csv": {
+      "sha256": "57d9f5a2ae4c648b5649ffa7f776b27dc0509fc3be366a436ee7eb076d678491",
+      "bytes": 440
+    },
+    "tables\\tco_baseline.csv": {
+      "sha256": "9eeea75d669c78314771c32d52aac1ec40fbc6f56a3ae5119b9b14e8db089868",
+      "bytes": 530
+    },
+    "tables\\telemetry.csv": {
+      "sha256": "7eb4645245f76002162201e848507853662448b501d4b9af47ee044c6656d0b2",
+      "bytes": 130562
+    },
+    "tables\\temperature_incidents.csv": {
+      "sha256": "db16e67d16b672ed4ce34c1245ceb539f86f72aa90fd3f2e961a5000af2bfc5a",
+      "bytes": 221
+    },
+    "tables\\wacc.csv": {
+      "sha256": "7f82be2d7aa03f568f1a5f361e54d26a5fad32b050baddfe2f088af89d9677a3",
+      "bytes": 2507
+    }
+  },
+  "report_render_status": "PASS",
+  "limitations": [
+    "Учебная модель CBAM с транспортом",
+    "Длина GPS-ломаной контрольного участка, не полного рейса",
+    "Временной пояс IoT отсутствует"
+  ],
+  "template": {
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\end_template\\Шаблон_отчета_ЭА_краткий_v2.docx",
+    "sha256": "cf8b89262c58256410a4d8f80fc3b6a5a47e2166413eb183cea41e67a30189e7"
+  }
+}

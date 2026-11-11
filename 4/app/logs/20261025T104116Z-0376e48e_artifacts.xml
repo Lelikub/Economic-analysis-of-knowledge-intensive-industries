@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="9" time="1.249" timestamp="2026-10-25T13:41:33.230898+03:00" hostname="Lelikub_NVD"><testcase classname="4.app.tests.test_artifacts" name="test_docx_structure" time="0.049" /><testcase classname="4.app.tests.test_artifacts" name="test_dpp_schema" time="0.027" /><testcase classname="4.app.tests.test_artifacts" name="test_images_present" time="0.027" /><testcase classname="4.app.tests.test_artifacts" name="test_curve_tables_match_metrics[wacc]" time="0.026" /><testcase classname="4.app.tests.test_artifacts" name="test_curve_tables_match_metrics[cargo_value]" time="0.007" /><testcase classname="4.app.tests.test_artifacts" name="test_curve_tables_match_metrics[lead_time]" time="0.007" /><testcase classname="4.app.tests.test_artifacts" name="test_curve_tables_match_metrics[ets]" time="0.006" /><testcase classname="4.app.tests.test_artifacts" name="test_dynamic_tco_consistency" time="0.005" /><testcase classname="4.app.tests.test_artifacts" name="test_report_contains_results" time="0.043"><failure message="AssertionError: assert '45,00' in 'МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РФ\nРоссийский химико-технологический университет имени Д.И. Менделеева\n\n\...ть CBC и перебором\nair_gap_290000\nWARNING\nОриентир &gt;290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море'">artifacts = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/output')
+
+    def test_report_contains_results(artifacts):
+        from docx import Document
+        d=Document(artifacts/REPORT_NAME)
+        text='\n'.join([p.text for p in d.paragraphs]+[c.text for t in d.tables for r in t.rows for c in r.cells])
+        for x in ['SCRAP_WRITE_OFF','123 624 000','6.1.','6.2.','6.3.','45,00']:
+&gt;           assert x in text
+E           AssertionError: assert '45,00' in 'МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РФ\nРоссийский химико-технологический университет имени Д.И. Менделеева\n\n\...ть CBC и перебором\nair_gap_290000\nWARNING\nОриентир &gt;290 тыс. не выполняется для авиа–ж/д; выполняется для авиа–море'
+
+4\app\tests\test_artifacts.py:62: AssertionError</failure></testcase></testsuite></testsuites>

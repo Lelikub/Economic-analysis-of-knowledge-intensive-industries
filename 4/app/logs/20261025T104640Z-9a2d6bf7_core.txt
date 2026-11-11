@@ -1,0 +1,94 @@
+....................................EEEEE.....E                          [100%]
+=================================== ERRORS ====================================
+_____________________ ERROR at setup of test_missing_file _____________________
+
+self = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/logs/.pytest_tmp/de68d3cdfd30458eac4fb27701ff9a59')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\.pytest_tmp\\de68d3cdfd30458eac4fb27701ff9a59'
+
+C:\Users\ildar\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:1011: FileNotFoundError
+_________________ ERROR at setup of test_duplicate_json_keys __________________
+
+self = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/logs/.pytest_tmp/de68d3cdfd30458eac4fb27701ff9a59')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\.pytest_tmp\\de68d3cdfd30458eac4fb27701ff9a59'
+
+C:\Users\ildar\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:1011: FileNotFoundError
+__________________ ERROR at setup of test_string_number_json __________________
+
+self = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/logs/.pytest_tmp/de68d3cdfd30458eac4fb27701ff9a59')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\.pytest_tmp\\de68d3cdfd30458eac4fb27701ff9a59'
+
+C:\Users\ildar\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:1011: FileNotFoundError
+___________________ ERROR at setup of test_wrong_csv_header ___________________
+
+self = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/logs/.pytest_tmp/de68d3cdfd30458eac4fb27701ff9a59')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\.pytest_tmp\\de68d3cdfd30458eac4fb27701ff9a59'
+
+C:\Users\ildar\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:1011: FileNotFoundError
+_________________ ERROR at setup of test_duplicate_tariff_hub _________________
+
+self = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/logs/.pytest_tmp/de68d3cdfd30458eac4fb27701ff9a59')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\.pytest_tmp\\de68d3cdfd30458eac4fb27701ff9a59'
+
+C:\Users\ildar\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:1011: FileNotFoundError
+______ ERROR at setup of test_ticks_outside_view_not_reported_as_clipped ______
+
+self = WindowsPath('C:/work/Economic analysis of knowledge‑intensive industries/4/app/logs/.pytest_tmp/de68d3cdfd30458eac4fb27701ff9a59')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\logs\\.pytest_tmp\\de68d3cdfd30458eac4fb27701ff9a59'
+
+C:\Users\ildar\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:1011: FileNotFoundError
+=========================== short test summary info ===========================
+ERROR 4/app/tests/test_loaders.py::test_missing_file - FileNotFoundError: [Wi...
+ERROR 4/app/tests/test_loaders.py::test_duplicate_json_keys - FileNotFoundErr...
+ERROR 4/app/tests/test_loaders.py::test_string_number_json - FileNotFoundErro...
+ERROR 4/app/tests/test_loaders.py::test_wrong_csv_header - FileNotFoundError:...
+ERROR 4/app/tests/test_loaders.py::test_duplicate_tariff_hub - FileNotFoundEr...
+ERROR 4/app/tests/test_plot_integrity.py::test_ticks_outside_view_not_reported_as_clipped
+41 passed, 6 errors in 2.13s

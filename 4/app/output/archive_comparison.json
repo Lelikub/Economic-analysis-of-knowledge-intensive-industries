@@ -1,0 +1,32 @@
+[
+  {
+    "member": "module1_tco_cbam_input.json",
+    "sha256_archive": "b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839",
+    "sha256_primary": "b8bd86578e090501d3f264e67b1fe6abea08ac3d8b67d9d505f996ab83d7b839",
+    "equal": true
+  },
+  {
+    "member": "module2_cflp_customers.csv",
+    "sha256_archive": "7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8",
+    "sha256_primary": "7da689b004879b196118518e80e11d64dde5cf2089b9ced5f39cbc8fd5987ac8",
+    "equal": true
+  },
+  {
+    "member": "module2_cflp_facilities.csv",
+    "sha256_archive": "9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52",
+    "sha256_primary": "9373e520adc8955e5b4b5c6b912272885d80a470833e4b1a4515711694249d52",
+    "equal": true
+  },
+  {
+    "member": "module2_cflp_tariffs.csv",
+    "sha256_archive": "52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd",
+    "sha256_primary": "52491703a1c781b0be90815a95c1cda628c48db8febcb47a1e5598bfb640a3fd",
+    "equal": true
+  },
+  {
+    "member": "module3_iot_telemetry.csv",
+    "sha256_archive": "c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9",
+    "sha256_primary": "c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9",
+    "equal": true
+  }
+]

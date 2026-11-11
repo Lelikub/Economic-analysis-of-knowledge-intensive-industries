@@ -1,0 +1,65 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - C:\work\Economic analysis of knowledge-intensive industries\4/app/vendor\pulp\apis\../solverdir/cbc/win/i64/cbc.exe C:\Users\ildar\AppData\Local\Temp\d49e2cd9ee0c4cec84132350c62b4b85-pulp.mps -sec 60 -randomSeed 1 -integerTolerance 1e-9 -primalTolerance 1e-9 -ratio 0 -threads 1 -timeMode elapsed -branch -printingOptions all -solution C:\Users\ildar\AppData\Local\Temp\d49e2cd9ee0c4cec84132350c62b4b85-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 14 COLUMNS
+At line 91 RHS
+At line 101 BOUNDS
+At line 106 ENDATA
+Problem MODEL has 9 rows, 24 columns and 44 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 60
+randomSeed was changed from 1234567 to 1
+integerTolerance was changed from 1e-07 to 1e-09
+primalTolerance was changed from 1e-07 to 1e-09
+ratioGap was changed from 0 to 0
+threads was changed from 0 to 1
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 1.06674e+08 - 0.00 seconds
+Cgl0004I processed model has 9 rows, 24 columns (4 integer (4 of which binary)) and 44 elements
+Cbc0038I Initial state - 4 integers unsatisfied sum - 1.29911
+Cbc0038I Pass   1: suminf.    0.47059 (1) obj. 1.11298e+08 iterations 6
+Cbc0038I Solution found of 1.3671e+08
+Cbc0038I Relaxing continuous gives 1.32282e+08
+Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 15 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.00 seconds)
+Cbc0038I Freeing continuous variables gives a solution of 1.32282e+08
+Cbc0038I Round again with cutoff of 1.29721e+08
+Cbc0038I Pass   2: suminf.    0.47059 (1) obj. 1.11298e+08 iterations 0
+Cbc0038I Pass   3: suminf.    0.05335 (1) obj. 1.29721e+08 iterations 5
+Cbc0038I Pass   4: suminf.    0.05335 (1) obj. 1.29721e+08 iterations 0
+Cbc0038I Pass   5: suminf.    0.28571 (1) obj. 1.16104e+08 iterations 5
+Cbc0038I Pass   6: suminf.    0.23152 (1) obj. 1.29721e+08 iterations 7
+Cbc0038I Pass   7: suminf.    0.41176 (1) obj. 1.12934e+08 iterations 3
+Cbc0038I Pass   8: suminf.    0.41176 (1) obj. 1.12934e+08 iterations 0
+Cbc0038I Pass   9: suminf.    0.07692 (1) obj. 1.14861e+08 iterations 4
+Cbc0038I Pass  10: suminf.    0.07692 (1) obj. 1.14861e+08 iterations 0
+Cbc0038I Pass  11: suminf.    0.27652 (1) obj. 1.29721e+08 iterations 4
+Cbc0038I Pass  12: suminf.    0.29412 (1) obj. 1.14907e+08 iterations 5
+Cbc0038I Pass  13: suminf.    0.29412 (1) obj. 1.14907e+08 iterations 0
+Cbc0038I Pass  14: suminf.    0.29412 (1) obj. 1.14907e+08 iterations 0
+Cbc0038I Pass  15: suminf.    0.00000 (0) obj. 1.29721e+08 iterations 3
+Cbc0038I Solution found of 1.29721e+08
+Cbc0038I Relaxing continuous gives 1.23624e+08
+Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 3 continuous
+Cbc0038I Full problem 9 rows 24 columns, reduced to 9 rows 21 columns
+Cbc0038I Mini branch and bound did not improve solution (0.00 seconds)
+Cbc0038I Freeing continuous variables gives a solution of 1.23624e+08
+Cbc0038I Round again with cutoff of 1.20234e+08
+Cbc0038I Pass  16: suminf.    0.47059 (1) obj. 1.11298e+08 iterations 0
+Cbc0038I Pass  17: suminf.    0.26823 (2) obj. 1.20234e+08 iterations 5
+Cbc0038I Pass  18: suminf.    0.28571 (1) obj. 1.16102e+08 iterations 3
+Cbc0038I Pass  19: suminf.    0.28571 (1) obj. 1.16102e+08 iterations 0
+Cbc0038I Pass  20: suminf.    0.42917 (1) obj. 1.20234e+08 iterations 6
+Cbc0038I Pass  21: suminf.    0.41176 (1) obj. 1.12934e+08 iterations 3
+Cbc0038I Pass  22: suminf.    0.07692 (1) obj. 1.14861e+08 iterations 4
+Cbc0038I Pass  23: suminf.    0.07692 (1) obj. 1.14861e+08 iterations 0
+Cbc0038I Pass  24: suminf.    0.51780 (2) obj. 1.20234e+08 iterations 6
+Cbc0038I Pass  25: suminf.    0.07692 (1) obj. 1.19841e+08 iterations 2
+Cbc0038I Pass  26: suminf.    0.07692 (1) obj. 1.19841e+08 iterations 0
+Cbc0038I Pass  27: suminf.    0.07692 (1) obj. 1.19841e+08 iterations 0
+Cbc0038I Pass  28: suminf.    0.07692 (1) obj. 1.19841e+08 iterations 0
+Cbc0038I Pass  29: suminf.    0.42917 (1) obj. 1.20234e+08 itera

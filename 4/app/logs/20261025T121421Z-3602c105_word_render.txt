@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "engine": "Microsoft Word 16.0",
+  "page_count": 24,
+  "captions": [
+    {
+      "text": "Рисунок 1 — Структура логистических затрат. Источник: module1_tco_cbam_input.json → tco_baseline.csv.",
+      "page": 7
+    },
+    {
+      "text": "Рисунок 2 — Чувствительность к стоимости капитала. Источник: module1_tco_cbam_input.json → wacc.csv.",
+      "page": 8
+    },
+    {
+      "text": "Рисунок 3 — Чувствительность к стоимости груза. Источник: module1_tco_cbam_input.json → cargo_value.csv.",
+      "page": 9
+    },
+    {
+      "text": "Рисунок 4 — Изменение только времени морского плеча. Источник: module1_tco_cbam_input.json → lead_time.csv.",
+      "page": 10
+    },
+    {
+      "text": "Рисунок 5 — Авиация и железная дорога: стоимость капитала 15%. Источник: module1_tco_cbam_input.json → ets.csv.",
+      "page": 11
+    },
+    {
+      "text": "Рисунок 6 — Снабжение из нескольких источников. Источник: module2_cflp_*.csv → flows_multi.csv.",
+      "page": 12
+    },
+    {
+      "text": "Рисунок 7 — Снабжение из одного источника. Источник: module2_cflp_*.csv → flows_single.csv.",
+      "page": 13
+    },
+    {
+      "text": "Рисунок 8 — Резерв мощностей оптимальной сети. Источник: module2_cflp_*.csv → facilities_multi.csv.",
+      "page": 14
+    },
+    {
+      "text": "Рисунок 9 — Big-M: разрыв релаксации и время. Источник: module2_cflp_*.csv → cflp_comparison.csv.",
+      "page": 15
+    },
+    {
+      "text": "Рисунок 10 — Холодовая цепь: непрерывное нарушение. Источник: module3_iot_telemetry.csv → telemetry.csv, temperature_incidents.csv.",
+      "page": 16
+    },
+    {
+      "text": "Рисунок 11 — Трёхосевой акселерометр и удар. Источник: module3_iot_telemetry.csv → telemetry.csv, shock_incidents.csv.",
+      "page": 17
+    },
+    {
+      "text": "Рисунок 12 — Контрольный участок телеметрии. Источник: module3_iot_telemetry.csv → gps_segments.csv.",
+      "page": 18
+    }
+  ],
+  "images": [
+    {
+      "page": 7,
+      "width_points": 473.3500061035156,
+      "height_points": 264.8500061035156
+    },
+    {
+      "page": 8,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 9,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 10,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 11,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 12,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 13,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 14,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 15,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 16,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 17,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    },
+    {
+      "page": 18,
+      "width_points": 473.3500061035156,
+      "height_points": 247.9499969482422
+    }
+  ],
+  "pdf": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\Итоговый_отчет_практическая_4_ЭА.pdf",
+  "docx_read_only": true,
+  "docx_sha256": "62dd1555bfe9f02611e41244f0ca36b9b8d0cc735959eeb13eeb90a967db4cff",
+  "pdf_page_count": 24,
+  "pdf_caption_pages": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "pdf_image_pages": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "pdf_image_count": 12,
+  "pdf_text_nonempty": true,
+  "caption_image_same_page": true
+}

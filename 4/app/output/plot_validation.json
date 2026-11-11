@@ -1,0 +1,1133 @@
+[
+  {
+    "number": 1,
+    "key": "01_tco",
+    "title": "Структура логистических затрат",
+    "source": "module1_tco_cbam_input.json → tco_baseline.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\01_tco.png",
+    "dimensions": [
+      1680,
+      940
+    ],
+    "series": [],
+    "labels": [
+      {
+        "text": "Маршрут",
+        "inside": true
+      },
+      {
+        "text": "Логистические затраты, тысяч долларов\nна партию 20 тонн",
+        "inside": true
+      },
+      {
+        "text": "Авиация",
+        "inside": true
+      },
+      {
+        "text": "Железная дорога",
+        "inside": true
+      },
+      {
+        "text": "Море + автомобиль",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "50",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "150",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "350",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 2,
+    "key": "02_wacc",
+    "title": "Чувствительность к стоимости капитала",
+    "source": "module1_tco_cbam_input.json → wacc.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\02_wacc.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Авиация",
+        "points": 51,
+        "min_y": 344.839377732,
+        "max_y": 345.59280238900004
+      },
+      {
+        "label": "Железная дорога",
+        "points": 51,
+        "min_y": 61.0447033732,
+        "max_y": 66.6200458389
+      },
+      {
+        "label": "Море + автомобиль",
+        "points": 51,
+        "min_y": 46.073093502999996,
+        "max_y": 58.579942818099994
+      }
+    ],
+    "labels": [
+      {
+        "text": "Средневзвешенная стоимость капитала, % годовых",
+        "inside": true
+      },
+      {
+        "text": "Логистические затраты, тысяч долларов\nна партию 20 тонн",
+        "inside": true
+      },
+      {
+        "text": "5",
+        "inside": true
+      },
+      {
+        "text": "10",
+        "inside": true
+      },
+      {
+        "text": "15",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "25",
+        "inside": true
+      },
+      {
+        "text": "30",
+        "inside": true
+      },
+      {
+        "text": "50",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "150",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "350",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 3,
+    "key": "03_price",
+    "title": "Чувствительность к стоимости груза",
+    "source": "module1_tco_cbam_input.json → cargo_value.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\03_price.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Авиация",
+        "points": 97,
+        "min_y": 344.85965170400004,
+        "max_y": 412.32266540300003
+      },
+      {
+        "label": "Железная дорога",
+        "points": 97,
+        "min_y": 62.7307307704,
+        "max_y": 193.31703214
+      },
+      {
+        "label": "Море + автомобиль",
+        "points": 97,
+        "min_y": 50.1536414482,
+        "max_y": 271.479668845
+      }
+    ],
+    "labels": [
+      {
+        "text": "Цена груза, тысяч долларов за тонну",
+        "inside": true
+      },
+      {
+        "text": "Логистические затраты, тысяч долларов\nна партию 20 тонн",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "400",
+        "inside": true
+      },
+      {
+        "text": "500",
+        "inside": true
+      },
+      {
+        "text": "50",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "150",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "350",
+        "inside": true
+      },
+      {
+        "text": "400",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 4,
+    "key": "04_lead",
+    "title": "Изменение только времени морского плеча",
+    "source": "module1_tco_cbam_input.json → lead_time.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\04_lead.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Авиация",
+        "points": 111,
+        "min_y": 345.14074759500005,
+        "max_y": 345.14074759500005
+      },
+      {
+        "label": "Железная дорога",
+        "points": 111,
+        "min_y": 63.2748403595,
+        "max_y": 63.2748403595
+      },
+      {
+        "label": "Море + автомобиль",
+        "points": 111,
+        "min_y": 45.3799428181,
+        "max_y": 65.270353777
+      }
+    ],
+    "labels": [
+      {
+        "text": "Общий срок моря и автомобильной доставки, суток",
+        "inside": true
+      },
+      {
+        "text": "Логистические затраты, тысяч долларов\nна партию 20 тонн",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "40",
+        "inside": true
+      },
+      {
+        "text": "60",
+        "inside": true
+      },
+      {
+        "text": "80",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "120",
+        "inside": true
+      },
+      {
+        "text": "50",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "150",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "350",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 5,
+    "key": "05_ets",
+    "title": "Авиация и железная дорога: стоимость капитала 15%",
+    "source": "module1_tco_cbam_input.json → ets.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\05_ets.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Цена 150 тысяч долларов за тонну",
+        "points": 101,
+        "min_y": 256.487552123,
+        "max_y": 306.755072123
+      },
+      {
+        "label": "Цена 225 тысяч долларов за тонну",
+        "points": 101,
+        "min_y": 246.624538424,
+        "max_y": 296.89205842399997
+      },
+      {
+        "label": "Цена 300 тысяч долларов за тонну",
+        "points": 101,
+        "min_y": 236.761524725,
+        "max_y": 287.029044725
+      }
+    ],
+    "labels": [
+      {
+        "text": "Цена европейской квоты, евро за тонну углекислого газа",
+        "inside": true
+      },
+      {
+        "text": "Затраты авиации минус железной дороги,\nтысяч долларов",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "400",
+        "inside": true
+      },
+      {
+        "text": "500",
+        "inside": true
+      },
+      {
+        "text": "240",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "260",
+        "inside": true
+      },
+      {
+        "text": "270",
+        "inside": true
+      },
+      {
+        "text": "280",
+        "inside": true
+      },
+      {
+        "text": "290",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "310",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 6,
+    "key": "06_multi",
+    "title": "Снабжение из нескольких источников",
+    "source": "module2_cflp_*.csv → flows_multi.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\06_multi.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [],
+    "labels": [
+      {
+        "text": "Номер потребителя",
+        "inside": true
+      },
+      {
+        "text": "Распределительный хаб",
+        "inside": true
+      },
+      {
+        "text": "1",
+        "inside": true
+      },
+      {
+        "text": "2",
+        "inside": true
+      },
+      {
+        "text": "3",
+        "inside": true
+      },
+      {
+        "text": "4",
+        "inside": true
+      },
+      {
+        "text": "5",
+        "inside": true
+      },
+      {
+        "text": "A — Ногинск",
+        "inside": true
+      },
+      {
+        "text": "B — Тверь",
+        "inside": true
+      },
+      {
+        "text": "C — Рязань",
+        "inside": true
+      },
+      {
+        "text": "D — Великий Новгород",
+        "inside": true
+      },
+      {
+        "text": " ",
+        "inside": true
+      },
+      {
+        "text": "Поток, тонн в год",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 7,
+    "key": "07_single",
+    "title": "Снабжение из одного источника",
+    "source": "module2_cflp_*.csv → flows_single.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\07_single.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [],
+    "labels": [
+      {
+        "text": "Номер потребителя",
+        "inside": true
+      },
+      {
+        "text": "Распределительный хаб",
+        "inside": true
+      },
+      {
+        "text": "1",
+        "inside": true
+      },
+      {
+        "text": "2",
+        "inside": true
+      },
+      {
+        "text": "3",
+        "inside": true
+      },
+      {
+        "text": "4",
+        "inside": true
+      },
+      {
+        "text": "5",
+        "inside": true
+      },
+      {
+        "text": "A — Ногинск",
+        "inside": true
+      },
+      {
+        "text": "B — Тверь",
+        "inside": true
+      },
+      {
+        "text": "C — Рязань",
+        "inside": true
+      },
+      {
+        "text": "D — Великий Новгород",
+        "inside": true
+      },
+      {
+        "text": " ",
+        "inside": true
+      },
+      {
+        "text": "Поток, тонн в год",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 8,
+    "key": "08_capacity",
+    "title": "Резерв мощностей оптимальной сети",
+    "source": "module2_cflp_*.csv → facilities_multi.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\08_capacity.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [],
+    "labels": [
+      {
+        "text": "Распределительный хаб",
+        "inside": true
+      },
+      {
+        "text": "Тонн в год",
+        "inside": true
+      },
+      {
+        "text": "A\nНогинск",
+        "inside": true
+      },
+      {
+        "text": "B\nТверь",
+        "inside": true
+      },
+      {
+        "text": "C\nРязань",
+        "inside": true
+      },
+      {
+        "text": "D\nВеликий Новгород",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "200",
+        "inside": true
+      },
+      {
+        "text": "300",
+        "inside": true
+      },
+      {
+        "text": "400",
+        "inside": true
+      },
+      {
+        "text": "500",
+        "inside": true
+      },
+      {
+        "text": "600",
+        "inside": true
+      },
+      {
+        "text": "700",
+        "inside": true
+      },
+      {
+        "text": "800",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 9,
+    "key": "09_bigm",
+    "title": "Big-M: разрыв релаксации и время",
+    "source": "module2_cflp_*.csv → cflp_comparison.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\09_bigm.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [],
+    "labels": [
+      {
+        "text": "Постановка",
+        "inside": true
+      },
+      {
+        "text": "Разрыв линейной релаксации, %",
+        "inside": true
+      },
+      {
+        "text": "Реальные мощности",
+        "inside": true
+      },
+      {
+        "text": "Завышенные мощности",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "40",
+        "inside": true
+      },
+      {
+        "text": "60",
+        "inside": true
+      },
+      {
+        "text": "80",
+        "inside": true
+      },
+      {
+        "text": "Медиана трёх запусков CBC",
+        "inside": true
+      },
+      {
+        "text": "Стеночное время, мс",
+        "inside": true
+      },
+      {
+        "text": "K:\nцелочисленная",
+        "inside": true
+      },
+      {
+        "text": "K:\nлинейная",
+        "inside": true
+      },
+      {
+        "text": "M:\nцелочисленная",
+        "inside": true
+      },
+      {
+        "text": "M:\nлинейная",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "10",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "30",
+        "inside": true
+      },
+      {
+        "text": "40",
+        "inside": true
+      },
+      {
+        "text": "50",
+        "inside": true
+      },
+      {
+        "text": "60",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 10,
+    "key": "10_temperature",
+    "title": "Холодовая цепь: непрерывное нарушение",
+    "source": "module3_iot_telemetry.csv → telemetry.csv, temperature_incidents.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\10_temperature.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Температура",
+        "points": 1440,
+        "min_y": -21.05,
+        "max_y": -16.03
+      },
+      {
+        "label": "_child2",
+        "points": 2,
+        "min_y": -18.0,
+        "max_y": -18.0
+      },
+      {
+        "label": "_child3",
+        "points": 2,
+        "min_y": -22.0,
+        "max_y": -22.0
+      }
+    ],
+    "labels": [
+      {
+        "text": "Часы от 10.04.2026 08:00",
+        "inside": true
+      },
+      {
+        "text": "Температура, °C",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "40",
+        "inside": true
+      },
+      {
+        "text": "60",
+        "inside": true
+      },
+      {
+        "text": "80",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "120",
+        "inside": true
+      },
+      {
+        "text": "−22",
+        "inside": true
+      },
+      {
+        "text": "−21",
+        "inside": true
+      },
+      {
+        "text": "−20",
+        "inside": true
+      },
+      {
+        "text": "−19",
+        "inside": true
+      },
+      {
+        "text": "−18",
+        "inside": true
+      },
+      {
+        "text": "−17",
+        "inside": true
+      },
+      {
+        "text": "−16",
+        "inside": true
+      },
+      {
+        "text": "−15",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 11,
+    "key": "11_shock",
+    "title": "Трёхосевой акселерометр и удар",
+    "source": "module3_iot_telemetry.csv → telemetry.csv, shock_incidents.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\11_shock.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Ось X",
+        "points": 1440,
+        "min_y": -0.347,
+        "max_y": 1.15
+      },
+      {
+        "label": "Ось Y",
+        "points": 1440,
+        "min_y": -0.402,
+        "max_y": 0.95
+      },
+      {
+        "label": "Ось Z",
+        "points": 1440,
+        "min_y": 0.294,
+        "max_y": 2.65
+      },
+      {
+        "label": "Векторная норма",
+        "points": 1440,
+        "min_y": 0.335220822742,
+        "max_y": 3.04097023991
+      },
+      {
+        "label": "Осевой порог 2.5g",
+        "points": 2,
+        "min_y": 2.5,
+        "max_y": 2.5
+      }
+    ],
+    "labels": [
+      {
+        "text": "Часы от 10.04.2026 08:00",
+        "inside": true
+      },
+      {
+        "text": "Ускорение, g",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "40",
+        "inside": true
+      },
+      {
+        "text": "60",
+        "inside": true
+      },
+      {
+        "text": "80",
+        "inside": true
+      },
+      {
+        "text": "100",
+        "inside": true
+      },
+      {
+        "text": "120",
+        "inside": true
+      },
+      {
+        "text": "−0.5",
+        "inside": true
+      },
+      {
+        "text": "0.0",
+        "inside": true
+      },
+      {
+        "text": "0.5",
+        "inside": true
+      },
+      {
+        "text": "1.0",
+        "inside": true
+      },
+      {
+        "text": "1.5",
+        "inside": true
+      },
+      {
+        "text": "2.0",
+        "inside": true
+      },
+      {
+        "text": "2.5",
+        "inside": true
+      },
+      {
+        "text": "3.0",
+        "inside": true
+      },
+      {
+        "text": "3.5",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "number": 12,
+    "key": "12_gps",
+    "title": "Контрольный участок телеметрии",
+    "source": "module3_iot_telemetry.csv → gps_segments.csv",
+    "path": "C:\\work\\Economic analysis of knowledge‑intensive industries\\4\\app\\output\\figures\\12_gps.png",
+    "dimensions": [
+      1680,
+      880
+    ],
+    "series": [
+      {
+        "label": "Измеренные GPS-точки",
+        "points": 1440,
+        "min_y": 52.520993,
+        "max_y": 55.75727
+      },
+      {
+        "label": "_child0",
+        "points": 1439,
+        "min_y": 1.21239292869,
+        "max_y": 1676.56024962
+      }
+    ],
+    "labels": [
+      {
+        "text": "Долгота, градусы",
+        "inside": true
+      },
+      {
+        "text": "Широта, градусы",
+        "inside": true
+      },
+      {
+        "text": "15",
+        "inside": true
+      },
+      {
+        "text": "20",
+        "inside": true
+      },
+      {
+        "text": "25",
+        "inside": true
+      },
+      {
+        "text": "30",
+        "inside": true
+      },
+      {
+        "text": "35",
+        "inside": true
+      },
+      {
+        "text": "52.5",
+        "inside": true
+      },
+      {
+        "text": "53.0",
+        "inside": true
+      },
+      {
+        "text": "53.5",
+        "inside": true
+      },
+      {
+        "text": "54.0",
+        "inside": true
+      },
+      {
+        "text": "54.5",
+        "inside": true
+      },
+      {
+        "text": "55.0",
+        "inside": true
+      },
+      {
+        "text": "55.5",
+        "inside": true
+      },
+      {
+        "text": "Индекс отсчёта",
+        "inside": true
+      },
+      {
+        "text": "Накопленный GPS-путь, км",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "500",
+        "inside": true
+      },
+      {
+        "text": "750",
+        "inside": true
+      },
+      {
+        "text": "1000",
+        "inside": true
+      },
+      {
+        "text": "1250",
+        "inside": true
+      },
+      {
+        "text": "1500",
+        "inside": true
+      },
+      {
+        "text": "0",
+        "inside": true
+      },
+      {
+        "text": "250",
+        "inside": true
+      },
+      {
+        "text": "500",
+        "inside": true
+      },
+      {
+        "text": "750",
+        "inside": true
+      },
+      {
+        "text": "1000",
+        "inside": true
+      },
+      {
+        "text": "1250",
+        "inside": true
+      },
+      {
+        "text": "1500",
+        "inside": true
+      },
+      {
+        "text": "1750",
+        "inside": true
+      }
+    ],
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "batch_id": "RAIL-EXP-2026-HF10N-04",
+  "cargo_type": "Electronic Grade Anhydrous HF (Grade 10N)",
+  "transport_mode": "Rail_Express",
+  "sha256_telemetry_digest": "c10444662cfd412ed355b20cc11c54660407d83d04784c171eb4a31238c5d0c9",
+  "cold_chain_status": "VIOLATED",
+  "vibration_status": "SHOCK_DETECTED",
+  "final_disposition": "SCRAP_WRITE_OFF",
+  "adjusted_tco_usd": 1257274.84,
+  "scope3_transport_emissions_tco2": 0.8047
+}
